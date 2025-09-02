@@ -3,7 +3,7 @@
   <generator>Windows Inform 10.1.2</generator>
   <item nodeId="node-15">
     <command xml:space="preserve">morganav1</command>
-    <result xml:space="preserve">Morgana&#x000A;An Interactive Fiction by Brianna&#x000A;Release 1 / Serial number 250901 / Inform 7 v10.1.2 / D&#x000A;&#x000A;Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates. This room is small and cozy. You see a desk in the corner of the room.&#x000A;&#x000A;On the desk is a laptop.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">laptop has no description.&#x000A;&#x000A;Morgana&#x000A;An Interactive Fiction by Brianna&#x000A;Release 1 / Serial number 250901 / Inform 7 v10.1.2 / D&#x000A;&#x000A;Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates. This room is small and cozy. You see a desk in the corner of the room.&#x000A;&#x000A;The radio is off.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -11,7 +11,11 @@
       <child nodeId="node-30"/>
       <child nodeId="node-19"/>
       <child nodeId="node-27"/>
+      <child nodeId="node-45"/>
       <child nodeId="node-38"/>
+      <child nodeId="node-42"/>
+      <child nodeId="node-47"/>
+      <child nodeId="node-43"/>
       <child nodeId="node-23"/>
       <child nodeId="node-26"/>
       <child nodeId="node-20"/>
@@ -79,6 +83,12 @@
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
+  <item nodeId="node-45">
+    <command xml:space="preserve">switch on the laptop</command>
+    <result xml:space="preserve">It isn't something you can switch.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
   <item nodeId="node-38">
     <command xml:space="preserve">take laptop</command>
     <result xml:space="preserve">Taken.&#x000A;&#x000A;&gt;</result>
@@ -98,6 +108,65 @@
   <item nodeId="node-40">
     <command xml:space="preserve">turn on laptop</command>
     <result xml:space="preserve">You switch the laptop on.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-41"/>
+    </children>
+  </item>
+  <item nodeId="node-41">
+    <command xml:space="preserve">x laptop</command>
+    <result xml:space="preserve">The old laptop was a hand me down from your older sister who graduated 3 years ago. It's not too fancy and does what you need it to do.&#x000A;&#x000A;The laptop is currently switched on.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-42">
+    <command xml:space="preserve">turn on laptop</command>
+    <result xml:space="preserve">You switch the laptop on.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-46"/>
+      <child nodeId="node-44"/>
+      <child nodeId="node-49"/>
+    </children>
+  </item>
+  <item nodeId="node-46">
+    <command xml:space="preserve">open laptop</command>
+    <result xml:space="preserve">It isn't something you can open.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-44">
+    <command xml:space="preserve">turn on computer</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-49">
+    <command xml:space="preserve">x laptop</command>
+    <result xml:space="preserve">The laptop is currently switched on.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-47">
+    <command xml:space="preserve">turn on radio</command>
+    <result xml:space="preserve">You switch the radio on.&#x000A;&#x000A;Two characters in the radio play have begun an argument: "Did not!"&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-48"/>
+    </children>
+  </item>
+  <item nodeId="node-48">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;The argument continues: "Did too!"&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-43">
+    <command xml:space="preserve">turn on the laptop</command>
+    <result xml:space="preserve">It isn't something you can switch.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>

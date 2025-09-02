@@ -13,15 +13,22 @@ When play begins (this is the run property checks at the start of play rule):
 A television is a kind of device. A television has a number called the channel. Understand the channel property as referring to a television. Understand "channel" as a television.
 
 
+The Dorm Room is a room. The description of the dorm room is "You are sitting in your dorm room on your [bed] in the small apartment you share with 2 other roommates. This room is small and cozy. You see a [desk] in the corner of the room. On the desk is a [laptop]."
 
-The Dorm Room is a room. The description of the dorm room is "You are sitting in your dorm room on your [bed] in the small apartment you share with 2 other roommates. This room is small and cozy. You see a [desk] in the corner of the room."
+The laptop is a device in the Dorm Room. The laptop is switched off. "[if switched on]You open the laptop and the screen turns on.[otherwise]The laptop is closed and off[end if]."
 
+[Every turn when the radio is switched on:
+	say "[one of]Two characters in the radio play have begun an argument[or]The argument continues[or]The play continues[stopping]: [one of]'Did not!'[or]'Did too!'[or]'Did I?'[or]'You did!'[or]'I couldn't have, Martha!'[or]'But you did, Tom!'[cycling]"]
 
 
 The desk is in the dorm room. The description of the desk is "The wooden desk came with the room. On it is a [laptop]."
 
-The laptop is an device on the desk. Understand "computer" as laptop. The description of the laptop is "The old laptop was a hand me down from your older sister who graduated 3 years ago. It's not too fancy and does what you need it to do."
+[A laptop is a kind of thing. A laptop can be turned on. A laptop can be opened.
+The purple laptop is on the desk.
+	The description of the purple laptop is "The old laptop was a hand me down from your older sister who graduated 3 years ago. It's not too fancy and does what you need it to do."
+	[Understand "computer" as laptop. ]]
 
+	
 ["[if open]The lid of a plank coffin yawns open.[otherwise]A plank coffin lies upon the dirt floor of the Tomb."]
 
 [The purple laptop is on the desk.  The description of the purple laptop is "The old laptop was a hand me down from your older sister who graduated 3 years ago. It's not too fancy and does what you need it to do."]
