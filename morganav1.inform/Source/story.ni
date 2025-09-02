@@ -4,71 +4,61 @@
 
 Section 1 - Testing descriptions - Not for release
 
+When play begins:
+	now the right hand status line is "[time of day]".
+
 When play begins (this is the run property checks at the start of play rule):
 	repeat with item running through things:
 		if description of the item is "":
 			say "[item] has no description."
+			
+Work duration is a number that varies.
+
+Every turn:
+	now work duration is 0;
+	increment the turn count;
+	follow the time allotment rules;
+	if work duration is 0, rule succeeds;
+	increase the time of day by (work duration minutes - 1 minute).
+	
+The time allotment rules are a rulebook.
+
+A time allotment rule for examining or looking:
+	now work duration is 0;
+	rule succeeds.
+
+A time allotment rule for washing:
+	now work duration is -30;
+	rule succeeds.
 
 
-A television is a kind of device. A television has a number called the channel. Understand the channel property as referring to a television. Understand "channel" as a television.
+Examining something is acting fast. Looking is acting fast. [In a game with tight timing, it is sometimes friendliest to the player to let him LOOK and EXAMINE as much as necessary without being penalized.]
+
+
+The description of the player is "You are Morgana, a college student."
 
 
 The Dorm Room is a room. The description of the dorm room is "You are sitting in your dorm room on your [bed] in the small apartment you share with 2 other roommates. This room is small and cozy. You see a [desk] in the corner of the room. On the desk is a [laptop]."
 
-The laptop is a device in the Dorm Room. The laptop is switched off. "[if switched on]You open the laptop and the screen turns on.[otherwise]The laptop is closed and off[end if]."
-
-[Every turn when the radio is switched on:
-	say "[one of]Two characters in the radio play have begun an argument[or]The argument continues[or]The play continues[stopping]: [one of]'Did not!'[or]'Did too!'[or]'Did I?'[or]'You did!'[or]'I couldn't have, Martha!'[or]'But you did, Tom!'[cycling]"]
-
+The laptop is an openable container in the Dorm Room. 
+The laptop is closed. 
+[The laptop can be switched on.]
+After opening the laptop: say "On the screen is a half-finished programming [assignment]. You've spent about 20 minutes working on it so far."
+The assignment is in the laptop. The description of the assignment is "The c++ programming assignment is about half done."
 
 The desk is in the dorm room. The description of the desk is "The wooden desk came with the room. On it is a [laptop]."
-
-[A laptop is a kind of thing. A laptop can be turned on. A laptop can be opened.
-The purple laptop is on the desk.
-	The description of the purple laptop is "The old laptop was a hand me down from your older sister who graduated 3 years ago. It's not too fancy and does what you need it to do."
-	[Understand "computer" as laptop. ]]
-
-	
-["[if open]The lid of a plank coffin yawns open.[otherwise]A plank coffin lies upon the dirt floor of the Tomb."]
-
-[The purple laptop is on the desk.  The description of the purple laptop is "The old laptop was a hand me down from your older sister who graduated 3 years ago. It's not too fancy and does what you need it to do."]
-
-
-
 The bed is in the dorm room. The description of the bed is "The twin bed is longer than the ones that you grew up sleeping on, but you were happy to buy new sheets for this next chapter in your life."
 
 
+The common area is south of the dorm room. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a [sink] and a fridge."
 
+The trash can is a thing in the common area. It is a container. "The trash can is barely full."
+Instead of removing something from the trash can: say "Ew, it's all dirty now, no thanks."
 
+A thing can be dirty or clean. 
 
+Washing is an action applying to one visible thing. Understand "wash [something]" as washing. [§12.7. New actions] 
+Carry out washing:
+	say "The [the noun] are now pretty and clean!".
 
-
-
-
-
-[n your room, you have a desk with a laptop, a bookshelf, a shag rug, and a collection of cds."]
-
-[The bed is in the Dorm Room.  ]
-
-
-[
-A laptop is a kind of device. 
-
-
-
-]
-
-
-
-[
-The bookshelf is in the dorm room. The description of the bookshelf is "A squat bookshelf holds books from your younger days, a few Supernatural dvds, and some college books that you were required to buy but have never opened."
-
-The rug is in the dorm room. The description of the rug is "A heart shaped shag rug lays in the middle of the floor. It's nice and fluffy compared to the felt-like carpet in the rest of the room."
-]
-The description of the player is "You are Morgana, a college student. You are wearing a watch."
-
-The player wears a watch. The description of the watch is "It is [the time of day]."
-
-
-
-The common area is south of the dorm room. "The common area contains a small couch, tv, dining table, and a kitchenette."
+There is a sink in the common area. The sink contains things called dishes. The dishes can be washed.
