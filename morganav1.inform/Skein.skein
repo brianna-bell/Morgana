@@ -1,62 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Skein rootNode="node-6">
+<Skein rootNode="node-15">
   <generator>Windows Inform 10.1.2</generator>
-  <item nodeId="node-6">
+  <item nodeId="node-15">
     <command xml:space="preserve">morganav1</command>
-    <result xml:space="preserve">morganav1&#x000A;An Interactive Fiction by brianna&#x000A;Release 1 / Serial number 250901 / Inform 7 v10.1.2 / D&#x000A;&#x000A;Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates. You don't have very many things, but you do have a laptop, a bookshelf and a rug.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">Morgana&#x000A;An Interactive Fiction by Brianna&#x000A;Release 1 / Serial number 250901 / Inform 7 v10.1.2 / D&#x000A;&#x000A;Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates. This room is small and cozy. You see a desk in the corner of the room.&#x000A;&#x000A;On the desk is a laptop.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-9"/>
-      <child nodeId="node-7"/>
-      <child nodeId="node-13"/>
-      <child nodeId="node-8"/>
-      <child nodeId="node-12"/>
+      <child nodeId="node-16"/>
+      <child nodeId="node-30"/>
+      <child nodeId="node-19"/>
+      <child nodeId="node-27"/>
+      <child nodeId="node-38"/>
+      <child nodeId="node-23"/>
+      <child nodeId="node-26"/>
+      <child nodeId="node-20"/>
+      <child nodeId="node-21"/>
+      <child nodeId="node-22"/>
     </children>
   </item>
-  <item nodeId="node-9">
+  <item nodeId="node-16">
     <command xml:space="preserve">look</command>
     <result xml:space="preserve">Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates.&#x000A;&#x000A;You can see a laptop, a bookshelf and a rug here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-10"/>
+      <child nodeId="node-17"/>
     </children>
   </item>
-  <item nodeId="node-10">
+  <item nodeId="node-17">
     <command xml:space="preserve">look out window</command>
     <result xml:space="preserve">I only understood you as far as wanting to look outside.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-11"/>
+      <child nodeId="node-18"/>
     </children>
   </item>
-  <item nodeId="node-11">
+  <item nodeId="node-18">
     <command xml:space="preserve">look outside</command>
     <result xml:space="preserve">You see nothing unexpected in that direction.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-7">
+  <item nodeId="node-30">
+    <command xml:space="preserve">open laptop</command>
+    <result xml:space="preserve">It isn't something you can open.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-19">
     <command xml:space="preserve">s</command>
     <result xml:space="preserve">common area&#x000A;The common area contains a small couch, tv, dining table, and a kitchenette.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-13">
+  <item nodeId="node-27">
+    <command xml:space="preserve">sit at desk</command>
+    <result xml:space="preserve">I didn't understand that sentence.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-28"/>
+    </children>
+  </item>
+  <item nodeId="node-28">
+    <command xml:space="preserve">take laptop</command>
+    <result xml:space="preserve">Taken.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-29"/>
+    </children>
+  </item>
+  <item nodeId="node-29">
+    <command xml:space="preserve">open laptop</command>
+    <result xml:space="preserve">It isn't something you can open.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-38">
+    <command xml:space="preserve">take laptop</command>
+    <result xml:space="preserve">Taken.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-39"/>
+      <child nodeId="node-40"/>
+    </children>
+  </item>
+  <item nodeId="node-39">
+    <command xml:space="preserve">open laptop</command>
+    <result xml:space="preserve">It isn't something you can open.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-40">
+    <command xml:space="preserve">turn on laptop</command>
+    <result xml:space="preserve">You switch the laptop on.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-23">
+    <command xml:space="preserve">x bed</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-24"/>
+    </children>
+  </item>
+  <item nodeId="node-24">
+    <command xml:space="preserve">x desk</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-25"/>
+    </children>
+  </item>
+  <item nodeId="node-25">
+    <command xml:space="preserve">examine desk</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-26">
+    <command xml:space="preserve">x desk</command>
+    <result xml:space="preserve">The wooden desk came with the room.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-20">
     <command xml:space="preserve">x rug</command>
     <result xml:space="preserve">A heart shaped shag rug lays in the middle of the floor. It's nice and fluffy compared to the felt-like carpet in the rest of the room.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-8">
+  <item nodeId="node-21">
     <command xml:space="preserve">x self</command>
     <result xml:space="preserve">You are Morgana, a college student.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
+    <children>
+      <child nodeId="node-31"/>
+    </children>
   </item>
-  <item nodeId="node-12">
+  <item nodeId="node-31">
+    <command xml:space="preserve">z watch</command>
+    <result xml:space="preserve">I only understood you as far as wanting to wait.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-32"/>
+    </children>
+  </item>
+  <item nodeId="node-32">
+    <command xml:space="preserve">x watch</command>
+    <result xml:space="preserve">It is 9:01 am.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-33"/>
+    </children>
+  </item>
+  <item nodeId="node-33">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-34"/>
+    </children>
+  </item>
+  <item nodeId="node-34">
+    <command xml:space="preserve">x watch</command>
+    <result xml:space="preserve">It is 9:03 am.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-35"/>
+    </children>
+  </item>
+  <item nodeId="node-35">
+    <command xml:space="preserve">x watch</command>
+    <result xml:space="preserve">It is 9:04 am.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-36"/>
+    </children>
+  </item>
+  <item nodeId="node-36">
+    <command xml:space="preserve">x watch</command>
+    <result xml:space="preserve">It is 9:05 am.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-37"/>
+    </children>
+  </item>
+  <item nodeId="node-37">
+    <command xml:space="preserve">x watch</command>
+    <result xml:space="preserve">It is 9:06 am.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-22">
     <command xml:space="preserve">x window</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
