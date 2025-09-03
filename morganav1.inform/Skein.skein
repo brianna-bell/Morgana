@@ -3,218 +3,225 @@
   <generator>Windows Inform 10.1.2</generator>
   <item nodeId="node-1">
     <command xml:space="preserve">morganav1</command>
-    <result xml:space="preserve">Morgana&#x000A;An Interactive Fiction by Brianna&#x000A;Release 1 / Serial number 250902 / Inform 7 v10.1.2 / D&#x000A;&#x000A;Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates. This room is small and cozy. You see a desk in the corner of the room. On the desk is a laptop.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">Morgana&#x000A;An Interactive Fiction by Brianna&#x000A;Release 1 / Serial number 250903 / Inform 7 v10.1.2 / D&#x000A;&#x000A;Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates. This room is small and cozy. You see a desk in the corner of the room. On the desk is a laptop.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-69"/>
-      <child nodeId="node-72"/>
-      <child nodeId="node-67"/>
+      <child nodeId="node-2"/>
+      <child nodeId="node-4"/>
+      <child nodeId="node-7"/>
+      <child nodeId="node-27"/>
     </children>
   </item>
-  <item nodeId="node-69">
+  <item nodeId="node-2">
     <command xml:space="preserve">drink coffee</command>
     <result xml:space="preserve">You drink the dark, bitter coffee.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-70"/>
+      <child nodeId="node-3"/>
     </children>
   </item>
-  <item nodeId="node-70">
+  <item nodeId="node-3">
     <command xml:space="preserve">drink coffee</command>
     <result xml:space="preserve">You drink the dark, bitter coffee.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-72">
+  <item nodeId="node-4">
     <command xml:space="preserve">energy</command>
     <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-73"/>
+      <child nodeId="node-5"/>
     </children>
   </item>
-  <item nodeId="node-73">
+  <item nodeId="node-5">
     <command xml:space="preserve">say energy</command>
     <result xml:space="preserve">(to yourself)&#x000A;There is no reply.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-74"/>
+      <child nodeId="node-6"/>
     </children>
   </item>
-  <item nodeId="node-74">
+  <item nodeId="node-6">
     <command xml:space="preserve">check energy level</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-67">
+  <item nodeId="node-7">
     <command xml:space="preserve">s</command>
-    <result xml:space="preserve">common area&#x000A;The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small trash can.&#x000A;&#x000A;You can see a cup of coffee here.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">Common Area&#x000A;The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small trash can.&#x000A;&#x000A;You can see a cup of coffee here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-71"/>
-      <child nodeId="node-75"/>
-      <child nodeId="node-68"/>
+      <child nodeId="node-8"/>
+      <child nodeId="node-9"/>
+      <child nodeId="node-12"/>
     </children>
   </item>
-  <item nodeId="node-71">
+  <item nodeId="node-8">
     <command xml:space="preserve">drink coffee</command>
     <result xml:space="preserve">You feel a bit more energetic.&#x000A;You drink the dark, bitter coffee.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-75">
+  <item nodeId="node-9">
     <command xml:space="preserve">n</command>
     <result xml:space="preserve">Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates. This room is small and cozy. You see a desk in the corner of the room. On the desk is a laptop.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-76"/>
+      <child nodeId="node-10"/>
     </children>
   </item>
-  <item nodeId="node-76">
+  <item nodeId="node-10">
     <command xml:space="preserve">s</command>
     <result xml:space="preserve">common area&#x000A;The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge.&#x000A;&#x000A;The trash can is barely full.&#x000A;&#x000A;You can also see a cup of coffee here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-77"/>
+      <child nodeId="node-11"/>
     </children>
   </item>
-  <item nodeId="node-77">
+  <item nodeId="node-11">
     <command xml:space="preserve">wash dishes</command>
     <result xml:space="preserve">The dishes are now pretty and clean!&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-68">
+  <item nodeId="node-12">
     <command xml:space="preserve">wash dishes</command>
-    <result xml:space="preserve">You feel a little drained.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">You feel a little worn.&#x000A;You went back.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-78"/>
-      <child nodeId="node-80"/>
+      <child nodeId="node-13"/>
+      <child nodeId="node-15"/>
     </children>
   </item>
-  <item nodeId="node-78">
+  <item nodeId="node-13">
     <command xml:space="preserve">drink coffee</command>
     <result xml:space="preserve">You feel a bit more energetic.&#x000A;You drink the dark, bitter coffee.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-79"/>
+      <child nodeId="node-14"/>
     </children>
   </item>
-  <item nodeId="node-79">
+  <item nodeId="node-14">
     <command xml:space="preserve">drink coffee</command>
     <result xml:space="preserve">You drink the dark, bitter coffee.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-80">
+  <item nodeId="node-15">
+    <command xml:space="preserve">wash dishes</command>
+    <result xml:space="preserve">You're too tired to do that.&#x000A;You went back.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-16"/>
+      <child nodeId="node-24"/>
+    </children>
+  </item>
+  <item nodeId="node-16">
+    <command xml:space="preserve">wash dishes</command>
+    <result xml:space="preserve">You're too tired to do that.&#x000A;You went back.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-17"/>
+    </children>
+  </item>
+  <item nodeId="node-17">
+    <command xml:space="preserve">wash dishes</command>
+    <result xml:space="preserve">You're too tired to do that.&#x000A;You went back.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-18"/>
+    </children>
+  </item>
+  <item nodeId="node-18">
     <command xml:space="preserve">wash dishes</command>
     <result xml:space="preserve">You don't have the energy to do much else.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-81"/>
-      <child nodeId="node-82"/>
+      <child nodeId="node-19"/>
+      <child nodeId="node-23"/>
     </children>
   </item>
-  <item nodeId="node-81">
-    <command xml:space="preserve">wash dishes</command>
-    <result xml:space="preserve">You don't have the energy to do much else.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-85"/>
-    </children>
-  </item>
-  <item nodeId="node-85">
-    <command xml:space="preserve">wash dishes</command>
-    <result xml:space="preserve">You don't have the energy to do much else.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-86"/>
-    </children>
-  </item>
-  <item nodeId="node-86">
-    <command xml:space="preserve">wash dishes</command>
-    <result xml:space="preserve">You don't have the energy to do much else.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-87"/>
-      <child nodeId="node-91"/>
-    </children>
-  </item>
-  <item nodeId="node-87">
+  <item nodeId="node-19">
     <command xml:space="preserve">SHOWME</command>
     <result xml:space="preserve">common area - room&#x000A;    yourself - person&#x000A;    sink - open container&#x000A;        dishes&#x000A;    cup of coffee&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-88"/>
+      <child nodeId="node-20"/>
     </children>
   </item>
-  <item nodeId="node-88">
+  <item nodeId="node-20">
     <command xml:space="preserve">drink coffee</command>
     <result xml:space="preserve">You feel a bit more energetic.&#x000A;You drink the dark, bitter coffee.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-89"/>
+      <child nodeId="node-21"/>
     </children>
   </item>
-  <item nodeId="node-89">
+  <item nodeId="node-21">
     <command xml:space="preserve">drink coffee</command>
     <result xml:space="preserve">You feel a bit more energetic.&#x000A;You drink the dark, bitter coffee.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-90"/>
+      <child nodeId="node-22"/>
     </children>
   </item>
-  <item nodeId="node-90">
+  <item nodeId="node-22">
     <command xml:space="preserve">wash dishes</command>
     <result xml:space="preserve">You feel a little drained.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-91">
+  <item nodeId="node-23">
     <command xml:space="preserve">wash dishes</command>
     <result xml:space="preserve">You don't have the energy to do much else.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-82">
+  <item nodeId="node-24">
     <command xml:space="preserve">wash dishes\</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-83"/>
+      <child nodeId="node-25"/>
     </children>
   </item>
-  <item nodeId="node-83">
+  <item nodeId="node-25">
     <command xml:space="preserve">wash dishes\</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-84"/>
+      <child nodeId="node-26"/>
     </children>
   </item>
-  <item nodeId="node-84">
+  <item nodeId="node-26">
     <command xml:space="preserve">wash dishes</command>
     <result xml:space="preserve">You don't have the energy to do much else.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-27">
+    <command xml:space="preserve">xyzzy</command>
+    <result xml:space="preserve">Nice try bozo.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>

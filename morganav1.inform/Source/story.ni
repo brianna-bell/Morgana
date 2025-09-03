@@ -7,8 +7,8 @@ Use serial comma.
 The player has a number called energy. The energy of the player is 7. 
 The maximum energy is always 10. The minimum energy is always 0.
 
-
 The effort of washing is always 4.
+The time to wash is always 2.
 
 When play begins:
 	now the left hand status line is "[location] | Energy: [energy of the player]";
@@ -19,103 +19,49 @@ When play begins (this is the run property checks at the start of play rule):
 		if description of the item is "":
 			say "[item] has no description."
 
-To charge by (amount - a number):
-	if the amount is positive:
-		if the energy of the player is less than the maximum energy:
-			increase the energy of the player by amount;
-			say "You feel a bit more energetic.";
-	otherwise:
-		if the energy of the player is less than the minimum energy:
-			Now the energy of the player is the minimum energy;
-			say "You don't have the energy to do much else.";
-			rule fails;
-		otherwise: 
-			increase the energy of the player by amount; [increase still like adding a negative]
-			if the energy of the player is less than the minimum energy:
-				Now the energy of the player is the minimum energy;
-				say "You don't have the energy to do that.";
-				rule fails;
-			otherwise:
-				say "You feel a little drained.";
-				
-To drain by (amount - a number):
-	let difference be the the energy of the player - amount;
-	if the difference is positive:
-		decrease the energy of the player by amount;
-		say "You feel a little worn.";
-		rule succeeds;
-	otherwise if the difference is zero:
-		decrease the energy of the player by amount;
-		say "That's about all the effort you feel like putting in today.";
-		rule succeeds;
-	otherwise:
-		Say "You're too tired to do that.";
-		rule fails;
-
-[
-Work duration is a number that varies.
-
-Every turn:
-	now work duration is 0;
-	increment the turn count;
-	follow the time allotment rules;
-	if work duration is 0, rule succeeds;
-	increase the time of day by (work duration minutes - 1 minute).
-	
-The time allotment rules are a rulebook.
-
-A time allotment rule for examining or looking:
-	now work duration is 0;
-	rule succeeds.
-
-A time allotment rule for washing:
-	if the energy of the player is 0:
-		rule fails;
-	otherwise if the energy of the player is less than 4:
-		rule fails;
-	otherwise:
-		now work duration is -45;
-		rule succeeds;
-]
-To charge by (amount - a number):
-	if the amount is positive:
-		if the energy of the player is less than the maximum energy:
-			increase the energy of the player by amount;
-			say "You feel a bit more energetic.";
-	otherwise:
-		if the energy of the player is less than the minimum energy:
-			Now the energy of the player is the minimum energy;
-			say "You don't have the energy to do much else.";
-			rule fails;
-		otherwise: 
-			increase the energy of the player by amount; [increase still like adding a negative]
-			if the energy of the player is less than the minimum energy:
-				Now the energy of the player is the minimum energy;
-				say "You don't have the energy to do that.";
-				rule fails;
-			otherwise:
-				say "You feel a little drained.";
-				
-To drain by (amount - a number):
-	let difference be the the energy of the player - amount;
-	if the difference is positive:
-		decrease the energy of the player by amount;
-		say "You feel a little worn.";
-		rule succeeds;
-	otherwise if the difference is zero:
-		decrease the energy of the player by amount;
-		say "That's about all the effort you feel like putting in today.";
-		rule succeeds;
-	otherwise:
-		Say "You're too tired to do that.";
-		rule fails;
-
 To reverse time by (hours - a number):
 	[let target be the time of day minus hours hours;]
 	let target be time of day minus hours hours;
 	now time of day is target;
-	say "You went back.";
+	say "The minutes tick backwards.";
 	rule succeeds;
+
+To charge by (amount - a number):
+	if the amount is positive:
+		if the energy of the player is less than the maximum energy:
+			increase the energy of the player by amount;
+			say "You feel a bit more energetic.";
+	otherwise:
+		if the energy of the player is less than the minimum energy:
+			Now the energy of the player is the minimum energy;
+			say "You don't have the energy to do much else.";
+			rule fails;
+		otherwise: 
+			increase the energy of the player by amount; [increase still like adding a negative]
+			if the energy of the player is less than the minimum energy:
+				Now the energy of the player is the minimum energy;
+				say "You don't have the energy to do that.";
+				rule fails;
+			otherwise:
+				say "You feel a little drained.";
+				
+To drain by (amount - a number) and (timer - a number):
+	let difference be the the energy of the player - amount;
+	if the difference is positive:
+		decrease the energy of the player by amount;
+		say "You feel a little worn.";
+		reverse time by timer;
+		rule succeeds;
+	otherwise if the difference is zero:
+		decrease the energy of the player by amount;
+		say "That's about all the effort you feel like putting in today.";
+		reverse time by timer;
+		rule succeeds;
+	otherwise:
+		Say "You're too tired to do that.";
+		rule fails;
+
+
 
 
 Examining something is acting fast. Looking is acting fast. [In a game with tight timing, it is sometimes friendliest to the player to let him LOOK and EXAMINE as much as necessary without being penalized.]
@@ -127,6 +73,14 @@ Carry out washing:
 	say "The [the noun] are now pretty and clean!".
 
 The description of the player is "You are Morgana, a college student."
+
+Understand "xyzzy" or "say xyzzy" or "cast xyzzy" as casting xyzzy.
+
+Casting xyzzy is an action applying to nothing.
+
+Check casting xyzzy:
+	say "Nice try bozo.";
+
 
 [---------------------Gameplay--------------------]
 
@@ -157,8 +111,7 @@ The description of the sink is "A shallow metal sink."
 The description of the dishes is "A few plates, cereal bowls, and spoons that have been sitting here for at least 2 days."
 
 Instead of washing the dishes:
-	Drain by the effort of washing;
-	Reverse time by 2;
+	Drain by the effort of washing and 2;
 
 A cup of coffee is in the common area. The description of the cup of coffee is "A fresh, hot cup of full caff coffee. Even just smelling it helps you perk up." 
 
