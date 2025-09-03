@@ -100,18 +100,28 @@ The bed is in the dorm room. The description of the bed is "The twin bed is long
 
 [---------------------Common Area------------------------]
 
-The Common Area is south of the dorm room. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a [sink] and a fridge. There is also a small [trash can]."
+The Common Area is south of the dorm room. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small [trash can]."
+
+The pile of dishes are things in the common area. The pile of dishes can be washed. The pile of dishes are dirty. 
+
+Instead of examining the pile of dishes:
+	say "A few plates, cereal bowls, and spoons.";
+	if the pile of dishes are dirty:
+		say "They are covered in greasy stains and leftover food and have been here for a few days.";
+	otherwise:
+		say "They are clean and drying on the countertop.";
 
 The trash can is a container. The description of the trash can is "The trash can is barely full."
 Instead of removing something from the trash can: say "Ew, it's all dirty now, no thanks."
 
-There is a sink in the common area. The sink contains things called dishes. The dishes can be washed.
-The description of the sink is "A shallow metal sink."
 
-The description of the dishes is "A few plates, cereal bowls, and spoons that have been sitting here for at least 2 days."
 
 Instead of washing the dishes:
-	Drain by the effort of washing and 2;
+	if the dishes are dirty:
+		Drain by the effort of washing and 2;
+		Now the dishes are clean;
+	otherwise:
+		say "but they're already clean.";
 
 A cup of coffee is in the common area. The description of the cup of coffee is "A fresh, hot cup of full caff coffee. Even just smelling it helps you perk up." 
 
@@ -120,3 +130,4 @@ Instead of drinking the cup of coffee:
 	now the player is carrying the cup of coffee;
 	charge by 2; 
 	say "You drink the hot coffee and it warms you from the inside."
+
