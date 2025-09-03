@@ -37,14 +37,6 @@ To recharge by (amount - a number):
 		increase the energy of the player by amount;
 		say "You feel a bit more energetic."
 
-[
-To recharge:
-	if the energy of the player is less than 10:
-		increase the energy of the player by 3;
-		say "You feel a bit more energetic."
-
-
-]
 
 Examining something is acting fast. Looking is acting fast. [In a game with tight timing, it is sometimes friendliest to the player to let him LOOK and EXAMINE as much as necessary without being penalized.]
 
@@ -79,10 +71,14 @@ Instead of removing something from the trash can: say "Ew, it's all dirty now, n
 
 There is a sink in the common area. The sink contains things called dishes. The dishes can be washed.
 
+Instead of washing the dishes:
+	recharge by -4;
+	rule succeeds. 
+
 A cup of coffee is in the common area. 
 
 Instead of drinking the cup of coffee:
 	move the cup of coffee to the player;
 	now the player is carrying the cup of coffee;
-	recharge by 2; [This runs our "to recharge" phrase!]
+	recharge by 2; 
 	say "You drink the dark, bitter coffee."

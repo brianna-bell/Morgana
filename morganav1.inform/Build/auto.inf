@@ -2563,6 +2563,7 @@ Constant anchor_U355 = 1105;
 Constant anchor_U356 = 1105;
 Constant anchor_U357 = 1105;
 Constant anchor_U358 = 1105;
+Constant anchor_U359 = 1105;
 Constant property_id_U95 = 41;
 Constant property_id_U96 = 42;
 Constant property_id_U97 = 43;
@@ -10153,6 +10154,10 @@ Global max_z_object;
             rtrue;
         }
         if ((R == call_U1990)) {
+            print "Instead of washing the dishes";
+            rtrue;
+        }
+        if ((R == call_U1991)) {
             print "Instead of drinking the cup of coffee";
             rtrue;
         }
@@ -27950,7 +27955,7 @@ Global max_z_object;
             RulebookParBreak(forbid_breaks);
         }
     }
-    if ((action == ##Drink)) {
+    if ((action == ##A_washing)) {
         if ((original_deadflag ~= deadflag)) {
             rfalse;
         }
@@ -27963,6 +27968,26 @@ Global max_z_object;
                 return reason_the_action_failed;
             }
             return call_U1990;
+        }
+        ((latest_rule_result-->(0)) = 0);
+    } else {
+        if (say__p) {
+            RulebookParBreak(forbid_breaks);
+        }
+    }
+    if ((action == ##Drink)) {
+        if ((original_deadflag ~= deadflag)) {
+            rfalse;
+        }
+        if (say__p) {
+            RulebookParBreak(forbid_breaks);
+        }
+        (rv = (call_U1991)());
+        if (rv) {
+            if ((rv == 2)) {
+                return reason_the_action_failed;
+            }
+            return call_U1991;
         }
         ((latest_rule_result-->(0)) = 0);
     } else {
@@ -58381,18 +58406,14 @@ Global max_z_object;
     rfalse;
 ];
 [ call_U1990;
-    if ((((action == ##Drink)) && ((((actor == player)) && ((noun == I_cup_of_coffee_U1)))))) {
+    if ((((action == ##A_washing)) && ((((actor == player)) && ((noun == I_dishes_U1)))))) {
         (self = noun);
         if (debug_rules) {
             DB_Rule(call_U1990, 809, 0);
         }
-        MoveObject(I_cup_of_coffee_U1, player, 0, 0);
-        MoveObject(I_cup_of_coffee_U1, player);
-        call_U1991(2);
-        (say__p = 1);
-        ParaContent();
-        print "You drink the dark, bitter coffee.";
-        print "^";
+        call_U1992(-4);
+        RulebookSucceeds();
+        rtrue;
         RulebookFails(0, 0);
         rtrue;
     } else {
@@ -58402,7 +58423,29 @@ Global max_z_object;
     }
     rfalse;
 ];
-[ call_U1991 t_0;
+[ call_U1991;
+    if ((((action == ##Drink)) && ((((actor == player)) && ((noun == I_cup_of_coffee_U1)))))) {
+        (self = noun);
+        if (debug_rules) {
+            DB_Rule(call_U1991, 810, 0);
+        }
+        MoveObject(I_cup_of_coffee_U1, player, 0, 0);
+        MoveObject(I_cup_of_coffee_U1, player);
+        call_U1992(2);
+        (say__p = 1);
+        ParaContent();
+        print "You drink the dark, bitter coffee.";
+        print "^";
+        RulebookFails(0, 0);
+        rtrue;
+    } else {
+        if ((debug_rules > 1)) {
+            DB_Rule(call_U1991, 810, 2);
+        }
+    }
+    rfalse;
+];
+[ call_U1992 t_0;
     if ((GProperty(OBJECT_TY, player, A_P_energy) < 10)) {
         WriteGProperty(OBJECT_TY, player, A_P_energy, (GProperty(OBJECT_TY, player, A_P_energy) + t_0));
         (say__p = 1);
@@ -58412,7 +58455,7 @@ Global max_z_object;
     }
     rfalse;
 ];
-[ call_U1992;
+[ call_U1993;
     if ((((action == ##Examine)) && ((noun ofclass K2_thing)))) {
         rtrue;
     }
