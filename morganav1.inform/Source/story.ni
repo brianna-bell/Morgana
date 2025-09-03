@@ -1,23 +1,17 @@
 "Morgana" by Brianna
 
-[comments]
+[---------------------Setup--------------------]
 
-Section 1 - Testing descriptions - Not for release
+The player has a number called energy. The energy of the player is 7. The maximum energy is always 10.
 
-The player has a number called energy. The energy of the player is 7.
-
-
-	
 When play begins:
 	now the left hand status line is "[location] | Energy: [energy of the player]";
 	now the right hand status line is "[time of day]".
 	
-
 When play begins (this is the run property checks at the start of play rule):
 	repeat with item running through things:
 		if description of the item is "":
 			say "[item] has no description."
-
 
 Work duration is a number that varies.
 
@@ -38,66 +32,31 @@ A time allotment rule for washing:
 	now work duration is -30;
 	rule succeeds.
 
-[Energy is a number that varies. The player has energy.]
-[Energy is a kind of value. 10 e specifies an energy. The player has an energy.]
-[The player's energy is a kind of value. 1e specifies an energy. 10e specifies an energy.]
+To recharge by (amount - a number):
+	if the energy of the player is less than the maximum energy:
+		increase the energy of the player by amount;
+		say "You feel a bit more energetic."
 
-
-
+[
 To recharge:
 	if the energy of the player is less than 10:
 		increase the energy of the player by 3;
 		say "You feel a bit more energetic."
 
 
-
-[The energy allotment rules are a rulebook.
-
-An Energy allotment rule for washing:
-	increase the energy of the player by 3;
-	rule succeeds.
-]
-[
-Energy cost is an energy that varies.
-The energy allotment rules are a rulebook.
-
-An Energy allotment rule for washing:
-	now Energy cost is 3;
-	rule succeeds.
-
-The coffee is a kind of thing. A coffee is always edible. The description is usually "It is a steamy cup of joe." 
-
-After eating the coffee:
-	increase the energy of the player by 3e;
-	say "You feel energized";
-	[try looking.]
 ]
 
-[§15.8. Units]
-[
-Energy is a kind of value. 10e specifies an energy.
-A person has a Energy. The Energy of the player is 10e. 
-
-
-Energy cost is an energy that varies.
-The energy allotment rules are a rulebook.
-
-An Energy allotment rule for washing:
-	now Energy cost is 3e;
-	rule succeeds.
-
-The coffee is a kind of thing. A coffee is always edible. The description is usually "It is a steamy cup of joe." 
-
-After eating the coffee:
-	increase the energy of the player by 3e;
-	say "You feel energized";
-	[try looking.]
-]
 Examining something is acting fast. Looking is acting fast. [In a game with tight timing, it is sometimes friendliest to the player to let him LOOK and EXAMINE as much as necessary without being penalized.]
 
+A thing can be dirty or clean. 
+
+Washing is an action applying to one visible thing. Understand "wash [something]" as washing. [§12.7. New actions] 
+Carry out washing:
+	say "The [the noun] are now pretty and clean!".
 
 The description of the player is "You are Morgana, a college student."
 
+[---------------------Gameplay--------------------]
 
 The Dorm Room is a room. The description of the dorm room is "You are sitting in your dorm room on your [bed] in the small apartment you share with 2 other roommates. This room is small and cozy. You see a [desk] in the corner of the room. On the desk is a [laptop]."
 
@@ -116,11 +75,7 @@ The common area is south of the dorm room. "The common area contains a small cou
 The trash can is a thing in the common area. It is a container. "The trash can is barely full."
 Instead of removing something from the trash can: say "Ew, it's all dirty now, no thanks."
 
-A thing can be dirty or clean. 
 
-Washing is an action applying to one visible thing. Understand "wash [something]" as washing. [§12.7. New actions] 
-Carry out washing:
-	say "The [the noun] are now pretty and clean!".
 
 There is a sink in the common area. The sink contains things called dishes. The dishes can be washed.
 
@@ -129,5 +84,5 @@ A cup of coffee is in the common area.
 Instead of drinking the cup of coffee:
 	move the cup of coffee to the player;
 	now the player is carrying the cup of coffee;
-	recharge; [This runs our "to recharge" phrase!]
+	recharge by 2; [This runs our "to recharge" phrase!]
 	say "You drink the dark, bitter coffee."

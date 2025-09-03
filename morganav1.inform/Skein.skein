@@ -97,5 +97,23 @@
     <result xml:space="preserve">The dishes are now pretty and clean!&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
+    <children>
+      <child nodeId="node-78"/>
+    </children>
+  </item>
+  <item nodeId="node-78">
+    <command xml:space="preserve">drink coffee</command>
+    <result xml:space="preserve">You feel a bit more energetic.&#x000A;You drink the dark, bitter coffee.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-79"/>
+    </children>
+  </item>
+  <item nodeId="node-79">
+    <command xml:space="preserve">drink coffee</command>
+    <result xml:space="preserve">You drink the dark, bitter coffee.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
   </item>
 </Skein>
