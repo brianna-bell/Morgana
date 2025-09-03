@@ -4,14 +4,21 @@
 
 Section 1 - Testing descriptions - Not for release
 
+The player has a number called energy. The energy of the player is 7.
+
+
+	
 When play begins:
+	now the left hand status line is "[location] | Energy: [energy of the player]";
 	now the right hand status line is "[time of day]".
+	
 
 When play begins (this is the run property checks at the start of play rule):
 	repeat with item running through things:
 		if description of the item is "":
 			say "[item] has no description."
-			
+
+
 Work duration is a number that varies.
 
 Every turn:
@@ -31,7 +38,61 @@ A time allotment rule for washing:
 	now work duration is -30;
 	rule succeeds.
 
+[Energy is a number that varies. The player has energy.]
+[Energy is a kind of value. 10 e specifies an energy. The player has an energy.]
+[The player's energy is a kind of value. 1e specifies an energy. 10e specifies an energy.]
 
+
+
+To recharge:
+	if the energy of the player is less than 10:
+		increase the energy of the player by 3;
+		say "You feel a bit more energetic."
+
+
+
+[The energy allotment rules are a rulebook.
+
+An Energy allotment rule for washing:
+	increase the energy of the player by 3;
+	rule succeeds.
+]
+[
+Energy cost is an energy that varies.
+The energy allotment rules are a rulebook.
+
+An Energy allotment rule for washing:
+	now Energy cost is 3;
+	rule succeeds.
+
+The coffee is a kind of thing. A coffee is always edible. The description is usually "It is a steamy cup of joe." 
+
+After eating the coffee:
+	increase the energy of the player by 3e;
+	say "You feel energized";
+	[try looking.]
+]
+
+[§15.8. Units]
+[
+Energy is a kind of value. 10e specifies an energy.
+A person has a Energy. The Energy of the player is 10e. 
+
+
+Energy cost is an energy that varies.
+The energy allotment rules are a rulebook.
+
+An Energy allotment rule for washing:
+	now Energy cost is 3e;
+	rule succeeds.
+
+The coffee is a kind of thing. A coffee is always edible. The description is usually "It is a steamy cup of joe." 
+
+After eating the coffee:
+	increase the energy of the player by 3e;
+	say "You feel energized";
+	[try looking.]
+]
 Examining something is acting fast. Looking is acting fast. [In a game with tight timing, it is sometimes friendliest to the player to let him LOOK and EXAMINE as much as necessary without being penalized.]
 
 
@@ -62,3 +123,11 @@ Carry out washing:
 	say "The [the noun] are now pretty and clean!".
 
 There is a sink in the common area. The sink contains things called dishes. The dishes can be washed.
+
+A cup of coffee is in the common area. 
+
+Instead of drinking the cup of coffee:
+	move the cup of coffee to the player;
+	now the player is carrying the cup of coffee;
+	recharge; [This runs our "to recharge" phrase!]
+	say "You drink the dark, bitter coffee."
