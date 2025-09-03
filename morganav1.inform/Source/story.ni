@@ -2,7 +2,13 @@
 
 [---------------------Setup--------------------]
 
-The player has a number called energy. The energy of the player is 7. The maximum energy is always 10. The minimum energy is always 0.
+Use serial comma. 
+
+The player has a number called energy. The energy of the player is 7. 
+The maximum energy is always 10. The minimum energy is always 0.
+
+
+The effort of washing is always 4.
 
 When play begins:
 	now the left hand status line is "[location] | Energy: [energy of the player]";
@@ -27,12 +33,26 @@ To charge by (amount - a number):
 			increase the energy of the player by amount; [increase still like adding a negative]
 			if the energy of the player is less than the minimum energy:
 				Now the energy of the player is the minimum energy;
-				say "You don't have the energy to do much else.";
+				say "You don't have the energy to do that.";
 				rule fails;
 			otherwise:
 				say "You feel a little drained.";
-	
+				
+To drain by (amount - a number):
+	let difference be the the energy of the player - amount;
+	if the difference is positive:
+		decrease the energy of the player by amount;
+		say "You feel a little worn.";
+		rule succeeds;
+	otherwise if the difference is zero:
+		decrease the energy of the player by amount;
+		say "That's about all the effort you feel like putting in today.";
+		rule succeeds;
+	otherwise:
+		Say "You're too tired to do that.";
+		rule fails;
 
+[
 Work duration is a number that varies.
 
 Every turn:
@@ -48,17 +68,54 @@ A time allotment rule for examining or looking:
 	now work duration is 0;
 	rule succeeds.
 
-
-
 A time allotment rule for washing:
 	if the energy of the player is 0:
 		rule fails;
+	otherwise if the energy of the player is less than 4:
+		rule fails;
 	otherwise:
-		now work duration is -30;
+		now work duration is -45;
 		rule succeeds;
-		
-	
+]
+To charge by (amount - a number):
+	if the amount is positive:
+		if the energy of the player is less than the maximum energy:
+			increase the energy of the player by amount;
+			say "You feel a bit more energetic.";
+	otherwise:
+		if the energy of the player is less than the minimum energy:
+			Now the energy of the player is the minimum energy;
+			say "You don't have the energy to do much else.";
+			rule fails;
+		otherwise: 
+			increase the energy of the player by amount; [increase still like adding a negative]
+			if the energy of the player is less than the minimum energy:
+				Now the energy of the player is the minimum energy;
+				say "You don't have the energy to do that.";
+				rule fails;
+			otherwise:
+				say "You feel a little drained.";
+				
+To drain by (amount - a number):
+	let difference be the the energy of the player - amount;
+	if the difference is positive:
+		decrease the energy of the player by amount;
+		say "You feel a little worn.";
+		rule succeeds;
+	otherwise if the difference is zero:
+		decrease the energy of the player by amount;
+		say "That's about all the effort you feel like putting in today.";
+		rule succeeds;
+	otherwise:
+		Say "You're too tired to do that.";
+		rule fails;
 
+To reverse time by (hours - a number):
+	[let target be the time of day minus hours hours;]
+	let target be time of day minus hours hours;
+	now time of day is target;
+	say "You went back.";
+	rule succeeds;
 
 
 Examining something is acting fast. Looking is acting fast. [In a game with tight timing, it is sometimes friendliest to the player to let him LOOK and EXAMINE as much as necessary without being penalized.]
@@ -73,6 +130,8 @@ The description of the player is "You are Morgana, a college student."
 
 [---------------------Gameplay--------------------]
 
+[---------------------Dorm Room--------------------]
+
 The Dorm Room is a room. The description of the dorm room is "You are sitting in your dorm room on your [bed] in the small apartment you share with 2 other roommates. This room is small and cozy. You see a [desk] in the corner of the room. On the desk is a [laptop]."
 
 The laptop is an openable container in the Dorm Room. 
@@ -85,13 +144,12 @@ The assignment is in the laptop. The description of the assignment is "The c++ p
 The desk is in the dorm room. The description of the desk is "The wooden desk came with the room. On it is a [laptop]."
 The bed is in the dorm room. The description of the bed is "The twin bed is longer than the ones that you grew up sleeping on, but you were happy to buy new sheets for this next chapter in your life."
 
+[---------------------Common Area------------------------]
 
-The common area is south of the dorm room. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a [sink] and a fridge. There is also a small [trash can]."
+The Common Area is south of the dorm room. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a [sink] and a fridge. There is also a small [trash can]."
 
 The trash can is a container. The description of the trash can is "The trash can is barely full."
 Instead of removing something from the trash can: say "Ew, it's all dirty now, no thanks."
-
-
 
 There is a sink in the common area. The sink contains things called dishes. The dishes can be washed.
 The description of the sink is "A shallow metal sink."
@@ -99,7 +157,8 @@ The description of the sink is "A shallow metal sink."
 The description of the dishes is "A few plates, cereal bowls, and spoons that have been sitting here for at least 2 days."
 
 Instead of washing the dishes:
-	charge by -4.
+	Drain by the effort of washing;
+	Reverse time by 2;
 
 A cup of coffee is in the common area. The description of the cup of coffee is "A fresh, hot cup of full caff coffee. Even just smelling it helps you perk up." 
 
@@ -107,4 +166,4 @@ Instead of drinking the cup of coffee:
 	move the cup of coffee to the player;
 	now the player is carrying the cup of coffee;
 	charge by 2; 
-	say "You drink the dark, bitter coffee."
+	say "You drink the hot coffee and it warms you from the inside."
