@@ -2,7 +2,7 @@
 
 [---------------------Setup--------------------]
 
-The player has a number called energy. The energy of the player is 7. The maximum energy is always 10.
+The player has a number called energy. The energy of the player is 7. The maximum energy is always 10. The minimum energy is always 0.
 
 When play begins:
 	now the left hand status line is "[location] | Energy: [energy of the player]";
@@ -12,6 +12,26 @@ When play begins (this is the run property checks at the start of play rule):
 	repeat with item running through things:
 		if description of the item is "":
 			say "[item] has no description."
+
+To charge by (amount - a number):
+	if the amount is positive:
+		if the energy of the player is less than the maximum energy:
+			increase the energy of the player by amount;
+			say "You feel a bit more energetic.";
+	otherwise:
+		if the energy of the player is less than the minimum energy:
+			Now the energy of the player is the minimum energy;
+			say "You don't have the energy to do much else.";
+			rule fails;
+		otherwise: 
+			increase the energy of the player by amount; [increase still like adding a negative]
+			if the energy of the player is less than the minimum energy:
+				Now the energy of the player is the minimum energy;
+				say "You don't have the energy to do much else.";
+				rule fails;
+			otherwise:
+				say "You feel a little drained.";
+	
 
 Work duration is a number that varies.
 
@@ -28,14 +48,17 @@ A time allotment rule for examining or looking:
 	now work duration is 0;
 	rule succeeds.
 
-A time allotment rule for washing:
-	now work duration is -30;
-	rule succeeds.
 
-To recharge by (amount - a number):
-	if the energy of the player is less than the maximum energy:
-		increase the energy of the player by amount;
-		say "You feel a bit more energetic."
+
+A time allotment rule for washing:
+	if the energy of the player is 0:
+		rule fails;
+	otherwise:
+		now work duration is -30;
+		rule succeeds;
+		
+	
+
 
 
 Examining something is acting fast. Looking is acting fast. [In a game with tight timing, it is sometimes friendliest to the player to let him LOOK and EXAMINE as much as necessary without being penalized.]
@@ -56,29 +79,32 @@ The laptop is an openable container in the Dorm Room.
 The laptop is closed. 
 [The laptop can be switched on.]
 After opening the laptop: say "On the screen is a half-finished programming [assignment]. You've spent about 20 minutes working on it so far."
+The description of the laptop is "An older model that you got from your older sister. It does what you need it to do."
 The assignment is in the laptop. The description of the assignment is "The c++ programming assignment is about half done."
 
 The desk is in the dorm room. The description of the desk is "The wooden desk came with the room. On it is a [laptop]."
 The bed is in the dorm room. The description of the bed is "The twin bed is longer than the ones that you grew up sleeping on, but you were happy to buy new sheets for this next chapter in your life."
 
 
-The common area is south of the dorm room. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a [sink] and a fridge."
+The common area is south of the dorm room. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a [sink] and a fridge. There is also a small [trash can]."
 
-The trash can is a thing in the common area. It is a container. "The trash can is barely full."
+The trash can is a container. The description of the trash can is "The trash can is barely full."
 Instead of removing something from the trash can: say "Ew, it's all dirty now, no thanks."
 
 
 
 There is a sink in the common area. The sink contains things called dishes. The dishes can be washed.
+The description of the sink is "A shallow metal sink."
+
+The description of the dishes is "A few plates, cereal bowls, and spoons that have been sitting here for at least 2 days."
 
 Instead of washing the dishes:
-	recharge by -4;
-	rule succeeds. 
+	charge by -4.
 
-A cup of coffee is in the common area. 
+A cup of coffee is in the common area. The description of the cup of coffee is "A fresh, hot cup of full caff coffee. Even just smelling it helps you perk up." 
 
 Instead of drinking the cup of coffee:
 	move the cup of coffee to the player;
 	now the player is carrying the cup of coffee;
-	recharge by 2; 
+	charge by 2; 
 	say "You drink the dark, bitter coffee."

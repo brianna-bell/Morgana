@@ -316,20 +316,20 @@ Global match_length = 0;
 Global match_from = 0;
 Global parsetoken_nesting = 0;
 Array Global_Vars --> 0
-  (0) ! -->1 = V58_number_understood (V58_number_understood)
-  (0) ! -->2 = V59_real_number_understood (V59_real_number_understood)
-  (0) ! -->3 = V60_truth_state_understood (V60_truth_state_understood)
-  (0) ! -->4 = V61_external_file_understood (V61_external_file_understood)
-  (540) ! -->5 = V62_time_understood (V62_time_understood)
-  (I_entire_game_U1) ! -->6 = V63_scene_understood (V63_scene_understood)
-  (I_figure_of_cover_U1) ! -->7 = V64_figure_name_understood (V64_figure_name_understood)
-  (0) ! -->8 = V65_sound_name_understood (V65_sound_name_understood)
-  (I_english_language_U1) ! -->9 = V66_natural_language_understo (V66_natural_language_understo)
-  (I_present_tense_U1) ! -->10 = V67_grammatical_tense_underst (V67_grammatical_tense_underst)
-  (I_first_person_singular_U1) ! -->11 = V68_narrative_viewpoint_under (V68_narrative_viewpoint_under)
-  (I_nominative_U1) ! -->12 = V69_grammatical_case_understo (V69_grammatical_case_understo)
-  (I_neuter_gender_U1) ! -->13 = V70_grammatical_gender_unders (V70_grammatical_gender_unders)
-  (I_didn_t_understand_error_U1) ! -->14 = V71_command_parser_error_unde (V71_command_parser_error_unde)
+  (0) ! -->1 = V59_number_understood (V59_number_understood)
+  (0) ! -->2 = V60_real_number_understood (V60_real_number_understood)
+  (0) ! -->3 = V61_truth_state_understood (V61_truth_state_understood)
+  (0) ! -->4 = V62_external_file_understood (V62_external_file_understood)
+  (540) ! -->5 = V63_time_understood (V63_time_understood)
+  (I_entire_game_U1) ! -->6 = V64_scene_understood (V64_scene_understood)
+  (I_figure_of_cover_U1) ! -->7 = V65_figure_name_understood (V65_figure_name_understood)
+  (0) ! -->8 = V66_sound_name_understood (V66_sound_name_understood)
+  (I_english_language_U1) ! -->9 = V67_natural_language_understo (V67_natural_language_understo)
+  (I_present_tense_U1) ! -->10 = V68_grammatical_tense_underst (V68_grammatical_tense_underst)
+  (I_first_person_singular_U1) ! -->11 = V69_narrative_viewpoint_under (V69_narrative_viewpoint_under)
+  (I_nominative_U1) ! -->12 = V70_grammatical_case_understo (V70_grammatical_case_understo)
+  (I_neuter_gender_U1) ! -->13 = V71_grammatical_gender_unders (V71_grammatical_gender_unders)
+  (I_didn_t_understand_error_U1) ! -->14 = V72_command_parser_error_unde (V72_command_parser_error_unde)
   (I_english_language_U1) ! -->15 = V1_language_of_play (V1_language_of_play)
   (0) ! -->16 = V12_darkness_witnessed (V12_darkness_witnessed)
   (bc_U152) ! -->17 = V26_command_prompt (V26_command_prompt)
@@ -351,15 +351,16 @@ Array Global_Vars --> 0
   (0) ! -->33 = V52_visibility_level_count (V52_visibility_level_count)
   (0) ! -->34 = V53_visibility_ceiling (V53_visibility_ceiling)
   (0) ! -->35 = V54_examine_text_printed (V54_examine_text_printed)
-  (selfobj) ! -->36 = V72_actor (V72_actor)
-  (0) ! -->37 = V73_action_in_world (V73_action_in_world)
-  (0) ! -->38 = V74_action_keeping_silent (V74_action_keeping_silent)
-  (0) ! -->39 = V75_specific_check_rulebook (V75_specific_check_rulebook)
-  (0) ! -->40 = V76_specific_carry_out_rulebo (V76_specific_carry_out_rulebo)
-  (0) ! -->41 = V77_specific_report_rulebook (V77_specific_report_rulebook)
-  (0) ! -->42 = V78_within_the_player_s_sight (V78_within_the_player_s_sight)
+  (selfobj) ! -->36 = V73_actor (V73_actor)
+  (0) ! -->37 = V74_action_in_world (V74_action_in_world)
+  (0) ! -->38 = V75_action_keeping_silent (V75_action_keeping_silent)
+  (0) ! -->39 = V76_specific_check_rulebook (V76_specific_check_rulebook)
+  (0) ! -->40 = V77_specific_carry_out_rulebo (V77_specific_carry_out_rulebo)
+  (0) ! -->41 = V78_specific_report_rulebook (V78_specific_report_rulebook)
+  (0) ! -->42 = V79_within_the_player_s_sight (V79_within_the_player_s_sight)
   (10) ! -->43 = V56_maximum_energy (V56_maximum_energy)
-  (0) ! -->44 = V57_work_duration (V57_work_duration)
+  (0) ! -->44 = V57_minimum_energy (V57_minimum_energy)
+  (0) ! -->45 = V58_work_duration (V58_work_duration)
 ;
 Constant subterfuge_1 = absent;
 Constant subterfuge_2 = animate;
@@ -3767,40 +3768,44 @@ Constant I7_VERSION_NUMBER = "10.1.2";
 Constant I7_FULL_VERSION_NUMBER = "10.1.2";
 Serial "250902";
 Constant alphabetised_text_0 = ">";
-Constant alphabetised_text_1 = "An Interactive Fiction";
-Constant alphabetised_text_2 = "Brianna";
-Constant alphabetised_text_3 = "Dishes";
-Constant alphabetised_text_4 = "Dorm Room";
-Constant alphabetised_text_5 = "Fiction";
-Constant alphabetised_text_6 = "Morgana";
-Constant alphabetised_text_7 = "QUIT";
-Constant alphabetised_text_8 = "RESTART";
-Constant alphabetised_text_9 = "RESTORE a saved game";
-Constant alphabetised_text_10 = "The c++ programming assignment is about half done.";
-Constant alphabetised_text_11 = "The trash can is barely full.";
-Constant alphabetised_text_12 = "The twin bed is longer than the ones that you grew up sleeping on, but you were happy to buy new sheets for this next chapter in your life.";
-Constant alphabetised_text_13 = "UNDO the last command";
-Constant alphabetised_text_14 = "You are Morgana, a college student.";
-Constant alphabetised_text_15 = "Yourself";
+Constant alphabetised_text_1 = "A few plates, cereal bowls, and spoons that have been sitting here for at least 2 days.";
+Constant alphabetised_text_2 = "A fresh, hot cup of full caff coffee. Even just smelling it helps you perk up.";
+Constant alphabetised_text_3 = "A shallow metal sink.";
+Constant alphabetised_text_4 = "An Interactive Fiction";
+Constant alphabetised_text_5 = "An older model that you got from your older sister. It does what you need it to do.";
+Constant alphabetised_text_6 = "Brianna";
+Constant alphabetised_text_7 = "Dishes";
+Constant alphabetised_text_8 = "Dorm Room";
+Constant alphabetised_text_9 = "Fiction";
+Constant alphabetised_text_10 = "Morgana";
+Constant alphabetised_text_11 = "QUIT";
+Constant alphabetised_text_12 = "RESTART";
+Constant alphabetised_text_13 = "RESTORE a saved game";
+Constant alphabetised_text_14 = "The c++ programming assignment is about half done.";
+Constant alphabetised_text_15 = "The trash can is barely full.";
+Constant alphabetised_text_16 = "The twin bed is longer than the ones that you grew up sleeping on, but you were happy to buy new sheets for this next chapter in your life.";
+Constant alphabetised_text_17 = "UNDO the last command";
+Constant alphabetised_text_18 = "You are Morgana, a college student.";
+Constant alphabetised_text_19 = "Yourself";
 Constant outcome_allow_access_U1 = "allow access";
 Constant outcome_allow_startup_U1 = "allow startup";
-Constant alphabetised_text_16 = "animals";
-Constant alphabetised_text_17 = "assignment";
-Constant alphabetised_text_18 = "backdrops";
-Constant alphabetised_text_19 = "bed";
-Constant alphabetised_text_20 = "common area";
-Constant alphabetised_text_21 = "containers";
-Constant alphabetised_text_22 = "cup of coffee";
+Constant alphabetised_text_20 = "animals";
+Constant alphabetised_text_21 = "assignment";
+Constant alphabetised_text_22 = "backdrops";
+Constant alphabetised_text_23 = "bed";
+Constant alphabetised_text_24 = "common area";
+Constant alphabetised_text_25 = "containers";
+Constant alphabetised_text_26 = "cup of coffee";
 Constant outcome_deny_access_U1 = "deny access";
 Constant outcome_deny_startup_U1 = "deny startup";
-Constant alphabetised_text_23 = "desk";
-Constant alphabetised_text_24 = "devices";
-Constant alphabetised_text_25 = "directions";
-Constant alphabetised_text_26 = "dishes";
-Constant alphabetised_text_27 = "doors";
-Constant alphabetised_text_28 = "down";
-Constant alphabetised_text_29 = "east";
-Constant alphabetised_text_30 = "inside";
+Constant alphabetised_text_27 = "desk";
+Constant alphabetised_text_28 = "devices";
+Constant alphabetised_text_29 = "directions";
+Constant alphabetised_text_30 = "dishes";
+Constant alphabetised_text_31 = "doors";
+Constant alphabetised_text_32 = "down";
+Constant alphabetised_text_33 = "east";
+Constant alphabetised_text_34 = "inside";
 Constant outcome_it_does_U1 = "it does";
 Constant outcome_it_does_not_U1 = "it does not";
 Constant outcome_it_is_likely_U1 = "it is likely";
@@ -3808,32 +3813,32 @@ Constant outcome_it_is_possible_U1 = "it is possible";
 Constant outcome_it_is_unlikely_U1 = "it is unlikely";
 Constant outcome_it_is_very_likely_U1 = "it is very likely";
 Constant outcome_it_is_very_unlikely_U1 = "it is very unlikely";
-Constant alphabetised_text_31 = "laptop";
-Constant alphabetised_text_32 = "men";
-Constant alphabetised_text_33 = "north";
-Constant alphabetised_text_34 = "northeast";
-Constant alphabetised_text_35 = "northwest";
-Constant alphabetised_text_36 = "outside";
-Constant alphabetised_text_37 = "people";
+Constant alphabetised_text_35 = "laptop";
+Constant alphabetised_text_36 = "men";
+Constant alphabetised_text_37 = "north";
+Constant alphabetised_text_38 = "northeast";
+Constant alphabetised_text_39 = "northwest";
+Constant alphabetised_text_40 = "outside";
+Constant alphabetised_text_41 = "people";
 Constant outcome_persuasion_fails_U1 = "persuasion fails";
 Constant outcome_persuasion_succeeds_U1 = "persuasion succeeds";
-Constant alphabetised_text_38 = "player's holdalls";
-Constant alphabetised_text_39 = "regions";
-Constant alphabetised_text_40 = "see some suggestions for AMUSING things to do";
-Constant alphabetised_text_41 = "sink";
-Constant alphabetised_text_42 = "south";
-Constant alphabetised_text_43 = "southeast";
-Constant alphabetised_text_44 = "southwest";
-Constant alphabetised_text_45 = "supporters";
-Constant alphabetised_text_46 = "the";
+Constant alphabetised_text_42 = "player's holdalls";
+Constant alphabetised_text_43 = "regions";
+Constant alphabetised_text_44 = "see some suggestions for AMUSING things to do";
+Constant alphabetised_text_45 = "sink";
+Constant alphabetised_text_46 = "south";
+Constant alphabetised_text_47 = "southeast";
+Constant alphabetised_text_48 = "southwest";
+Constant alphabetised_text_49 = "supporters";
+Constant alphabetised_text_50 = "the";
 Constant outcome_there_is_insufficien_U1 = "there is insufficient light";
 Constant outcome_there_is_sufficient__U1 = "there is sufficient light";
-Constant alphabetised_text_47 = "trash can";
-Constant alphabetised_text_48 = "up";
-Constant alphabetised_text_49 = "vehicles";
-Constant alphabetised_text_50 = "west";
-Constant alphabetised_text_51 = "women";
-Constant alphabetised_text_52 = "yourself";
+Constant alphabetised_text_51 = "trash can";
+Constant alphabetised_text_52 = "up";
+Constant alphabetised_text_53 = "vehicles";
+Constant alphabetised_text_54 = "west";
+Constant alphabetised_text_55 = "women";
+Constant alphabetised_text_56 = "yourself";
 Constant abilities_U1 = (RELS_TEST);
 Constant abilities_U2 = (RELS_TEST);
 Constant abilities_U4 = (RELS_TEST);
@@ -3841,47 +3846,47 @@ Constant abilities_U5 = (RELS_TEST);
 Constant V1_starting_the_virtual_mach = activity_id_U1;
 Constant V2_printing_the_name = activity_id_U2;
 Constant V3_printing_the_plural_name = activity_id_U3;
-Constant text_U1 = alphabetised_text_33;
-Constant text_U2 = alphabetised_text_46;
-Constant text_U3 = alphabetised_text_25;
-Constant text_U4 = alphabetised_text_34;
-Constant text_U5 = alphabetised_text_46;
-Constant text_U6 = alphabetised_text_25;
-Constant text_U7 = alphabetised_text_35;
-Constant text_U8 = alphabetised_text_46;
-Constant text_U9 = alphabetised_text_25;
-Constant text_U10 = alphabetised_text_42;
-Constant text_U11 = alphabetised_text_46;
-Constant text_U12 = alphabetised_text_25;
-Constant text_U13 = alphabetised_text_43;
-Constant text_U14 = alphabetised_text_46;
-Constant text_U15 = alphabetised_text_25;
-Constant text_U16 = alphabetised_text_44;
-Constant text_U17 = alphabetised_text_46;
-Constant text_U18 = alphabetised_text_25;
-Constant text_U19 = alphabetised_text_29;
-Constant text_U20 = alphabetised_text_46;
-Constant text_U21 = alphabetised_text_25;
-Constant text_U22 = alphabetised_text_50;
-Constant text_U23 = alphabetised_text_46;
-Constant text_U24 = alphabetised_text_25;
-Constant text_U25 = alphabetised_text_48;
-Constant text_U26 = alphabetised_text_46;
-Constant text_U27 = alphabetised_text_25;
-Constant text_U28 = alphabetised_text_28;
-Constant text_U29 = alphabetised_text_46;
-Constant text_U30 = alphabetised_text_25;
-Constant text_U31 = alphabetised_text_30;
-Constant text_U32 = alphabetised_text_46;
-Constant text_U33 = alphabetised_text_25;
-Constant text_U34 = alphabetised_text_36;
-Constant text_U35 = alphabetised_text_46;
-Constant text_U36 = alphabetised_text_25;
-Constant text_U37 = alphabetised_text_52;
-Constant text_U38 = alphabetised_text_14;
-Constant text_U39 = alphabetised_text_15;
-Constant text_U40 = alphabetised_text_52;
-Constant text_U41 = alphabetised_text_37;
+Constant text_U1 = alphabetised_text_37;
+Constant text_U2 = alphabetised_text_50;
+Constant text_U3 = alphabetised_text_29;
+Constant text_U4 = alphabetised_text_38;
+Constant text_U5 = alphabetised_text_50;
+Constant text_U6 = alphabetised_text_29;
+Constant text_U7 = alphabetised_text_39;
+Constant text_U8 = alphabetised_text_50;
+Constant text_U9 = alphabetised_text_29;
+Constant text_U10 = alphabetised_text_46;
+Constant text_U11 = alphabetised_text_50;
+Constant text_U12 = alphabetised_text_29;
+Constant text_U13 = alphabetised_text_47;
+Constant text_U14 = alphabetised_text_50;
+Constant text_U15 = alphabetised_text_29;
+Constant text_U16 = alphabetised_text_48;
+Constant text_U17 = alphabetised_text_50;
+Constant text_U18 = alphabetised_text_29;
+Constant text_U19 = alphabetised_text_33;
+Constant text_U20 = alphabetised_text_50;
+Constant text_U21 = alphabetised_text_29;
+Constant text_U22 = alphabetised_text_54;
+Constant text_U23 = alphabetised_text_50;
+Constant text_U24 = alphabetised_text_29;
+Constant text_U25 = alphabetised_text_52;
+Constant text_U26 = alphabetised_text_50;
+Constant text_U27 = alphabetised_text_29;
+Constant text_U28 = alphabetised_text_32;
+Constant text_U29 = alphabetised_text_50;
+Constant text_U30 = alphabetised_text_29;
+Constant text_U31 = alphabetised_text_34;
+Constant text_U32 = alphabetised_text_50;
+Constant text_U33 = alphabetised_text_29;
+Constant text_U34 = alphabetised_text_40;
+Constant text_U35 = alphabetised_text_50;
+Constant text_U36 = alphabetised_text_29;
+Constant text_U37 = alphabetised_text_56;
+Constant text_U38 = alphabetised_text_18;
+Constant text_U39 = alphabetised_text_19;
+Constant text_U40 = alphabetised_text_56;
+Constant text_U41 = alphabetised_text_41;
 Constant RBNO0_OUTCOME_U1 = outcome_it_is_very_unlikely_U1;
 Constant RBNO4_OUTCOME_U1 = outcome_it_is_very_likely_U1;
 Constant RBNO3_OUTCOME_U1 = outcome_it_is_likely_U1;
@@ -3918,65 +3923,69 @@ Constant V31_handling_the_final_questi = activity_id_U31;
 Constant V32_printing_the_locale_descr = activity_id_U32;
 Constant V33_choosing_notable_locale_o = activity_id_U33;
 Constant V34_printing_a_locale_paragra = activity_id_U34;
-Constant text_U42 = alphabetised_text_25;
+Constant text_U42 = alphabetised_text_29;
 Constant K4_door_First = nothing;
-Constant text_U43 = alphabetised_text_27;
-Constant text_U44 = alphabetised_text_21;
+Constant text_U43 = alphabetised_text_31;
+Constant text_U44 = alphabetised_text_25;
 Constant K6_supporter_First = nothing;
-Constant text_U45 = alphabetised_text_45;
+Constant text_U45 = alphabetised_text_49;
 Constant K7_backdrop_First = nothing;
-Constant text_U46 = alphabetised_text_18;
-Constant text_U47 = alphabetised_text_37;
+Constant text_U46 = alphabetised_text_22;
+Constant text_U47 = alphabetised_text_41;
 Constant K9_region_First = nothing;
-Constant text_U48 = alphabetised_text_39;
+Constant text_U48 = alphabetised_text_43;
 Constant K10_man_First = nothing;
-Constant text_U49 = alphabetised_text_32;
+Constant text_U49 = alphabetised_text_36;
 Constant K11_woman_First = nothing;
-Constant text_U50 = alphabetised_text_51;
+Constant text_U50 = alphabetised_text_55;
 Constant K12_animal_First = nothing;
-Constant text_U51 = alphabetised_text_16;
+Constant text_U51 = alphabetised_text_20;
 Constant K13_device_First = nothing;
-Constant text_U52 = alphabetised_text_24;
+Constant text_U52 = alphabetised_text_28;
 Constant K14_vehicle_First = nothing;
-Constant text_U53 = alphabetised_text_49;
+Constant text_U53 = alphabetised_text_53;
 Constant K15_player_s_holdall_First = nothing;
-Constant text_U54 = alphabetised_text_38;
+Constant text_U54 = alphabetised_text_42;
 Constant text_U55 = alphabetised_text_0;
-Constant text_U56 = alphabetised_text_2;
-Constant text_U57 = alphabetised_text_1;
-Constant text_U58 = alphabetised_text_5;
+Constant text_U56 = alphabetised_text_6;
+Constant text_U57 = alphabetised_text_4;
+Constant text_U58 = alphabetised_text_9;
 Constant column_identity_U1 = table_column_id_U1;
-Constant text_U59 = alphabetised_text_8;
-Constant text_U60 = alphabetised_text_9;
-Constant text_U61 = alphabetised_text_40;
-Constant text_U62 = alphabetised_text_7;
-Constant text_U63 = alphabetised_text_13;
+Constant text_U59 = alphabetised_text_12;
+Constant text_U60 = alphabetised_text_13;
+Constant text_U61 = alphabetised_text_44;
+Constant text_U62 = alphabetised_text_11;
+Constant text_U63 = alphabetised_text_17;
 Constant column_identity_U2 = table_column_id_U2;
 Constant column_identity_U3 = table_column_id_U3;
 Constant column_identity_U4 = table_column_id_U4;
 Constant column_identity_U5 = table_column_id_U5;
 Constant column_identity_U6 = table_column_id_U6;
 Constant column_identity_U7 = table_column_id_U7;
-Constant text_U64 = alphabetised_text_4;
-Constant text_U65 = alphabetised_text_31;
-Constant text_U66 = alphabetised_text_21;
-Constant text_U67 = alphabetised_text_17;
-Constant text_U68 = alphabetised_text_10;
-Constant text_U69 = alphabetised_text_23;
-Constant text_U70 = alphabetised_text_19;
-Constant text_U71 = alphabetised_text_12;
-Constant text_U72 = alphabetised_text_20;
-Constant text_U73 = alphabetised_text_47;
-Constant text_U74 = alphabetised_text_11;
-Constant text_U75 = alphabetised_text_21;
-Constant text_U76 = alphabetised_text_41;
-Constant text_U77 = alphabetised_text_21;
-Constant text_U78 = alphabetised_text_26;
-Constant text_U79 = alphabetised_text_3;
-Constant text_U80 = alphabetised_text_22;
-Constant text_U81 = alphabetised_text_6;
-Constant text_U82 = alphabetised_text_1;
-Constant text_U83 = alphabetised_text_2;
+Constant text_U64 = alphabetised_text_8;
+Constant text_U65 = alphabetised_text_35;
+Constant text_U66 = alphabetised_text_5;
+Constant text_U67 = alphabetised_text_25;
+Constant text_U68 = alphabetised_text_21;
+Constant text_U69 = alphabetised_text_14;
+Constant text_U70 = alphabetised_text_27;
+Constant text_U71 = alphabetised_text_23;
+Constant text_U72 = alphabetised_text_16;
+Constant text_U73 = alphabetised_text_24;
+Constant text_U74 = alphabetised_text_51;
+Constant text_U75 = alphabetised_text_15;
+Constant text_U76 = alphabetised_text_25;
+Constant text_U77 = alphabetised_text_45;
+Constant text_U78 = alphabetised_text_3;
+Constant text_U79 = alphabetised_text_25;
+Constant text_U80 = alphabetised_text_30;
+Constant text_U81 = alphabetised_text_1;
+Constant text_U82 = alphabetised_text_7;
+Constant text_U83 = alphabetised_text_26;
+Constant text_U84 = alphabetised_text_2;
+Constant text_U85 = alphabetised_text_10;
+Constant text_U86 = alphabetised_text_4;
+Constant text_U87 = alphabetised_text_6;
 Constant GPR_REPARSE = REPARSE_CODE;
 Constant TABLE_NOVALUE = IMPROBABLE_VALUE;
 Constant RC_INFINITY = MAX_POSITIVE_NUMBER;
@@ -5261,62 +5270,62 @@ Array bc_U164 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U165 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array inline_U15 --> [ 0; 0; 0; 0; 0; ];
 Array bc_U166 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U65; ];
-Array bc_U167 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
+Array bc_U167 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U66; ];
 Array bc_U168 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
-Array bc_U169 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U66; ];
+Array bc_U169 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U67; ];
 Array bc_U170 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U171 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array inline_U16 --> [ 0; 0; 0; 0; 0; ];
-Array bc_U172 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U67; ];
-Array bc_U173 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U68; ];
+Array bc_U172 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U68; ];
+Array bc_U173 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U69; ];
 Array bc_U174 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U175 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U176 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U177 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array inline_U17 --> [ 0; 0; 0; 0; 0; ];
-Array bc_U178 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U69; ];
+Array bc_U178 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U70; ];
 Array ts_array_U395 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U1976; ];
 Array bc_U179 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U180 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U181 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U182 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array inline_U18 --> [ 0; 0; 0; 0; 0; ];
-Array bc_U183 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U70; ];
-Array bc_U184 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U71; ];
+Array bc_U183 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U71; ];
+Array bc_U184 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U72; ];
 Array bc_U185 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U186 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U187 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U188 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
-Array bc_U189 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U72; ];
+Array bc_U189 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U73; ];
 Array ts_array_U396 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U1977; ];
 Array bc_U190 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U191 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U192 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array inline_U19 --> [ 0; 0; 0; 0; 0; ];
-Array bc_U193 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U73; ];
-Array bc_U194 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U74; ];
+Array bc_U193 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U74; ];
+Array bc_U194 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U75; ];
 Array bc_U195 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
-Array bc_U196 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U75; ];
+Array bc_U196 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U76; ];
 Array bc_U197 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U198 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array inline_U20 --> [ 0; 0; 0; 0; 0; ];
-Array bc_U199 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U76; ];
-Array bc_U200 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
+Array bc_U199 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U77; ];
+Array bc_U200 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U78; ];
 Array bc_U201 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
-Array bc_U202 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U77; ];
+Array bc_U202 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U79; ];
 Array bc_U203 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U204 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array inline_U21 --> [ 0; 0; 0; 0; 0; ];
-Array bc_U205 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U78; ];
-Array bc_U206 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U79; ];
-Array bc_U207 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
+Array bc_U205 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U80; ];
+Array bc_U206 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U81; ];
+Array bc_U207 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U82; ];
 Array bc_U208 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U209 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U210 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U211 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array inline_U22 --> [ 0; 0; 0; 0; 0; ];
-Array bc_U212 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U80; ];
-Array bc_U213 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
+Array bc_U212 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U83; ];
+Array bc_U213 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U84; ];
 Array bc_U214 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U215 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array bc_U216 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
@@ -5326,9 +5335,9 @@ Array ts_array_U398 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U1981; ];
 Array bc_U218 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array DK3_phrase_real_number____re --> [ PHRASE_TY; 2; REAL_NUMBER_TY; ];
 Array DK4_phrase_real_number____nu --> [ PHRASE_TY; 2; NUMBER_TY; ];
-Array bc_U219 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U81; ];
-Array bc_U220 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U82; ];
-Array bc_U221 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U83; ];
+Array bc_U219 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U85; ];
+Array bc_U220 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U86; ];
+Array bc_U221 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U87; ];
 Array UUID_ARRAY -> [ 45; 'U'; 'U'; 'I'; 'D'; ':'; '/'; '/'; '8'; 'A'; '6'; 'C'; '1'; 'E'; '5'; 'F'; '-'; 'A'; 'B'; '8'; 'B'; '-'; '4'; '7'; 'C'; '9'; '-'; 'A'; '3'; 'A'; 'A'; '-'; 'E'; 'B'; '7'; '7'; 'F'; '3'; '3'; '5'; '8'; 'D'; '4'; '8'; '/'; '/'; ];
 Array InitialSituation --> [ selfobj; 0; I_dorm_room_U1; 540; 0; ];
 Array Map_Storage --> [ 0; 0; 0; I_common_area_U1; 0; 0; 0; 0; 0; 0; 0; 0; I_dorm_room_U1; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; ];
@@ -5837,6 +5846,7 @@ K1_room I_dorm_room_U1    with short_name bc_U162
     with list_together bc_U165
 ;
 K5_container -> I_laptop_U1    with short_name bc_U166
+    with description bc_U167
     has ~open
     has openable
     with vector 0
@@ -5846,10 +5856,9 @@ K5_container -> I_laptop_U1    with short_name bc_U166
     with IK2_Count 1
     with K2_thing_Next I_assignment_U1
     with IK5_Count 0
-    with K5_container_Next I_trash_can_U1
+    with K5_container_Next I_sink_U1
     with action_bitmap 0 0 0 0 0
     with name 'laptop' 'containers//p'
-    with description bc_U167
     with initial bc_U168
     with plural bc_U169
     with article bc_U170
@@ -5889,7 +5898,7 @@ K2_thing -> I_bed_U1    with short_name bc_U183
     has mark_as_thing
     with KD_Count 2
     with IK2_Count 4
-    with K2_thing_Next I_trash_can_U1
+    with K2_thing_Next I_sink_U1
     with action_bitmap 0 0 0 0 0
     with name 'bed' 'things//p'
     with initial bc_U185
@@ -5910,24 +5919,8 @@ K1_room I_common_area_U1    with short_name bc_U189
     with article bc_U191
     with list_together bc_U192
 ;
-K5_container -> I_trash_can_U1    with short_name bc_U193
-    with initial bc_U194
-    with vector 0
-    has mark_as_thing
-    has container
-    with KD_Count 5
-    with IK2_Count 5
-    with K2_thing_Next I_sink_U1
-    with IK5_Count 1
-    with K5_container_Next I_sink_U1
-    with action_bitmap 0 0 0 0 0
-    with name 'trash' 'can' 'containers//p'
-    with description bc_U195
-    with plural bc_U196
-    with article bc_U197
-    with list_together bc_U198
-;
 K5_container -> I_sink_U1    with short_name bc_U199
+    with description bc_U200
     with vector 0
     has mark_as_thing
     has container
@@ -5935,19 +5928,19 @@ K5_container -> I_sink_U1    with short_name bc_U199
     with IK2_Count 6
     with K2_thing_Next I_dishes_U1
     with IK5_Count 2
-    with K5_container_Next 0
+    with K5_container_Next I_trash_can_U1
     with action_bitmap 0 0 0 0 0
     with name 'sink' 'containers//p'
-    with description bc_U200
     with initial bc_U201
     with plural bc_U202
     with article bc_U203
     with list_together bc_U204
 ;
 K2_thing -> -> I_dishes_U1    with short_name bc_U205
+    with description bc_U206
     has proper
     with vector 0
-    with cap_short_name bc_U206
+    with cap_short_name bc_U207
     has mark_as_thing
     with KD_Count 2
     with IK2_Count 7
@@ -5955,25 +5948,41 @@ K2_thing -> -> I_dishes_U1    with short_name bc_U205
     with action_bitmap 0 0 0 0 0
     with name 'dishes' 'things//p'
     has ~P_washed
-    with description bc_U207
     with initial bc_U208
     with plural bc_U209
     with article bc_U210
     with list_together bc_U211
 ;
 K2_thing -> I_cup_of_coffee_U1    with short_name bc_U212
+    with description bc_U213
     with vector 0
     has mark_as_thing
     with KD_Count 2
     with IK2_Count 8
-    with K2_thing_Next 0
+    with K2_thing_Next I_trash_can_U1
     with action_bitmap 0 0 0 0 0
     with name 'cup' 'of' 'coffee' 'things//p'
-    with description bc_U213
     with initial bc_U214
     with plural bc_U215
     with article bc_U216
     with list_together bc_U217
+;
+K5_container I_trash_can_U1    with short_name bc_U193
+    with description bc_U194
+    with vector 0
+    has mark_as_thing
+    has container
+    with KD_Count 5
+    with IK2_Count 5
+    with K2_thing_Next 0
+    with IK5_Count 1
+    with K5_container_Next 0
+    with action_bitmap 0 0 0 0 0
+    with name 'trash' 'can' 'containers//p'
+    with initial bc_U195
+    with plural bc_U196
+    with article bc_U197
+    with list_together bc_U198
 ;
 #ifndef cap_short_name; Constant cap_short_name = 0; #endif;
 #ifndef before; Constant before = 0; #endif;
@@ -58185,7 +58194,7 @@ Global max_z_object;
 [ call_U1977;
     #ifdef DEBUG;
         if (suppress_text_substitution) {
-            print "~The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a [sink] and a fridge.~";
+            print "~The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a [sink] and a fridge. There is also a small [trash can].~";
             rtrue;
         }
     #endif;
@@ -58195,7 +58204,11 @@ Global max_z_object;
     ParaContent();
     PrintShortName(I_sink_U1);
     ParaContent();
-    print " and a fridge.";
+    print " and a fridge. There is also a small ";
+    ParaContent();
+    PrintShortName(I_trash_can_U1);
+    ParaContent();
+    print ".";
     rtrue;
 ];
 [ call_U1978 which na t_0;
@@ -58299,30 +58312,30 @@ Global max_z_object;
 ];
 [ call_U1984;
     if (debug_rules) {
-        DB_Rule(call_U1984, 802, 0);
+        DB_Rule(call_U1984, 803, 0);
     }
-    ((Global_Vars-->44) = 0);
+    ((Global_Vars-->45) = 0);
     (turns = (turns + 1));
     FollowRulebook(RULEBOOK_TY_to_RULE_TY(rulebook_id_U363));
-    if (((Global_Vars-->44) == 0)) {
+    if (((Global_Vars-->45) == 0)) {
         RulebookSucceeds();
         rtrue;
     }
-    (the_time = NUMBER_TY_to_TIME_TY((the_time + NUMBER_TY_to_TIME_TY((((Global_Vars-->44)%TWENTY_FOUR_HOURS) - 1)))));
+    (the_time = NUMBER_TY_to_TIME_TY((the_time + NUMBER_TY_to_TIME_TY((((Global_Vars-->45)%TWENTY_FOUR_HOURS) - 1)))));
     rfalse;
 ];
 [ call_U1985;
     if ((((((action == ##Look)) || ((action == ##Examine)))) && ((actor == player)))) {
         (self = noun);
         if (debug_rules) {
-            DB_Rule(call_U1985, 803, 0);
+            DB_Rule(call_U1985, 804, 0);
         }
-        ((Global_Vars-->44) = 0);
+        ((Global_Vars-->45) = 0);
         RulebookSucceeds();
         rtrue;
     } else {
         if ((debug_rules > 1)) {
-            DB_Rule(call_U1985, 803, 2);
+            DB_Rule(call_U1985, 804, 2);
         }
     }
     rfalse;
@@ -58331,14 +58344,19 @@ Global max_z_object;
     if ((((action == ##A_washing)) && ((actor == player)))) {
         (self = noun);
         if (debug_rules) {
-            DB_Rule(call_U1986, 804, 0);
+            DB_Rule(call_U1986, 805, 0);
         }
-        ((Global_Vars-->44) = -30);
-        RulebookSucceeds();
-        rtrue;
+        if ((GProperty(OBJECT_TY, player, A_P_energy) == 0)) {
+            RulebookFails();
+            rtrue;
+        } else {
+            ((Global_Vars-->45) = -30);
+            RulebookSucceeds();
+            rtrue;
+        }
     } else {
         if ((debug_rules > 1)) {
-            DB_Rule(call_U1986, 804, 2);
+            DB_Rule(call_U1986, 805, 2);
         }
     }
     rfalse;
@@ -58412,8 +58430,6 @@ Global max_z_object;
             DB_Rule(call_U1990, 809, 0);
         }
         call_U1992(-4);
-        RulebookSucceeds();
-        rtrue;
         RulebookFails(0, 0);
         rtrue;
     } else {
@@ -58446,12 +58462,40 @@ Global max_z_object;
     rfalse;
 ];
 [ call_U1992 t_0;
-    if ((GProperty(OBJECT_TY, player, A_P_energy) < 10)) {
-        WriteGProperty(OBJECT_TY, player, A_P_energy, (GProperty(OBJECT_TY, player, A_P_energy) + t_0));
-        (say__p = 1);
-        ParaContent();
-        print "You feel a bit more energetic.";
-        print "^";
+    if (call_U66(t_0)) {
+        if ((GProperty(OBJECT_TY, player, A_P_energy) < 10)) {
+            WriteGProperty(OBJECT_TY, player, A_P_energy, (GProperty(OBJECT_TY, player, A_P_energy) + t_0));
+            (say__p = 1);
+            ParaContent();
+            print "You feel a bit more energetic.";
+            print "^";
+        }
+    } else {
+        if ((GProperty(OBJECT_TY, player, A_P_energy) < 0)) {
+            WriteGProperty(OBJECT_TY, player, A_P_energy, 0);
+            (say__p = 1);
+            ParaContent();
+            print "You don't have the energy to do much else.";
+            print "^";
+            RulebookFails();
+            rtrue;
+        } else {
+            WriteGProperty(OBJECT_TY, player, A_P_energy, (GProperty(OBJECT_TY, player, A_P_energy) + t_0));
+            if ((GProperty(OBJECT_TY, player, A_P_energy) < 0)) {
+                WriteGProperty(OBJECT_TY, player, A_P_energy, 0);
+                (say__p = 1);
+                ParaContent();
+                print "You don't have the energy to do much else.";
+                print "^";
+                RulebookFails();
+                rtrue;
+            } else {
+                (say__p = 1);
+                ParaContent();
+                print "You feel a little drained.";
+                print "^";
+            }
+        }
     }
     rfalse;
 ];
