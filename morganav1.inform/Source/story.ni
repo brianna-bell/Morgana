@@ -100,12 +100,12 @@ The bed is in the dorm room. The description of the bed is "The twin bed is long
 
 [---------------------Common Area------------------------]
 
-The Common Area is south of the dorm room. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small [trash can]."
+The Common Area is south of the dorm room. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small [trash can]. There's also a coffee maker on the counter. [if the pile of dishes are dirty]All of the coffee cups are dirty though.[otherwise]The coffee cups are clean and ready to use.[end if] There's also a [pile of dishes][if the pile of dishes are dirty] soaking in the sink. [otherwise] clean and drying on the counter.[end if]";
 
 The pile of dishes are things in the common area. The pile of dishes can be washed. The pile of dishes are dirty. 
 
 Instead of examining the pile of dishes:
-	say "A few plates, cereal bowls, and spoons.";
+	say "A few coffee cups, cereal bowls, and spoons.";
 	if the pile of dishes are dirty:
 		say "They are covered in greasy stains and leftover food and have been here for a few days.";
 	otherwise:
@@ -114,8 +114,6 @@ Instead of examining the pile of dishes:
 The trash can is a container. The description of the trash can is "The trash can is barely full."
 Instead of removing something from the trash can: say "Ew, it's all dirty now, no thanks."
 
-
-
 Instead of washing the dishes:
 	if the dishes are dirty:
 		Drain by the effort of washing and 2;
@@ -123,11 +121,28 @@ Instead of washing the dishes:
 	otherwise:
 		say "but they're already clean.";
 
-A cup of coffee is in the common area. The description of the cup of coffee is "A fresh, hot cup of full caff coffee. Even just smelling it helps you perk up." 
+[A coffee maker is in the common area. "The tan coffee maker was bought just a few months ago from the local trading post. It makes a decent cup of coffee.".]
+
+A cup of coffee is a thing.
+
+Brewing coffee is an action applying to nothing. Understand "brew coffee" as brewing coffee.
+Carry out brewing coffee:
+	if the dishes are clean:
+		now there is a cup of coffee;
+		move the cup of coffee to the player;
+		say "You have a fresh cup of coffee.";
+	otherwise:
+		say "All the mugs are dirty.";
+
+[Understand "pot" as the coffee maker.]
 
 Instead of drinking the cup of coffee:
-	move the cup of coffee to the player;
 	now the player is carrying the cup of coffee;
 	charge by 2; 
-	say "You drink the hot coffee and it warms you from the inside."
+	say "You drink the hot coffee and it warms you from the inside.";
+	remove the cup of coffee from play.
+
+
+
+
 
