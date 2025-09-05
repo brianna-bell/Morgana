@@ -3,7 +3,7 @@
     <story>
         <identification>
             <ifid>8A6C1E5F-AB8B-47C9-A3AA-EB77F3358D48</ifid>
-            <format>glulx</format>
+            <format>zcode</format>
         </identification>
         <bibliographic>
             <title>Morgana</title>
@@ -29,10 +29,10 @@
             <generatorversion>Inform 10.1.2 (build )</generatorversion>
             <originated>2025-09-04</originated>
         </colophon>
-        <glulx>
+        <zcode>
             <serial>250904</serial>
             <release>1</release>
             <compiler>Inform Inform 10.1.2 (build )</compiler>
-        </glulx>
+        </zcode>
     </story>
 </ifindex>

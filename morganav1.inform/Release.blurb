@@ -10,8 +10,8 @@ release to "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.m
 
 ! Blorb instructions
 
-storyfile leafname "Morgana.gblorb"
-storyfile "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.inform\Build\output.ulx" include
+storyfile leafname "Morgana.zblorb"
+storyfile "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.inform\Build\output.z8" include
 ifiction "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.inform\Metadata.iFiction" include
 cover "C:\Program Files\Inform\Internal\Miscellany\DefaultCover.jpg"
 picture 1 "C:\Program Files\Inform\Internal\Miscellany\DefaultCover.jpg"

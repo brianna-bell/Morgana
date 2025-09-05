@@ -44,7 +44,7 @@ Include Basic Screen Effects by Emily Short.
 Table of Fancy Status
 left	central	right
 " [location]"	"[time of day]"	"[current weekday]"
-" Energy: [energy of the player]"	"Morgana"	"Progress: [progress of the player]%"
+" Energy: [energy of the player]"	" "	"Progress: [progress of the player]%"
 
 Rule for constructing the status line:
 	 fill status bar with Table of Fancy Status;
@@ -117,6 +117,8 @@ Check casting xyzzy:
 	say "Nice try bozo.";
 
 
+
+
 [---------------------Gameplay--------------------]
 
 [---------------------Dorm Room--------------------]
@@ -137,8 +139,12 @@ The bed is in the dorm room. The description of the bed is "The twin bed is long
 [---------------------Common Area------------------------]
 The Common Area is south of the dorm room. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small [trash can]. There's also a coffee maker on the counter. [if the pile of dishes are dirty]All of the coffee cups are dirty though.[otherwise]The coffee cups are clean and ready to use.[end if] There's also a [pile of dishes][if the pile of dishes are dirty] soaking in the sink. [otherwise] clean and drying on the counter.[end if]";
 
-The trash can is a container. The description of the trash can is "The trash can is barely full."
+The trash can is a container in the common area. [The description of the trash can is "The trash can is barely full."]
 Instead of removing something from the trash can: say "Ew, it's all dirty now, no thanks."
+
+After examining the trash can:
+	clear the screen;
+	display the boxed quotation "That's where you belong".
 
 The pile of dishes are things in the common area. The pile of dishes can be washed. The pile of dishes are dirty. 
 
@@ -156,7 +162,7 @@ Instead of washing the dishes:
 	otherwise:
 		say "but they're already clean.";
 
-A cup of coffee is a thing.
+A cup of coffee is a thing. The description of the cup of coffee is "A warm cup of fresh hot coffee. The outside reads '#1 Mug'".
 
 Brewing coffee is an action applying to nothing. Understand "brew coffee" as brewing coffee.
 Carry out brewing coffee:
