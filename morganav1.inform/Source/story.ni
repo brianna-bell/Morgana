@@ -1,4 +1,6 @@
+
 "Morgana" by Brianna
+
 
 [---------------------Setup--------------------]
 
@@ -6,13 +8,49 @@ Use serial comma.
 
 The player has a number called energy. The energy of the player is 7. 
 The maximum energy is always 10. The minimum energy is always 0.
+The player has a number called progress. The progress of the player is 0. 
 
 The effort of washing is always 4.
 The time to wash is always 2.
 
+A weekday is a kind of value. The weekdays are Saturday, Sunday, Monday, Tuesday, Wednesday, Thursday, Friday. The current weekday is a weekday that varies. The current weekday is Wednesday.
+
+[
+The player's full name is a text that varies.
+
 When play begins:
-	now the left hand status line is "[location] | Energy: [energy of the player]";
-	now the right hand status line is "[time of day]".
+	now the command prompt is "What is your name? > ".
+
+To decide whether collecting names:
+	if the command prompt is "What is your name? > ", yes;
+	no.
+
+After reading a command when collecting names:
+	if the number of words in the player's command is greater than 5:
+		say "[paragraph break]Bruh that's too many names, pick something else.";
+		reject the player's command;
+	[otherise if the number of characters in the player’s command is greater than 10:
+		say "[paragraph break]Bruh that's too long, pick something shorter.";
+		reject the player's command;]
+	now the player's full name is the player's command;
+	now the command prompt is ">";
+	say "Hi, [player's full name]![paragraph break]";
+	say "[banner text]";
+	move the player to the location;
+	reject the player's command.]
+
+Include Basic Screen Effects by Emily Short.
+
+Table of Fancy Status
+left	central	right
+" [location]"	"[time of day]"	"[current weekday]"
+" Energy: [energy of the player]"	"Morgana"	"Progress: [progress of the player]%"
+
+Rule for constructing the status line:
+	 fill status bar with Table of Fancy Status;
+	 rule succeeds.
+
+
 	
 When play begins (this is the run property checks at the start of play rule):
 	repeat with item running through things:
@@ -61,14 +99,11 @@ To drain by (amount - a number) and (timer - a number):
 		Say "You're too tired to do that.";
 		rule fails;
 
-
-
-
 Examining something is acting fast. Looking is acting fast. [In a game with tight timing, it is sometimes friendliest to the player to let him LOOK and EXAMINE as much as necessary without being penalized.]
 
 A thing can be dirty or clean. 
 
-Washing is an action applying to one visible thing. Understand "wash [something]" as washing. [§12.7. New actions] 
+Washing is an action applying to one visible thing. Understand "wash [something]" as washing. 
 Carry out washing:
 	say "The [the noun] are now pretty and clean!".
 
@@ -98,9 +133,12 @@ The assignment is in the laptop. The description of the assignment is "The c++ p
 The desk is in the dorm room. The description of the desk is "The wooden desk came with the room. On it is a [laptop]."
 The bed is in the dorm room. The description of the bed is "The twin bed is longer than the ones that you grew up sleeping on, but you were happy to buy new sheets for this next chapter in your life."
 
+[Now clear the screen.]
 [---------------------Common Area------------------------]
-
 The Common Area is south of the dorm room. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small [trash can]. There's also a coffee maker on the counter. [if the pile of dishes are dirty]All of the coffee cups are dirty though.[otherwise]The coffee cups are clean and ready to use.[end if] There's also a [pile of dishes][if the pile of dishes are dirty] soaking in the sink. [otherwise] clean and drying on the counter.[end if]";
+
+The trash can is a container. The description of the trash can is "The trash can is barely full."
+Instead of removing something from the trash can: say "Ew, it's all dirty now, no thanks."
 
 The pile of dishes are things in the common area. The pile of dishes can be washed. The pile of dishes are dirty. 
 
@@ -111,17 +149,12 @@ Instead of examining the pile of dishes:
 	otherwise:
 		say "They are clean and drying on the countertop.";
 
-The trash can is a container. The description of the trash can is "The trash can is barely full."
-Instead of removing something from the trash can: say "Ew, it's all dirty now, no thanks."
-
 Instead of washing the dishes:
 	if the dishes are dirty:
 		Drain by the effort of washing and 2;
 		Now the dishes are clean;
 	otherwise:
 		say "but they're already clean.";
-
-[A coffee maker is in the common area. "The tan coffee maker was bought just a few months ago from the local trading post. It makes a decent cup of coffee.".]
 
 A cup of coffee is a thing.
 
@@ -134,13 +167,11 @@ Carry out brewing coffee:
 	otherwise:
 		say "All the mugs are dirty.";
 
-[Understand "pot" as the coffee maker.]
-
 Instead of drinking the cup of coffee:
-	now the player is carrying the cup of coffee;
-	charge by 2; 
-	say "You drink the hot coffee and it warms you from the inside.";
-	remove the cup of coffee from play.
+		now the player is carrying the cup of coffee;
+		charge by 2; 
+		say "You drink the hot coffee and it warms you from the inside.";
+		remove the cup of coffee from play;
 
 
 

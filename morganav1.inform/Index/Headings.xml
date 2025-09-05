@@ -10,7 +10,7 @@
     </dict>
     <key>1</key><dict>
         <key>Filename</key><string>C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.inform\Source\story.ni</string>
-        <key>Line</key><integer>1</integer>
+        <key>Line</key><integer>2</integer>
         <key>Title</key><string>--</string>
         <key>Level</key><integer>0</integer>
         <key>Indentation</key><integer>0</integer>
@@ -1245,5 +1245,54 @@
         <key>Title</key><string>Section 9 - Debugging Inform -</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>3</integer>
+    </dict>
+    <key>178</key><dict>
+        <key>Filename</key><string>C:\Program Files\Inform\Internal\Extensions\Emily Short\Basic Screen Effects.i7x</string>
+        <key>Line</key><integer>1</integer>
+        <key>Title</key><string>--</string>
+        <key>Level</key><integer>0</integer>
+        <key>Indentation</key><integer>0</integer>
+    </dict>
+    <key>179</key><dict>
+        <key>Filename</key><string>C:\Program Files\Inform\Internal\Extensions\Emily Short\Basic Screen Effects.i7x</string>
+        <key>Line</key><integer>9</integer>
+        <key>Title</key><string>Section - Clearing the screen</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>180</key><dict>
+        <key>Filename</key><string>C:\Program Files\Inform\Internal\Extensions\Emily Short\Basic Screen Effects.i7x</string>
+        <key>Line</key><integer>22</integer>
+        <key>Title</key><string>Section - Waiting for key-presses, quitting suddenly</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>181</key><dict>
+        <key>Filename</key><string>C:\Program Files\Inform\Internal\Extensions\Emily Short\Basic Screen Effects.i7x</string>
+        <key>Line</key><integer>87</integer>
+        <key>Title</key><string>Section - Showing the current quotation</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>182</key><dict>
+        <key>Filename</key><string>C:\Program Files\Inform\Internal\Extensions\Emily Short\Basic Screen Effects.i7x</string>
+        <key>Line</key><integer>94</integer>
+        <key>Title</key><string>Section - Centering text on-screen</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>183</key><dict>
+        <key>Filename</key><string>C:\Program Files\Inform\Internal\Extensions\Emily Short\Basic Screen Effects.i7x</string>
+        <key>Line</key><integer>148</integer>
+        <key>Title</key><string>Section - Customizing the status line</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>184</key><dict>
+        <key>Filename</key><string>C:\Program Files\Inform\Internal\Extensions\Emily Short\Basic Screen Effects.i7x</string>
+        <key>Line</key><integer>215</integer>
+        <key>Title</key><string>Section - Color effects</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
     </dict>
 </dict></plist>
