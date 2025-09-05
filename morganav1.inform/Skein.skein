@@ -3,7 +3,7 @@
   <generator>Windows Inform 10.1.2</generator>
   <item nodeId="node-1">
     <command xml:space="preserve">morganav1</command>
-    <result xml:space="preserve">trash can has no description.&#x000A;pile of dishes has no description.&#x000A;&#x000A;Morgana&#x000A;An Interactive Fiction by Brianna&#x000A;Release 1 / Serial number 250904 / Inform 7 v10.1.2 / D&#x000A;&#x000A;Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates. This room is small and cozy. You see a desk in the corner of the room. On the desk is a laptop.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">Morgana&#x000A;An Interactive Fiction by Brianna&#x000A;Release 1 / Serial number 250904 / Inform 7 v10.1.2 / D&#x000A;&#x000A;Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates. This room is small and cozy. You see a desk in the corner of the room. On the desk is a laptop.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -403,6 +403,78 @@
     <result xml:space="preserve">You feel a bit more energetic.&#x000A;You drink the hot coffee and it warms you from the inside.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
+    <children>
+      <child nodeId="node-147"/>
+    </children>
+  </item>
+  <item nodeId="node-147">
+    <command xml:space="preserve">brew coffee</command>
+    <result xml:space="preserve">You have a fresh cup of coffee.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-148"/>
+    </children>
+  </item>
+  <item nodeId="node-148">
+    <command xml:space="preserve">drink coffee</command>
+    <result xml:space="preserve">You feel a bit more energetic.&#x000A;You drink the hot coffee and it warms you from the inside.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-149"/>
+    </children>
+  </item>
+  <item nodeId="node-149">
+    <command xml:space="preserve">brew coffee</command>
+    <result xml:space="preserve">You have a fresh cup of coffee.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-150"/>
+    </children>
+  </item>
+  <item nodeId="node-150">
+    <command xml:space="preserve">drink coffee</command>
+    <result xml:space="preserve">You drink the hot coffee and it warms you from the inside.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-151"/>
+    </children>
+  </item>
+  <item nodeId="node-151">
+    <command xml:space="preserve">brew coffee</command>
+    <result xml:space="preserve">You have a fresh cup of coffee.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-152"/>
+    </children>
+  </item>
+  <item nodeId="node-152">
+    <command xml:space="preserve">drink coffee</command>
+    <result xml:space="preserve">You drink the hot coffee and it warms you from the inside.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-153"/>
+    </children>
+  </item>
+  <item nodeId="node-153">
+    <command xml:space="preserve">brew coffee</command>
+    <result xml:space="preserve">You have a fresh cup of coffee.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-154"/>
+    </children>
+  </item>
+  <item nodeId="node-154">
+    <command xml:space="preserve">drink coffee</command>
+    <result xml:space="preserve">You drink the hot coffee and it warms you from the inside.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
   </item>
   <item nodeId="node-37">
     <command xml:space="preserve">drink coffee</command>
@@ -775,7 +847,7 @@
   </item>
   <item nodeId="node-77">
     <command xml:space="preserve">x dishes</command>
-    <result xml:space="preserve">A few plates, cereal bowls, and spoons.&#x000A;They are covered in greasy stains and leftover food and have been here for a few days.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">A few coffee cups, cereal bowls, and spoons. They are covered in greasy stains and leftover food and have been here for a few days.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -793,7 +865,7 @@
   </item>
   <item nodeId="node-79">
     <command xml:space="preserve">x dishes</command>
-    <result xml:space="preserve">A few plates, cereal bowls, and spoons.&#x000A;They are clean and drying on the countertop.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">A few coffee cups, cereal bowls, and spoons.&#x000A;&#x000A;They are clean and drying on the countertop.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -826,7 +898,7 @@
   </item>
   <item nodeId="node-94">
     <command xml:space="preserve">x trash can</command>
-    <result xml:space="preserve">The trash can is empty.&#x000A;&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>

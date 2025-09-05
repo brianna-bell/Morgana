@@ -1,6 +1,4 @@
-
 "Morgana" by Brianna
-
 
 [---------------------Setup--------------------]
 
@@ -10,41 +8,20 @@ The player has a number called energy. The energy of the player is 7.
 The maximum energy is always 10. The minimum energy is always 0.
 The player has a number called progress. The progress of the player is 0. 
 
+The player has a number called drugs taken. The drugs taken of the player is 0. 
+The maximum drugs taken is always 5. 
+
 The effort of washing is always 4.
 The time to wash is always 2.
 
 A weekday is a kind of value. The weekdays are Saturday, Sunday, Monday, Tuesday, Wednesday, Thursday, Friday. The current weekday is a weekday that varies. The current weekday is Wednesday.
-
-[
-The player's full name is a text that varies.
-
-When play begins:
-	now the command prompt is "What is your name? > ".
-
-To decide whether collecting names:
-	if the command prompt is "What is your name? > ", yes;
-	no.
-
-After reading a command when collecting names:
-	if the number of words in the player's command is greater than 5:
-		say "[paragraph break]Bruh that's too many names, pick something else.";
-		reject the player's command;
-	[otherise if the number of characters in the player’s command is greater than 10:
-		say "[paragraph break]Bruh that's too long, pick something shorter.";
-		reject the player's command;]
-	now the player's full name is the player's command;
-	now the command prompt is ">";
-	say "Hi, [player's full name]![paragraph break]";
-	say "[banner text]";
-	move the player to the location;
-	reject the player's command.]
 
 Include Basic Screen Effects by Emily Short.
 
 Table of Fancy Status
 left	central	right
 " [location]"	"[time of day]"	"[current weekday]"
-" Energy: [energy of the player]"	" "	"Progress: [progress of the player]%"
+" Energy: [energy of the player]"	"Drugs: [drugs taken of the player] "	"Progress: [progress of the player]%"
 
 Rule for constructing the status line:
 	 fill status bar with Table of Fancy Status;
@@ -69,6 +46,11 @@ To charge by (amount - a number):
 		if the energy of the player is less than the maximum energy:
 			increase the energy of the player by amount;
 			say "You feel a bit more energetic.";
+		increase the drugs taken of the player by 1;
+		if the drugs taken of the player is at least the maximum drugs taken: 
+			clear the screen;
+			end the story saying "Your body couldn't take it. You evaporate into a cloud of red mist. You died, RIP";
+			rule fails;
 	otherwise:
 		if the energy of the player is less than the minimum energy:
 			Now the energy of the player is the minimum energy;
@@ -139,21 +121,22 @@ The bed is in the dorm room. The description of the bed is "The twin bed is long
 [---------------------Common Area------------------------]
 The Common Area is south of the dorm room. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small [trash can]. There's also a coffee maker on the counter. [if the pile of dishes are dirty]All of the coffee cups are dirty though.[otherwise]The coffee cups are clean and ready to use.[end if] There's also a [pile of dishes][if the pile of dishes are dirty] soaking in the sink. [otherwise] clean and drying on the counter.[end if]";
 
-The trash can is a container in the common area. [The description of the trash can is "The trash can is barely full."]
+The trash can is a container in the common area. The description of the trash can is "The trash can is barely full."
 Instead of removing something from the trash can: say "Ew, it's all dirty now, no thanks."
 
-After examining the trash can:
-	clear the screen;
+Instead of examining the trash can:
+	clear only the main screen;
 	display the boxed quotation "That's where you belong".
 
 The pile of dishes are things in the common area. The pile of dishes can be washed. The pile of dishes are dirty. 
 
-Instead of examining the pile of dishes:
-	say "A few coffee cups, cereal bowls, and spoons.";
+The description of the pile of dishes is "A few coffee cups, cereal bowls, and spoons. [if the pile of dishes are dirty]They are covered in greasy stains and leftover food and have been here for a few days.[otherwise] They are clean and drying on the countertop.[end if]".
+
+[After examining the pile of dishes:
 	if the pile of dishes are dirty:
 		say "They are covered in greasy stains and leftover food and have been here for a few days.";
 	otherwise:
-		say "They are clean and drying on the countertop.";
+		say "They are clean and drying on the countertop.";]
 
 Instead of washing the dishes:
 	if the dishes are dirty:
@@ -175,8 +158,8 @@ Carry out brewing coffee:
 
 Instead of drinking the cup of coffee:
 		now the player is carrying the cup of coffee;
-		charge by 2; 
 		say "You drink the hot coffee and it warms you from the inside.";
+		charge by 2; 
 		remove the cup of coffee from play;
 
 
