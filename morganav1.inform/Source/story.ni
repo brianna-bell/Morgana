@@ -6,7 +6,7 @@ Use serial comma.
 
 The player has a number called energy. The energy of the player is 7. 
 The maximum energy is always 10. The minimum energy is always 0.
-The player has a number called progress. The progress of the player is 0. 
+The player has a number called progress. The progress of the player is 80. 
 
 The player has a number called drugs taken. The drugs taken of the player is 0. 
 The maximum drugs taken is always 5. 
@@ -26,7 +26,6 @@ left	central	right
 Rule for constructing the status line:
 	 fill status bar with Table of Fancy Status;
 	 rule succeeds.
-
 
 	
 When play begins (this is the run property checks at the start of play rule):
@@ -98,7 +97,24 @@ Casting xyzzy is an action applying to nothing.
 Check casting xyzzy:
 	say "Nice try bozo.";
 
-
+Every turn:
+	If the time of day is after 9:04 AM:
+		say "it's time for bed!";
+		Now the energy of the player is the maximum energy;
+		Now the drugs taken of the player is 0;
+		Now the time of day is 8:59 AM;
+		now the current weekday is the weekday after the current weekday;
+	If the current weekday is Saturday:
+		Say "The time has come to turn in your final project. Your grade is....";
+		if the progress of the player is greater than 90:
+			say "A! You're on track to become the smartest mind of your generation! Feel proud of your accomplishment and enjoy your time off before the next ovester starts.";
+		otherwise if the progress of the player is greater than 80:
+			say "B. B's get degrees I guess.";
+		otherwise if the progress of the player is greater than 70:
+			say "C... Not too great. Better study harder next time.";
+		otherwise: 
+			say "F for the failure you are :(";
+		end the story;
 
 
 [---------------------Gameplay--------------------]

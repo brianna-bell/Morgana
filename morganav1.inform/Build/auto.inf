@@ -1002,7 +1002,6 @@ Constant rulebook_id_U15 = 14;
 Constant rulebook_id_U16 = 15;
 Constant call_U373 = EMPTY_RULEBOOK;
 Constant rulebook_id_U17 = 16;
-Constant call_U374 = EMPTY_RULEBOOK;
 Constant rulebook_id_U18 = 17;
 Constant rulebook_id_U19 = 18;
 Constant rulebook_id_U20 = 19;
@@ -2618,6 +2617,7 @@ Constant anchor_U357 = 1105;
 Constant anchor_U358 = 1105;
 Constant anchor_U359 = 1105;
 Constant anchor_U360 = 1105;
+Constant anchor_U361 = 1105;
 Constant property_id_U95 = 41;
 Constant property_id_U96 = 42;
 Constant property_id_U97 = 43;
@@ -5238,14 +5238,14 @@ Array bc_U211 --> [ CONSTANT_PACKED_TEXT_STORAGE; EMPTY_TEXT_PACKED; ];
 Array quotation_flag_U1 --> [ 0; 0; ];
 Array bc_U212 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U80; ];
 Array column_data_U11 table [ column_bits_U11; column_blanks_U10; ts_array_U401; ts_array_U402; ];
-Array ts_array_U401 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U2005; ];
-Array ts_array_U402 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U2006; ];
+Array ts_array_U401 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U2006; ];
+Array ts_array_U402 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U2007; ];
 Array column_data_U12 table [ column_bits_U12; column_blanks_U11; ts_array_U403; ts_array_U404; ];
-Array ts_array_U403 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U2007; ];
-Array ts_array_U404 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U2008; ];
+Array ts_array_U403 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U2008; ];
+Array ts_array_U404 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U2009; ];
 Array column_data_U13 table [ column_bits_U13; column_blanks_U12; ts_array_U405; ts_array_U406; ];
-Array ts_array_U405 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U2009; ];
-Array ts_array_U406 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U2010; ];
+Array ts_array_U405 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U2010; ];
+Array ts_array_U406 --> [ CONSTANT_PACKED_TEXT_STORAGE; call_U2011; ];
 Array table_data_U4 table [ column_data_U11; column_data_U12; column_data_U13; ];
 Array bc_U213 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U81; ];
 Array bc_U214 --> [ CONSTANT_PACKED_TEXT_STORAGE; text_U82; ];
@@ -5716,7 +5716,7 @@ K3_direction out_obj Compass    with short_name bc_U50
 K8_person selfobj    with short_name bc_U54
     with description bc_U55
     with P_energy 7
-    with P_progress 0
+    with P_progress 80
     with P_drugs_taken 0
     has proper
     has privately_named
@@ -10125,26 +10125,30 @@ Global max_z_object;
             rtrue;
         }
         if ((R == call_U1994)) {
-            print "After opening the laptop";
+            print "Every turn";
             rtrue;
         }
         if ((R == call_U1995)) {
-            print "Instead of removing something from the trash can";
+            print "After opening the laptop";
             rtrue;
         }
         if ((R == call_U1996)) {
+            print "Instead of removing something from the trash can";
+            rtrue;
+        }
+        if ((R == call_U1997)) {
             print "Instead of examining the trash can";
             rtrue;
         }
-        if ((R == call_U1998)) {
+        if ((R == call_U1999)) {
             print "Instead of washing the dishes";
             rtrue;
         }
-        if ((R == call_U1999)) {
+        if ((R == call_U2000)) {
             print "Carry out brewing coffee";
             rtrue;
         }
-        if ((R == call_U2000)) {
+        if ((R == call_U2001)) {
             print "Instead of drinking the cup of coffee";
             rtrue;
         }
@@ -27360,6 +27364,17 @@ Global max_z_object;
     ((latest_rule_result-->(0)) = 0);
     rfalse;
 ];
+[ call_U374 forbid_breaks rv;
+    (rv = (call_U1994)());
+    if (rv) {
+        if ((rv == 2)) {
+            return reason_the_action_failed;
+        }
+        return call_U1994;
+    }
+    ((latest_rule_result-->(0)) = 0);
+    rfalse;
+];
 [ call_U375 forbid_breaks rv original_deadflag;
     (original_deadflag = deadflag);
     (rv = (call_U1007)());
@@ -27867,12 +27882,12 @@ Global max_z_object;
 [ call_U388 forbid_breaks rv original_deadflag;
     (original_deadflag = deadflag);
     if ((action == ##Remove)) {
-        (rv = (call_U1995)());
+        (rv = (call_U1996)());
         if (rv) {
             if ((rv == 2)) {
                 return reason_the_action_failed;
             }
-            return call_U1995;
+            return call_U1996;
         }
         ((latest_rule_result-->(0)) = 0);
     } else {
@@ -27887,12 +27902,12 @@ Global max_z_object;
         if (say__p) {
             RulebookParBreak(forbid_breaks);
         }
-        (rv = (call_U1996)());
+        (rv = (call_U1997)());
         if (rv) {
             if ((rv == 2)) {
                 return reason_the_action_failed;
             }
-            return call_U1996;
+            return call_U1997;
         }
         ((latest_rule_result-->(0)) = 0);
     } else {
@@ -27907,12 +27922,12 @@ Global max_z_object;
         if (say__p) {
             RulebookParBreak(forbid_breaks);
         }
-        (rv = (call_U1998)());
+        (rv = (call_U1999)());
         if (rv) {
             if ((rv == 2)) {
                 return reason_the_action_failed;
             }
-            return call_U1998;
+            return call_U1999;
         }
         ((latest_rule_result-->(0)) = 0);
     } else {
@@ -27927,12 +27942,12 @@ Global max_z_object;
         if (say__p) {
             RulebookParBreak(forbid_breaks);
         }
-        (rv = (call_U2000)());
+        (rv = (call_U2001)());
         if (rv) {
             if ((rv == 2)) {
                 return reason_the_action_failed;
             }
-            return call_U2000;
+            return call_U2001;
         }
         ((latest_rule_result-->(0)) = 0);
     } else {
@@ -27944,12 +27959,12 @@ Global max_z_object;
 ];
 [ call_U391 forbid_breaks rv;
     if ((action == ##Open)) {
-        (rv = (call_U1994)());
+        (rv = (call_U1995)());
         if (rv) {
             if ((rv == 2)) {
                 return reason_the_action_failed;
             }
-            return call_U1994;
+            return call_U1995;
         }
         ((latest_rule_result-->(0)) = 0);
     } else {
@@ -58314,12 +58329,12 @@ Global max_z_object;
     print "casting xyzzy";
 ];
 [ call_U1983 forbid_breaks rv;
-    (rv = (call_U1999)());
+    (rv = (call_U2000)());
     if (rv) {
         if ((rv == 2)) {
             return reason_the_action_failed;
         }
-        return call_U1999;
+        return call_U2000;
     }
     ((latest_rule_result-->(0)) = 0);
     rfalse;
@@ -58457,10 +58472,58 @@ Global max_z_object;
     rfalse;
 ];
 [ call_U1994;
+    if (debug_rules) {
+        DB_Rule(call_U1994, 800, 0);
+    }
+    if ((((the_time + (20*ONE_HOUR))%TWENTY_FOUR_HOURS) > ((544 + (20*ONE_HOUR))%TWENTY_FOUR_HOURS))) {
+        (say__p = 1);
+        ParaContent();
+        print "it's time for bed!";
+        print "^";
+        WriteGProperty(OBJECT_TY, player, A_P_energy, 10);
+        WriteGProperty(OBJECT_TY, player, A_P_drugs_taken, 0);
+        (the_time = 539);
+        ((Global_Vars-->50) = (call_U1986)((Global_Vars-->50)));
+    }
+    if (((Global_Vars-->50) == I_saturday_U1)) {
+        (say__p = 1);
+        ParaContent();
+        print "The time has come to turn in your final project. Your grade is....";
+        print "^";
+        if ((GProperty(OBJECT_TY, player, A_P_progress) > 90)) {
+            (say__p = 1);
+            ParaContent();
+            print "A! You're on track to become the smartest mind of your generation! Feel proud of your accomplishment and enjoy your time off before the next ovester starts.";
+            print "^";
+        } else {
+            if ((GProperty(OBJECT_TY, player, A_P_progress) > 80)) {
+                (say__p = 1);
+                ParaContent();
+                print "B. B's get degrees I guess.";
+                print "^";
+            } else {
+                if ((GProperty(OBJECT_TY, player, A_P_progress) > 70)) {
+                    (say__p = 1);
+                    ParaContent();
+                    print "C... Not too great. Better study harder next time.";
+                    print "^";
+                } else {
+                    (say__p = 1);
+                    ParaContent();
+                    print "F for the failure you are :(";
+                }
+            }
+        }
+        (deadflag = 3);
+        (story_complete = 0);
+    }
+    rfalse;
+];
+[ call_U1995;
     if ((((action == ##Open)) && ((((actor == player)) && ((noun == I_laptop_U1)))))) {
         (self = noun);
         if (debug_rules) {
-            DB_Rule(call_U1994, 800, 0);
+            DB_Rule(call_U1995, 801, 0);
         }
         (say__p = 1);
         ParaContent();
@@ -58474,38 +58537,21 @@ Global max_z_object;
         rtrue;
     } else {
         if ((debug_rules > 1)) {
-            DB_Rule(call_U1994, 800, 2);
-        }
-    }
-    rfalse;
-];
-[ call_U1995;
-    if ((((action == ##Remove)) && ((((actor == player)) && ((((noun ofclass K2_thing)) && ((second == I_trash_can_U1)))))))) {
-        (self = noun);
-        if (debug_rules) {
-            DB_Rule(call_U1995, 801, 0);
-        }
-        (say__p = 1);
-        ParaContent();
-        print "Ew, it's all dirty now, no thanks.";
-        print "^";
-        RulebookFails(0, 0);
-        rtrue;
-    } else {
-        if ((debug_rules > 1)) {
             DB_Rule(call_U1995, 801, 2);
         }
     }
     rfalse;
 ];
 [ call_U1996;
-    if ((((action == ##Examine)) && ((((actor == player)) && ((noun == I_trash_can_U1)))))) {
+    if ((((action == ##Remove)) && ((((actor == player)) && ((((noun ofclass K2_thing)) && ((second == I_trash_can_U1)))))))) {
         (self = noun);
         if (debug_rules) {
             DB_Rule(call_U1996, 802, 0);
         }
-        VM_ClearScreen(2);
-        DisplayBoxedQuotation(call_U1997);
+        (say__p = 1);
+        ParaContent();
+        print "Ew, it's all dirty now, no thanks.";
+        print "^";
         RulebookFails(0, 0);
         rtrue;
     } else {
@@ -58516,19 +58562,36 @@ Global max_z_object;
     rfalse;
 ];
 [ call_U1997;
+    if ((((action == ##Examine)) && ((((actor == player)) && ((noun == I_trash_can_U1)))))) {
+        (self = noun);
+        if (debug_rules) {
+            DB_Rule(call_U1997, 803, 0);
+        }
+        VM_ClearScreen(2);
+        DisplayBoxedQuotation(call_U1998);
+        RulebookFails(0, 0);
+        rtrue;
+    } else {
+        if ((debug_rules > 1)) {
+            DB_Rule(call_U1997, 803, 2);
+        }
+    }
+    rfalse;
+];
+[ call_U1998;
     if (((quotation_flag_U1-->(0)) == 0)) {
         ((quotation_flag_U1-->(0)) = 1);
         box "That's where you belong";
     }
 ];
-[ call_U1998;
+[ call_U1999;
     if ((((action == ##A_washing)) && ((((actor == player)) && ((noun == I_pile_of_dishes_U1)))))) {
         (self = noun);
         if (debug_rules) {
-            DB_Rule(call_U1998, 803, 0);
+            DB_Rule(call_U1999, 804, 0);
         }
         if (call_U1943(I_pile_of_dishes_U1)) {
-            call_U2003(4, 2);
+            call_U2004(4, 2);
             call_U1947(I_pile_of_dishes_U1);
         } else {
             (say__p = 1);
@@ -58540,15 +58603,15 @@ Global max_z_object;
         rtrue;
     } else {
         if ((debug_rules > 1)) {
-            DB_Rule(call_U1998, 803, 2);
+            DB_Rule(call_U1999, 804, 2);
         }
     }
     rfalse;
 ];
-[ call_U1999;
+[ call_U2000;
     if ((actor == player)) {
         if (debug_rules) {
-            DB_Rule(call_U1999, 804, 0);
+            DB_Rule(call_U2000, 805, 0);
         }
         if (call_U1946(I_pile_of_dishes_U1)) {
             MoveObject(I_cup_of_coffee_U1, player, 0, 0);
@@ -58564,34 +58627,34 @@ Global max_z_object;
         }
     } else {
         if ((debug_rules > 1)) {
-            DB_Rule(call_U1999, 804, 3);
+            DB_Rule(call_U2000, 805, 3);
         }
     }
     rfalse;
 ];
-[ call_U2000;
+[ call_U2001;
     if ((((action == ##Drink)) && ((((actor == player)) && ((noun == I_cup_of_coffee_U1)))))) {
         (self = noun);
         if (debug_rules) {
-            DB_Rule(call_U2000, 805, 0);
+            DB_Rule(call_U2001, 806, 0);
         }
         MoveObject(I_cup_of_coffee_U1, player);
         (say__p = 1);
         ParaContent();
         print "You drink the hot coffee and it warms you from the inside.";
         print "^";
-        call_U2002(2);
+        call_U2003(2);
         RemoveFromPlay(I_cup_of_coffee_U1);
         RulebookFails(0, 0);
         rtrue;
     } else {
         if ((debug_rules > 1)) {
-            DB_Rule(call_U2000, 805, 2);
+            DB_Rule(call_U2001, 806, 2);
         }
     }
     rfalse;
 ];
-[ call_U2001 t_0 tmp_0;
+[ call_U2002 t_0 tmp_0;
     (tmp_0 = NUMBER_TY_to_TIME_TY((the_time - ((t_0*ONE_HOUR)%TWENTY_FOUR_HOURS))));
     (the_time = tmp_0);
     (say__p = 1);
@@ -58602,7 +58665,7 @@ Global max_z_object;
     rtrue;
     rfalse;
 ];
-[ call_U2002 t_0;
+[ call_U2003 t_0;
     if (call_U66(t_0)) {
         if ((GProperty(OBJECT_TY, player, A_P_energy) < 10)) {
             WriteGProperty(OBJECT_TY, player, A_P_energy, (GProperty(OBJECT_TY, player, A_P_energy) + t_0));
@@ -58649,7 +58712,7 @@ Global max_z_object;
     }
     rfalse;
 ];
-[ call_U2003 t_0 t_1 tmp_0;
+[ call_U2004 t_0 t_1 tmp_0;
     (tmp_0 = (GProperty(OBJECT_TY, player, A_P_energy) - t_0));
     if (call_U66(tmp_0)) {
         WriteGProperty(OBJECT_TY, player, A_P_energy, (GProperty(OBJECT_TY, player, A_P_energy) - t_0));
@@ -58657,7 +58720,7 @@ Global max_z_object;
         ParaContent();
         print "You feel a little worn.";
         print "^";
-        call_U2001(t_1);
+        call_U2002(t_1);
         RulebookSucceeds();
         rtrue;
     } else {
@@ -58667,7 +58730,7 @@ Global max_z_object;
             ParaContent();
             print "That's about all the effort you feel like putting in today.";
             print "^";
-            call_U2001(t_1);
+            call_U2002(t_1);
             RulebookSucceeds();
             rtrue;
         } else {
@@ -58681,7 +58744,7 @@ Global max_z_object;
     }
     rfalse;
 ];
-[ call_U2004;
+[ call_U2005;
     if ((((action == ##Examine)) && ((noun ofclass K2_thing)))) {
         rtrue;
     }
@@ -58690,7 +58753,7 @@ Global max_z_object;
     }
     rfalse;
 ];
-[ call_U2005;
+[ call_U2006;
     #ifdef DEBUG;
         if (suppress_text_substitution) {
             print "~ [location]~";
@@ -58704,7 +58767,7 @@ Global max_z_object;
     PrintShortName(real_location);
     rtrue;
 ];
-[ call_U2006;
+[ call_U2007;
     #ifdef DEBUG;
         if (suppress_text_substitution) {
             print "~ Energy: [energy of the player]~";
@@ -58720,7 +58783,7 @@ Global max_z_object;
     @pull self;
     rtrue;
 ];
-[ call_U2007;
+[ call_U2008;
     #ifdef DEBUG;
         if (suppress_text_substitution) {
             print "~[time of day]~";
@@ -58732,7 +58795,7 @@ Global max_z_object;
     PrintTimeOfDay(the_time);
     rtrue;
 ];
-[ call_U2008;
+[ call_U2009;
     #ifdef DEBUG;
         if (suppress_text_substitution) {
             print "~Drugs: [drugs taken of the player] ~";
@@ -58750,7 +58813,7 @@ Global max_z_object;
     print " ";
     rtrue;
 ];
-[ call_U2009;
+[ call_U2010;
     #ifdef DEBUG;
         if (suppress_text_substitution) {
             print "~[current weekday]~";
@@ -58762,7 +58825,7 @@ Global max_z_object;
     E7((Global_Vars-->50));
     rtrue;
 ];
-[ call_U2010;
+[ call_U2011;
     #ifdef DEBUG;
         if (suppress_text_substitution) {
             print "~Progress: [progress of the player]%~";
