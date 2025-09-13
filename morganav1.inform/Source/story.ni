@@ -4,8 +4,8 @@
 
 Use serial comma. 
 
-The player has a number called energy. The energy of the player is 7. 
-The maximum energy is always 10. The minimum energy is always 0.
+The player has a number called energy. The energy of the player is 100. 
+The maximum energy is always 100. The minimum energy is always 0.
 
 The player has a number called progress. The progress of the player is 0. 
 The maximum progress is always 100.
@@ -13,8 +13,14 @@ The maximum progress is always 100.
 The player has a number called drugs taken. The drugs taken of the player is 0. 
 The maximum drugs taken is always 5. 
 
-The effort of washing is always 4.
-The time to wash is always 2.
+[The effort of washing is always 30. [percent]]
+The time to wash is always 1. [hours]
+
+[debug only to skip to Saturday]
+Understand "dskip" as casting dskip.
+Casting dskip is an action applying to nothing. 
+Check casting dskip:
+	now the current weekday is Saturday;
 
 A weekday is a kind of value. The weekdays are Saturday, Sunday, Monday, Tuesday, Wednesday, Thursday, Friday. The current weekday is a weekday that varies. The current weekday is Wednesday.
 
@@ -23,7 +29,7 @@ Include Basic Screen Effects by Emily Short.
 Table of Fancy Status
 left	central	right
 " [location]"	"[time of day]"	"[current weekday]"
-" Energy: [energy of the player]"	"Drugs: [drugs taken of the player] "	"Progress: [progress of the player]%"
+" Energy: [energy of the player]%"	"Drugs: [drugs taken of the player] "	"Progress: [progress of the player]%"
 
 Rule for constructing the status line:
 	 fill status bar with Table of Fancy Status;
@@ -100,7 +106,7 @@ Washing is an action applying to one visible thing. Understand "wash [something]
 Carry out washing:
 	say "The [the noun] are now pretty and clean!".
 
-The description of the player is "You are Morgana, a college student."
+The description of the player is "You are Morgana, a college student. You have 9 fingers and 4 toes."
 
 Understand "xyzzy" or "say xyzzy" or "cast xyzzy" as casting xyzzy.
 
@@ -158,6 +164,8 @@ Carry out working:
 	let worktime be a random number from 1 to 3;
 	drain by worktime and (worktime * -1);
 
+
+
 Report working:
 	if progress of the player is 0:
 		say "You get started on your project. Better late than never.";
@@ -168,7 +176,7 @@ Report working:
 	else if progress of the player is less than maximum progress:
 		say "You're in the final stretch, just a little more to go!";
 	else:
-		say "You are finally done. You can relax, celebrate, or party til Saturday.";
+		Say "You are finally done. You can relax, celebrate, or party til Saturday. Enjoy your time.";
 
 [Rule to turn on the laptop first]
 Instead of switching on the laptop:
@@ -190,9 +198,16 @@ The player should work on the project.]
 The desk is in the dorm room. The description of the desk is "The wooden desk came with the room. On it is a [laptop]."
 The bed is in the dorm room. The description of the bed is "The twin bed is longer than the ones that you grew up sleeping on, but you were happy to buy new sheets for this next chapter in your life."
 
-[Now clear the screen.]
+[---------------------Hallway------------------------]
+The Hallway is south of the dorm room. "A narrow hallway with a mirror, a coatrack, and several posters."
+
+The Bathroom is south of the Hallway. "A tiny bathroom with a toilet, shower, and sink."
+
+The Closet is west of the Hallway.
+
+
 [---------------------Common Area------------------------]
-The Common Area is south of the dorm room. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small [trash can]. There's also a coffee maker on the counter. [if the pile of dishes are dirty]All of the coffee cups are dirty though.[otherwise]The coffee cups are clean and ready to use.[end if] There's also a [pile of dishes][if the pile of dishes are dirty] soaking in the sink. [otherwise] clean and drying on the counter.[end if]";
+The Common Area is east of the hallway. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small [trash can]. There's also a coffee maker on the counter. [if the pile of dishes are dirty]All of the coffee cups are dirty though.[otherwise]The coffee cups are clean and ready to use.[end if] There's also a [pile of dishes][if the pile of dishes are dirty] soaking in the sink. [otherwise] clean and drying on the counter.[end if]";
 
 The trash can is a container in the common area. The description of the trash can is "The trash can is barely full."
 Instead of removing something from the trash can: say "Ew, it's all dirty now, no thanks."
@@ -207,6 +222,7 @@ The description of the pile of dishes is "A few coffee cups, cereal bowls, and s
 
 Instead of washing the dishes:
 	if the dishes are dirty:
+		let effort of washing be a random number from 25 to 35;
 		Drain by the effort of washing and 2;
 		Now the dishes are clean;
 	otherwise:
@@ -229,7 +245,27 @@ Instead of drinking the cup of coffee:
 		charge by 2; 
 		remove the cup of coffee from play;
 
+The Far Hall is east of the common area.
 
+The Katie's Room is north of the far hall.
 
+Jessie's Room is east of the far hall.
+
+The Long Hall is south of the Common Area.
+
+The Study Room is east of the long hall.
+
+Annie's Room is south of the long hall. 
+
+The Courtyard is west of the long hall.
+
+The Train Station is south of the courtyard.
+[to party house or grocery store or both?]
+
+The Sidewalk is west of the courtyard.
+
+The Professor's Office is west of the sidewalk. 
+
+The Gym is north of the courtyard.
 
 
