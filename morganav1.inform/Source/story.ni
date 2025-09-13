@@ -29,7 +29,7 @@ Include Basic Screen Effects by Emily Short.
 Table of Fancy Status
 left	central	right
 " [location]"	"[time of day]"	"[current weekday]"
-" Energy: [energy of the player]%"	"Drugs: [drugs taken of the player] "	"Progress: [progress of the player]%"
+" Energy: [energy of the player]%"	 ""	"Progress: [progress of the player]%"
 
 Rule for constructing the status line:
 	 fill status bar with Table of Fancy Status;
@@ -157,14 +157,13 @@ Check working:
 		say "oops too tired :(" instead;
 
 Carry out working:
+	move the laptop to the player;
 	let effort be a random number from 10 to 25;
 	increase progress of the player by effort;
 	if progress of the player > maximum progress:
 		now progress of the player is maximum progress;
 	let worktime be a random number from 1 to 3;
 	drain by worktime and (worktime * -1);
-
-
 
 Report working:
 	if progress of the player is 0:
@@ -178,7 +177,6 @@ Report working:
 	else:
 		Say "You are finally done. You can relax, celebrate, or party til Saturday. Enjoy your time.";
 
-[Rule to turn on the laptop first]
 Instead of switching on the laptop:
 	if the laptop is switched off:
 		now the laptop is switched on;
@@ -186,25 +184,33 @@ Instead of switching on the laptop:
 	else:
 		say "It's already on.";
 
-[The laptop is an openable container in the Dorm Room. 
-The laptop is closed. 
-[The laptop can be switched on.]
-After opening the laptop: say "On the screen is a half-finished programming [project]. You've spent about 20 minutes working on it so far."
-The description of the laptop is "An older model that you got from your older sister. It does what you need it to do."
-The assignment is in the laptop. The description of the assignment is "The c++ programming assignment is about [progress of the player] done."
-
-The player should work on the project.]
 
 The desk is in the dorm room. The description of the desk is "The wooden desk came with the room. On it is a [laptop]."
-The bed is in the dorm room. The description of the bed is "The twin bed is longer than the ones that you grew up sleeping on, but you were happy to buy new sheets for this next chapter in your life."
+The bed is in the dorm room. The description of the bed is "The twin bed is longer than the ones that you grew up sleeping on, but you were happy to buy new sheets for this next chapter in your life. Underneath it is a [lockbox]."
+The lockbox is a locked and closed openable container in the dorm room.
+
+The matching key of the lockbox is a square key. 
+
+Before someone opening a locked thing (called the lockbox):
+	if the person asked is carrying the matching key of the lockbox, try the person asked unlocking the lockbox with the matching key of the lockbox;
+	if the lockbox is locked, stop the action.
 
 [---------------------Hallway------------------------]
 The Hallway is south of the dorm room. "A narrow hallway with a mirror, a coatrack, and several posters."
 
+[---------------------Bathroom------------------------]
 The Bathroom is south of the Hallway. "A tiny bathroom with a toilet, shower, and sink."
 
-The Closet is west of the Hallway.
+[---------------------Closet------------------------]
+The Closet is west of the Hallway. "A small closet with all three of our extra stuff in it."
 
+[Understand "open box" as opening the large box.]
+The large box is a closed openable container in the closet. The description of the large box is "A large box containing everything you brought to college but haven't used yet." 
+The old bracelet is in the large box.  "A campy little bracelet that you bought at a thrift store in your hometown several years ago."
+The club flyer is in the large box. "A flyer for the Thru club, which some of your friends are a part of. It's really not your cup of tea."
+The ratty purse is a closed container in the large box. "An old pleather bag that carried you for the last 3 years. You retired it several months ago but kept it because it still holds sentimental value." 
+The expired makeup is in the large box. "You never were one to wear much makeup, but it's too expensive to throw away without feeling bad about it."
+The square key is in the ratty purse. "You completely forgot where you put this key! You can finally get into the lockbox under your bed."
 
 [---------------------Common Area------------------------]
 The Common Area is east of the hallway. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small [trash can]. There's also a coffee maker on the counter. [if the pile of dishes are dirty]All of the coffee cups are dirty though.[otherwise]The coffee cups are clean and ready to use.[end if] There's also a [pile of dishes][if the pile of dishes are dirty] soaking in the sink. [otherwise] clean and drying on the counter.[end if]";
@@ -240,32 +246,44 @@ Carry out brewing coffee:
 		say "All the mugs are dirty.";
 
 Instead of drinking the cup of coffee:
-		now the player is carrying the cup of coffee;
-		say "You drink the hot coffee and it warms you from the inside.";
-		charge by 2; 
-		remove the cup of coffee from play;
+	now the player is carrying the cup of coffee;
+	say "You drink the hot coffee and it warms you from the inside.";
+	charge by 2; 
+	remove the cup of coffee from play;
 
+[---------------------Far Hall------------------------]
 The Far Hall is east of the common area.
 
+[---------------------Katie's Room------------------------]
 The Katie's Room is north of the far hall.
 
+[---------------------Jessie's Room------------------------]
 Jessie's Room is east of the far hall.
 
+[---------------------Long Hall------------------------]
 The Long Hall is south of the Common Area.
 
-The Study Room is east of the long hall.
+[---------------------Study Room------------------------]
+The Study Room is east of the long hall. 
+[boost progress?] 
 
+[---------------------Annie's Room------------------------]
 Annie's Room is south of the long hall. 
 
+[---------------------Courtyard------------------------]
 The Courtyard is west of the long hall.
 
+[---------------------Train Station------------------------]
 The Train Station is south of the courtyard.
 [to party house or grocery store or both?]
 
+[---------------------Sidewalk------------------------]
 The Sidewalk is west of the courtyard.
 
+[---------------------Professor's Office------------------------]
 The Professor's Office is west of the sidewalk. 
 
+[---------------------Gym------------------------]
 The Gym is north of the courtyard.
 
 
