@@ -6,7 +6,9 @@ Use serial comma.
 
 The player has a number called energy. The energy of the player is 7. 
 The maximum energy is always 10. The minimum energy is always 0.
-The player has a number called progress. The progress of the player is 80. 
+
+The player has a number called progress. The progress of the player is 0. 
+The maximum progress is always 100.
 
 The player has a number called drugs taken. The drugs taken of the player is 0. 
 The maximum drugs taken is always 5. 
@@ -27,17 +29,24 @@ Rule for constructing the status line:
 	 fill status bar with Table of Fancy Status;
 	 rule succeeds.
 
-	
 When play begins (this is the run property checks at the start of play rule):
 	repeat with item running through things:
 		if description of the item is "":
-			say "[item] has no description."
+			say "[item] has no description.";
+	Say "You are Morgana, a college student struggling to meet your project deadline, keep up with your responsibilities and try to have some kind of social life. Your project deadline is in 3 days (due first thing Saturday morning). Good luck!";
 
 To reverse time by (hours - a number):
 	[let target be the time of day minus hours hours;]
 	let target be time of day minus hours hours;
 	now time of day is target;
 	say "The minutes tick backwards.";
+	rule succeeds;
+	
+To forward time by (hours - a number):
+	[let target be the time of day minus hours hours;]
+	let target be time of day plus hours hours;
+	now time of day is target;
+	say "The minutes tick forwards.";
 	rule succeeds;
 
 To charge by (amount - a number):
@@ -69,7 +78,10 @@ To drain by (amount - a number) and (timer - a number):
 	if the difference is positive:
 		decrease the energy of the player by amount;
 		say "You feel a little worn.";
-		reverse time by timer;
+		if timer is positive:
+			reverse time by timer;
+		otherwise:
+			forward time by (timer * -1);
 		rule succeeds;
 	otherwise if the difference is zero:
 		decrease the energy of the player by amount;
@@ -98,7 +110,7 @@ Check casting xyzzy:
 	say "Nice try bozo.";
 
 Every turn:
-	If the time of day is after 9:04 AM:
+	If the time of day is after 11:59 PM:
 		say "it's time for bed!";
 		Now the energy of the player is the maximum energy;
 		Now the drugs taken of the player is 0;
@@ -123,12 +135,57 @@ Every turn:
 
 The Dorm Room is a room. The description of the dorm room is "You are sitting in your dorm room on your [bed] in the small apartment you share with 2 other roommates. This room is small and cozy. You see a [desk] in the corner of the room. On the desk is a [laptop]."
 
-The laptop is an openable container in the Dorm Room. 
+The laptop is a device in the Dorm Room. The description of the laptop is "Your small silver laptop." The laptop is switched off.
+
+Understand "work on laptop" or "use laptop" or "type on laptop" or "work on project" as working.
+
+Working is an action applying to nothing. 
+
+Check working when the laptop is switched off:
+	say "You should probably turn the laptop on first." instead.
+
+Check working: 
+	if progress is maximum progress:
+		say "You're completely finished! Time to relax." instead;
+	otherwise if the energy of the player is less than 1:
+		say "oops too tired :(" instead;
+
+Carry out working:
+	let effort be a random number from 10 to 25;
+	increase progress of the player by effort;
+	if progress of the player > maximum progress:
+		now progress of the player is maximum progress;
+	let worktime be a random number from 1 to 3;
+	drain by worktime and (worktime * -1);
+
+Report working:
+	if progress of the player is 0:
+		say "You get started on your project. Better late than never.";
+	else if progress of the player is less than 30:
+		say "You spend some time working on the project. You're making progress.";
+	else if progress of the player is less than 60:
+		say "You're almost halfway there. You definitely have momentum now.";
+	else if progress of the player is less than maximum progress:
+		say "You're in the final stretch, just a little more to go!";
+	else:
+		say "You are finally done. You can relax, celebrate, or party til Saturday.";
+
+[Rule to turn on the laptop first]
+Instead of switching on the laptop:
+	if the laptop is switched off:
+		now the laptop is switched on;
+		say "You turn on the laptop and find your project right where you left it. It's [progress of the player] percent done.";
+	else:
+		say "It's already on.";
+
+[The laptop is an openable container in the Dorm Room. 
 The laptop is closed. 
 [The laptop can be switched on.]
-After opening the laptop: say "On the screen is a half-finished programming [assignment]. You've spent about 20 minutes working on it so far."
+After opening the laptop: say "On the screen is a half-finished programming [project]. You've spent about 20 minutes working on it so far."
 The description of the laptop is "An older model that you got from your older sister. It does what you need it to do."
-The assignment is in the laptop. The description of the assignment is "The c++ programming assignment is about half done."
+The assignment is in the laptop. The description of the assignment is "The c++ programming assignment is about [progress of the player] done."
+
+The player should work on the project.]
 
 The desk is in the dorm room. The description of the desk is "The wooden desk came with the room. On it is a [laptop]."
 The bed is in the dorm room. The description of the bed is "The twin bed is longer than the ones that you grew up sleeping on, but you were happy to buy new sheets for this next chapter in your life."
@@ -147,12 +204,6 @@ Instead of examining the trash can:
 The pile of dishes are things in the common area. The pile of dishes can be washed. The pile of dishes are dirty. 
 
 The description of the pile of dishes is "A few coffee cups, cereal bowls, and spoons. [if the pile of dishes are dirty]They are covered in greasy stains and leftover food and have been here for a few days.[otherwise] They are clean and drying on the countertop.[end if]".
-
-[After examining the pile of dishes:
-	if the pile of dishes are dirty:
-		say "They are covered in greasy stains and leftover food and have been here for a few days.";
-	otherwise:
-		say "They are clean and drying on the countertop.";]
 
 Instead of washing the dishes:
 	if the dishes are dirty:
