@@ -163,7 +163,7 @@ Carry out working:
 	if progress of the player > maximum progress:
 		now progress of the player is maximum progress;
 	let worktime be a random number from 1 to 3;
-	drain by worktime and (worktime * -1);
+	drain by (worktime * 10) and (worktime * -1);
 
 Report working:
 	if progress of the player is 0:
@@ -186,8 +186,26 @@ Instead of switching on the laptop:
 
 
 The desk is in the dorm room. The description of the desk is "The wooden desk came with the room. On it is a [laptop]."
-The bed is in the dorm room. The description of the bed is "The twin bed is longer than the ones that you grew up sleeping on, but you were happy to buy new sheets for this next chapter in your life. Underneath it is a [lockbox]."
-The lockbox is a locked and closed openable container in the dorm room.
+The bed is in the dorm room.  The description of the bed is "The twin bed is longer than the ones that you grew up sleeping on, but you were happy to buy new sheets for this next chapter in your life."
+After examining the bed:
+	Say "Underneath it is a lockbox.";
+	move the lockbox to the Dorm Room.
+
+
+There is a lockbox. The lockbox is a locked and closed openable container. [This places it "off-stage" until we move it somewhere else.] The description of the lockbox is "A small locked box that you forgot about, and forgot where you put the key." 
+The badderall is in the lockbox. The badderall is edible. The description of the badderall is "A sketchy drug that you got at a fuel station last week. The packaging says that it gives you plenty of energy with no side effects." 
+After eating the badderall:
+	increase the drugs taken of the player by 1;	
+	Now the energy of the player is 100;
+	remove the badderall from play;
+	Say "You feel completely restored!". 
+
+
+Instead of looking under the bed when the lockbox is off-stage:
+	say "There is a forgotten lockbox under your bed.";
+	move the lockbox to the Dorm Room.
+
+[The lockbox is a locked and closed openable container in the dorm room.]
 
 The matching key of the lockbox is a square key. 
 
@@ -206,11 +224,17 @@ The Closet is west of the Hallway. "A small closet with all three of our extra s
 
 [Understand "open box" as opening the large box.]
 The large box is a closed openable container in the closet. The description of the large box is "A large box containing everything you brought to college but haven't used yet." 
-The old bracelet is in the large box.  "A campy little bracelet that you bought at a thrift store in your hometown several years ago."
-The club flyer is in the large box. "A flyer for the Thru club, which some of your friends are a part of. It's really not your cup of tea."
-The ratty purse is a closed container in the large box. "An old pleather bag that carried you for the last 3 years. You retired it several months ago but kept it because it still holds sentimental value." 
-The expired makeup is in the large box. "You never were one to wear much makeup, but it's too expensive to throw away without feeling bad about it."
-The square key is in the ratty purse. "You completely forgot where you put this key! You can finally get into the lockbox under your bed."
+The old bracelet is in the large box.  The description of the old bracelet is "A campy little bracelet that you bought at a thrift store in your hometown several years ago."
+The club flyer is in the large box. The description of the club flyer is "A flyer for the Thru club, which some of your friends are a part of. It's really not your cup of tea."
+The ratty purse is a container in the large box. The description of the ratty purse is "An old pleather bag that carried you for the last 3 years. You retired it several months ago but kept it because it still holds sentimental value." 
+The expired makeup is in the large box. The description of the expired makeup is "You never were one to wear much makeup, but it's too expensive to throw away without feeling bad about it."
+The square key is in the ratty purse. The description of the square key is "You completely forgot where you put this key!".
+After examining the square key:
+	If the lockbox is in the dorm room:
+		Say "Now you can open the lockbox under your bed.";
+	Otherwise:
+		Say "If only you remembered what it went to.". 
+
 
 [---------------------Common Area------------------------]
 The Common Area is east of the hallway. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small [trash can]. There's also a coffee maker on the counter. [if the pile of dishes are dirty]All of the coffee cups are dirty though.[otherwise]The coffee cups are clean and ready to use.[end if] There's also a [pile of dishes][if the pile of dishes are dirty] soaking in the sink. [otherwise] clean and drying on the counter.[end if]";
@@ -252,16 +276,17 @@ Instead of drinking the cup of coffee:
 	remove the cup of coffee from play;
 
 [---------------------Far Hall------------------------]
-The Far Hall is east of the common area.
+The Far Hall is east of the common area. The description of the Far Hall is "A hall similar to the one outside of your door. Your two roommates have set out their jackets and shoes set out."
 
 [---------------------Katie's Room------------------------]
-The Katie's Room is north of the far hall.
+The Katie's Room is north of the far hall. The description of Katie's Room is "Her room is decorated with nerdy stuff. She's an architectural student and loves math. The same type of desk as yours. She has a laptop charger and a mousepad with equations on it. On one of the walls is a tourism poster of earth. You both hope to go there one day."
+[Add her homework here in the afternoons]
 
 [---------------------Jessie's Room------------------------]
-Jessie's Room is east of the far hall.
+Jessie's Room is east of the far hall. The description of Jessie's Room is "Her room is set up sophisticated. She has a full set of school supplies all in creme and pastel coordinating hues. Her bed is always made and her books are always on the shelf. She has a picture on her desk of her and her younger brother. She misses him often."
 
 [---------------------Long Hall------------------------]
-The Long Hall is south of the Common Area.
+The Long Hall is south of the Common Area. The description of the Long Hall is "A longer corridor that leads to a study hall to the east, Annie's Room to the south, and the courtyard outside to the west. On the door to your dorm there are 3 different critters with each of your names on them."
 
 [---------------------Study Room------------------------]
 The Study Room is east of the long hall. 
