@@ -3,7 +3,7 @@
   <generator>Windows Inform 10.1.2</generator>
   <item nodeId="node-1">
     <command xml:space="preserve">morganav1</command>
-    <result xml:space="preserve">You are Morgana, a college student struggling to meet your project deadline, keep up with your responsibilities and try to have some kind of social life. Your project deadline is in 3 days (due Friday at 11:59pm). Good luck!&#x000A;&#x000A;Morgana&#x000A;An Interactive Fiction by Brianna&#x000A;Release 1 / Serial number 250917 / Inform 7 v10.1.2 / D&#x000A;&#x000A;Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates. This room is small and cozy. You see a desk in the corner of the room. On the desk is a laptop.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">You are Morgana, a college student struggling to meet your project deadline, keep up with your responsibilities and try to have some kind of social life. Your project is due Friday at 11:59pm. Good luck!&#x000A;&#x000A;Morgana&#x000A;An Interactive Fiction by Brianna&#x000A;Release 1 / Serial number 250917 / Inform 7 v10.1.2 / D&#x000A;&#x000A;Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates. This room is small and cozy. You see a desk in the corner of the room. On the desk is a laptop.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -13,6 +13,7 @@
       <child nodeId="node-23"/>
       <child nodeId="node-25"/>
       <child nodeId="node-26"/>
+      <child nodeId="node-596"/>
       <child nodeId="node-27"/>
       <child nodeId="node-29"/>
       <child nodeId="node-30"/>
@@ -23,8 +24,11 @@
       <child nodeId="node-56"/>
       <child nodeId="node-60"/>
       <child nodeId="node-310"/>
+      <child nodeId="node-558"/>
+      <child nodeId="node-557"/>
       <child nodeId="node-312"/>
       <child nodeId="node-314"/>
+      <child nodeId="node-560"/>
       <child nodeId="node-333"/>
       <child nodeId="node-342"/>
       <child nodeId="node-384"/>
@@ -169,6 +173,7 @@
     <changed>NO</changed>
     <children>
       <child nodeId="node-18"/>
+      <child nodeId="node-567"/>
     </children>
   </item>
   <item nodeId="node-18">
@@ -213,6 +218,39 @@
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
+  <item nodeId="node-567">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">Closet&#x000A;A small closet with all three of our extra stuff in it.&#x000A;&#x000A;You can see a large box (closed) here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-568"/>
+    </children>
+  </item>
+  <item nodeId="node-568">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">Hallway&#x000A;A narrow hallway with a mirror, a coatrack, and several posters.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-569"/>
+    </children>
+  </item>
+  <item nodeId="node-569">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Bathroom&#x000A;A tiny bathroom with a toilet, shower, and sink.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-570"/>
+    </children>
+  </item>
+  <item nodeId="node-570">
+    <command xml:space="preserve">take a shower</command>
+    <result xml:space="preserve">You turn on the shower and wait for the water to heat up. When it's hot, you strip and step inside. The steam fogs up the bathroom but it feels so nice on your skin. You take your time shampooing and scrubbing your body. You feel much better after showering.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
   <item nodeId="node-23">
     <command xml:space="preserve">a b c d e f g</command>
     <result xml:space="preserve">Who are you, a member of the British royal family? No one has that many names. Let's try this again.&#x000A;&#x000A;What is your name? &gt;</result>
@@ -237,6 +275,66 @@
   <item nodeId="node-26">
     <command xml:space="preserve">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</command>
     <result xml:space="preserve">Hi, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb!&#x000A;&#x000A;Morgana&#x000A;An Interactive Fiction by Brianna&#x000A;Release 1 / Serial number 250904 / Inform 7 v10.1.2 / D&#x000A;&#x000A;Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates. This room is small and cozy. You see a desk in the corner of the room. On the desk is a laptop.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-596">
+    <command xml:space="preserve">brush teeth</command>
+    <result xml:space="preserve">There's no toothbrush here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-597"/>
+    </children>
+  </item>
+  <item nodeId="node-597">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Hallway&#x000A;A narrow hallway with a mirror, a coatrack, and several posters.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-598"/>
+    </children>
+  </item>
+  <item nodeId="node-598">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Bathroom&#x000A;A tiny bathroom with a toilet, shower, and sink.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-599"/>
+    </children>
+  </item>
+  <item nodeId="node-599">
+    <command xml:space="preserve">brush teeth</command>
+    <result xml:space="preserve">You pick up your toothbrush, add some toothpaste, and brush your teeth. Afterwards, you feel fresh.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-600"/>
+    </children>
+  </item>
+  <item nodeId="node-600">
+    <command xml:space="preserve">brush teeth</command>
+    <result xml:space="preserve">You pick up your toothbrush, add some toothpaste, and brush your teeth. Afterwards, you feel fresh.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-601"/>
+    </children>
+  </item>
+  <item nodeId="node-601">
+    <command xml:space="preserve">brush teeth</command>
+    <result xml:space="preserve">You pick up your toothbrush, add some toothpaste, and brush your teeth. Afterwards, you feel fresh.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-602"/>
+    </children>
+  </item>
+  <item nodeId="node-602">
+    <command xml:space="preserve">brush teeth</command>
+    <result xml:space="preserve">You pick up your toothbrush, add some toothpaste, and brush your teeth. Afterwards, you feel fresh.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
@@ -1315,9 +1413,98 @@
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
+      <child nodeId="node-586"/>
       <child nodeId="node-135"/>
+      <child nodeId="node-571"/>
       <child nodeId="node-142"/>
     </children>
+  </item>
+  <item nodeId="node-586">
+    <command xml:space="preserve">brush teeth</command>
+    <result xml:space="preserve">You pick up your toothbrush, add some toothpaste, and brush your teeth. Afterwards, you feel fresh.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-587"/>
+    </children>
+  </item>
+  <item nodeId="node-587">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Hallway&#x000A;A narrow hallway with a mirror, a coatrack, and several posters.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-588"/>
+    </children>
+  </item>
+  <item nodeId="node-588">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">Common Area&#x000A;The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small trash can. There's also a coffee maker on the counter. All of the coffee cups are dirty though. There's also a pile of dishes soaking in the sink.  There is a game console hooked up to the TV.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-589"/>
+    </children>
+  </item>
+  <item nodeId="node-589">
+    <command xml:space="preserve">wash dishes</command>
+    <result xml:space="preserve">You feel a little worn.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-590"/>
+    </children>
+  </item>
+  <item nodeId="node-590">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Long Hall&#x000A;A longer corridor that leads to a study hall to the east, Annie's Room to the south, and the courtyard outside to the west. On the door to your dorm there are 3 different critters with each of your names on them.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-591"/>
+    </children>
+  </item>
+  <item nodeId="node-591">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Common Area&#x000A;The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small trash can. There's also a coffee maker on the counter. The coffee cups are clean and ready to use. There's also a pile of dishes clean and drying on the counter. There is a game console hooked up to the TV.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-592"/>
+    </children>
+  </item>
+  <item nodeId="node-592">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">Hallway&#x000A;A narrow hallway with a mirror, a coatrack, and several posters.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-593"/>
+    </children>
+  </item>
+  <item nodeId="node-593">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Bathroom&#x000A;A tiny bathroom with a toilet, shower, and sink.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-594"/>
+    </children>
+  </item>
+  <item nodeId="node-594">
+    <command xml:space="preserve">brush teeth</command>
+    <result xml:space="preserve">You pick up your toothbrush, add some toothpaste, and brush your teeth. Afterwards, you feel fresh.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-595"/>
+    </children>
+  </item>
+  <item nodeId="node-595">
+    <command xml:space="preserve">brush teeth</command>
+    <result xml:space="preserve">You pick up your toothbrush, add some toothpaste, and brush your teeth. Afterwards, you feel fresh.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
   </item>
   <item nodeId="node-135">
     <command xml:space="preserve">n</command>
@@ -1376,6 +1563,138 @@
   <item nodeId="node-141">
     <command xml:space="preserve">e</command>
     <result xml:space="preserve">The minutes tick forwards.&#x000A;&#x000A;Train Station&#x000A;The train that leads off campus is here. You can take it eastward, to go get groceries, or westward to go to the sorority house.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-571">
+    <command xml:space="preserve">take a shower</command>
+    <result xml:space="preserve">You turn on the shower and wait for the water to heat up. When it's hot, you strip and step inside. The steam fogs up the bathroom but it feels so nice on your skin. You take your time shampooing and scrubbing your body. You feel much better after showering.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-572"/>
+    </children>
+  </item>
+  <item nodeId="node-572">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Hallway&#x000A;A narrow hallway with a mirror, a coatrack, and several posters.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-573"/>
+    </children>
+  </item>
+  <item nodeId="node-573">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates. This room is small and cozy. You see a desk in the corner of the room. On the desk is a laptop.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-574"/>
+    </children>
+  </item>
+  <item nodeId="node-574">
+    <command xml:space="preserve">turn on laptop</command>
+    <result xml:space="preserve">You turn on the laptop and find your project right where you left it. It's 0 percent done.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-575"/>
+    </children>
+  </item>
+  <item nodeId="node-575">
+    <command xml:space="preserve">work on project</command>
+    <result xml:space="preserve">You feel a little worn.&#x000A;&#x000A;You spend some time working on the project. You're making progress.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-576"/>
+    </children>
+  </item>
+  <item nodeId="node-576">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Hallway&#x000A;A narrow hallway with a mirror, a coatrack, and several posters.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-577"/>
+    </children>
+  </item>
+  <item nodeId="node-577">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Bathroom&#x000A;A tiny bathroom with a toilet, shower, and sink.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-578"/>
+    </children>
+  </item>
+  <item nodeId="node-578">
+    <command xml:space="preserve">take a shower</command>
+    <result xml:space="preserve">You turn on the shower and wait for the water to heat up. When it's hot, you strip and step inside. The steam fogs up the bathroom but it feels so nice on your skin. You take your time shampooing and scrubbing your body. You feel much better after showering.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-579"/>
+    </children>
+  </item>
+  <item nodeId="node-579">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Hallway&#x000A;A narrow hallway with a mirror, a coatrack, and several posters.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-580"/>
+    </children>
+  </item>
+  <item nodeId="node-580">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Dorm Room&#x000A;You are sitting in your dorm room on your bed in the small apartment you share with 2 other roommates. This room is small and cozy. You see a desk in the corner of the room. On the desk is a laptop.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-581"/>
+    </children>
+  </item>
+  <item nodeId="node-581">
+    <command xml:space="preserve">work on project</command>
+    <result xml:space="preserve">You feel a little worn.&#x000A;&#x000A;You're almost halfway there. You definitely have momentum now.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-582"/>
+    </children>
+  </item>
+  <item nodeId="node-582">
+    <command xml:space="preserve">work on project</command>
+    <result xml:space="preserve">You feel a little worn.&#x000A;&#x000A;You're almost halfway there. You definitely have momentum now.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-583"/>
+    </children>
+  </item>
+  <item nodeId="node-583">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Hallway&#x000A;A narrow hallway with a mirror, a coatrack, and several posters.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-584"/>
+    </children>
+  </item>
+  <item nodeId="node-584">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Bathroom&#x000A;A tiny bathroom with a toilet, shower, and sink.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-585"/>
+    </children>
+  </item>
+  <item nodeId="node-585">
+    <command xml:space="preserve">take a shower</command>
+    <result xml:space="preserve">You turn on the shower and wait for the water to heat up. When it's hot, you strip and step inside. The steam fogs up the bathroom but it feels so nice on your skin. You take your time shampooing and scrubbing your body. You feel much better after showering.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
@@ -2839,6 +3158,27 @@
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
+  <item nodeId="node-558">
+    <command xml:space="preserve">shower</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-559"/>
+    </children>
+  </item>
+  <item nodeId="node-559">
+    <command xml:space="preserve">take a shower</command>
+    <result xml:space="preserve">You turn on the shower and wait for the water to heat up. When it's hot, you strip and step inside. The steam fogs up the bathroom but it feels so nice on your skin. You take your time shampooing and scrubbing your body. You feel much better after showering.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-557">
+    <command xml:space="preserve">showering</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
   <item nodeId="node-312">
     <command xml:space="preserve">skip</command>
     <result xml:space="preserve">You jump on the spot.&#x000A;&#x000A;&gt;</result>
@@ -3017,6 +3357,66 @@
   <item nodeId="node-332">
     <command xml:space="preserve">z</command>
     <result xml:space="preserve">Time passes.&#x000A;&#x000A;You neglected your own needs too much and need to be hospitalized. You missed your project deadline and also have a hefty medical bill to deal with.&#x000A;&#x000A;&#x000A;&#x000A;    *** The End ***&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;Would you like to RESTART, RESTORE a saved game, QUIT, or UNDO the last command?&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-560">
+    <command xml:space="preserve">take a shower</command>
+    <result xml:space="preserve">There's no shower here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-561"/>
+    </children>
+  </item>
+  <item nodeId="node-561">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">You can't go that way.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-562"/>
+    </children>
+  </item>
+  <item nodeId="node-562">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Hallway&#x000A;A narrow hallway with a mirror, a coatrack, and several posters.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-563"/>
+    </children>
+  </item>
+  <item nodeId="node-563">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">Closet&#x000A;A small closet with all three of our extra stuff in it.&#x000A;&#x000A;You can see a large box (closed) here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-564"/>
+    </children>
+  </item>
+  <item nodeId="node-564">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">Hallway&#x000A;A narrow hallway with a mirror, a coatrack, and several posters.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-565"/>
+    </children>
+  </item>
+  <item nodeId="node-565">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Bathroom&#x000A;A tiny bathroom with a toilet, shower, and sink.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-566"/>
+    </children>
+  </item>
+  <item nodeId="node-566">
+    <command xml:space="preserve">take a shower</command>
+    <result xml:space="preserve">You turn on the shower and wait for the water to heat up. When it's hot, you strip and step inside. The steam fogs up the bathroom but it feels so nice on your skin. You take your time shampooing and scrubbing your body. You feel much better after showering.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>

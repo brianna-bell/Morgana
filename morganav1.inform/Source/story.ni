@@ -46,7 +46,7 @@ When play begins (this is the run property checks at the start of play rule):
 	repeat with item running through things:
 		if description of the item is "":
 			say "[item] has no description.";
-	Say "You are Morgana, a college student struggling to meet your project deadline, keep up with your responsibilities and try to have some kind of social life. Your project deadline is in 3 days (due Friday at 11:59pm). Good luck!";
+	Say "You are Morgana, a college student struggling to meet your project deadline, keep up with your responsibilities and try to have some kind of social life. Your project is due Friday at 11:59pm. Good luck!";
 
 To reverse time by (hours - a number):
 	[let target be the time of day minus hours hours;]
@@ -262,6 +262,33 @@ The Hallway is south of the dorm room. "A narrow hallway with a mirror, a coatra
 
 [---------------------Bathroom------------------------]
 The Bathroom is south of the Hallway. "A tiny bathroom with a toilet, shower, and sink."
+Understand "take a shower" and "shower" as showering.
+Showering is an action applying to nothing. 
+Check showering:
+	if the player is in the bathroom: 
+		Reverse time by 1;
+		Say "You turn on the shower and wait for the water to heat up. When it's hot, you strip and step inside. The steam fogs up the bathroom but it feels so nice on your skin. You take your time shampooing and scrubbing your body. You feel much better after showering.";
+		Increase the quality of life of the player by 30;
+		If the energy of the player is less than 85:
+			Increase the energy of the player by 15;
+		Otherwise:
+			Now the energy of the player is 100;
+	otherwise:
+		Say "There's no shower here.";
+
+Understand "brush teeth" as brushing.
+Brushing is an action applying to nothing.
+Check brushing:
+	If the player is in the bathroom:
+		Reverse time by 1;
+		Say "You pick up your toothbrush, add some toothpaste, and brush your teeth. Afterwards, you feel fresh."; 
+		Increase the quality of life of the player by 10;
+		If the energy of the player is less than 90:
+			Increase the energy of the player by 10;
+		Otherwise:
+			Now the energy of the player is 100;
+	Otherwise:
+		Say "There's no toothbrush here.";
 
 [---------------------Closet------------------------]
 The Closet is west of the Hallway. "A small closet with all three of our extra stuff in it."
