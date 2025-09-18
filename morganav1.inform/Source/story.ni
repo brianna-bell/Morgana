@@ -16,6 +16,8 @@ The maximum drugs taken is always 5.
 The player has a number called quality of life. The quality of life of the player is 100.
 The minimum quality of life is always 0.
 
+The player has a number called markiplier. The markiplier of the player is 1.
+
 [The effort of washing is always 30. [percent]]
 The time to wash is always 1. [hours]
 
@@ -32,7 +34,7 @@ Include Basic Screen Effects by Emily Short.
 Table of Fancy Status
 left	central	right
 " [location]"	"[time of day]"	"[current weekday]"
-" Energy: [energy of the player]%"	 "QoL [quality of life of the player]"	"Progress: [progress of the player]%"
+" Energy: [energy of the player]%"	 "mp [markiplier of the player] QoL [quality of life of the player]"	"Progress: [progress of the player]%"
 
 Rule for constructing the status line:
 	 fill status bar with Table of Fancy Status;
@@ -136,6 +138,8 @@ Every turn:
 	If the quality of life of the player is negative:
 		Say "You neglected your own needs too much and need to be hospitalized. You missed your project deadline and also have a hefty medical bill to deal with.";
 		end the story;
+	Otherwise if the quality of life of the player is less than 20:
+		Say "You've been working too hard. You might want to take care of yourself.";
 	If the time of day is after 11:59 PM:
 		say "It's time for bed! You wake up the next day fully rested.";
 		Now the energy of the player is the maximum energy;
@@ -190,6 +194,7 @@ Check working:
 Carry out working:
 	move the laptop to the player;
 	let effort be a random number from 10 to 25;
+	let effort be effort * markiplier of the player;
 	let worktime be a random number from 1 to 3;
 	let difference be the energy of the player - (worktime * 10);
 	if the difference greater than -1:
@@ -208,7 +213,7 @@ Report working:
 	else if progress of the player is less than maximum progress:
 		say "You're in the final stretch, just a little more to go!";
 	else:
-		Say "You are finally done. You can relax, celebrate, or party til Saturday. Enjoy your time."
+		Say "You are finally done. You can relax, take care of yourself, or party til Saturday. Enjoy your time."
 
 Instead of switching on the laptop:
 	if the laptop is switched off:
@@ -334,21 +339,36 @@ Annie's Room is south of the long hall. The description of Annie's Room is "A si
 The Courtyard is west of the long hall. The description of the Courtyard is "The courtyard is a big area inside of a dome to keep the atmosphere in. The dome is clear so you can see outside to the rest of campus. You see a path to the north that leads to the gym, a path to the train station to the south, and the rest of campus to the west."
 
 [---------------------Train Station------------------------]
-The Train Station is south of the courtyard. The description of the Train Station is "The train that leads off campus is here. You can take it eastward, to go get groceries, or westward to go to the sorority house."
+The Train Station is south of the courtyard. The description of the Train Station is "The train that leads off campus is here. You can take it eastward, to go get groceries, or westward to go to the sorority house.".
 [to party house or grocery store or both?]
 
 [---------------------Grocery Store------------------------]
-The Grocery Store is east of the Train Station. The description of the Grocery Store is "The local grocer carries cheap and easy meals. Although it's a lot healthier to buy ingredients and cook your meals from scratch."
+The Grocery Store is east of the Train Station. The description of the Grocery Store is "The local grocer carries cheap and easy meals. You fill your basket, check out, and are ready to go back home. Take the train west to go back to campus.".
+After going to the Grocery Store:
+	Forward time by 1;
+	Increase quality of life of the player by 40;
+	Continue the action;
+	
+
+[Although it's a lot healthier to buy ingredients and cook your meals from scratch.]
 
 [---------------------Sorority House------------------------]
-The Sorority House is west of the Train Station. The description of the Sorority House is "A big fancy building with greek letters on the outside. Once you go inside, there are about 35 sorority girls all drinking and having fun. You also see Annie. Do you want to join them?".
-
+The Sorority House is west of the Train Station. The description of the Sorority House is "A big fancy building with greek letters on the outside. Once you go inside, there are about 35 sorority girls all drinking and having fun. You also see your friend Annie. You join the party and have a good time. After a few hours, the party winds down and it's time to go back. You can take the train eastward to get back to campus.".
+After going to the Sorority House:
+	Forward time by 3;
+	Increase quality of life of the player by 70;
+	Increase the drugs taken of the player by 1;
+	Continue the action;
 
 [---------------------Sidewalk------------------------]
-The Sidewalk is west of the courtyard.
+The Sidewalk is west of the courtyard. The description of the Sidewalk is "A long stretch from the courtyard to the building where your professor's office is. The walk is nice and peaceful."
 
 [---------------------Professor's Office------------------------]
-The Professor's Office is west of the sidewalk. 
+The Professor's Office is west of the sidewalk. The description of the Professor's Office is "You walk into your professor's office. She is there, grading homework assignments. She welcomes you in. You ask her some questions about the final project, and feel that you understand what to do better."
+After going to the Professor's Office:
+	Now the markiplier of the player is 2;
+	Continue the action.
+[todo: add a multiplier to progress after getting help ]
 
 [---------------------Gym------------------------]
 The Gym is north of the courtyard.
