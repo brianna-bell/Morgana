@@ -18,6 +18,8 @@ The minimum quality of life is always 0.
 
 The player has a number called markiplier. The markiplier of the player is 1.
 
+The player has a number called minutes passed. The minutes passed of the player is 0.
+
 [The effort of washing is always 30. [percent]]
 The time to wash is always 1. [hours]
 
@@ -50,14 +52,14 @@ To reverse time by (hours - a number):
 	[let target be the time of day minus hours hours;]
 	let target be time of day minus hours hours;
 	now time of day is target;
-	say "The minutes tick backwards.";
+	[say "The minutes tick backwards.";]
 	rule succeeds;
 	
 To forward time by (hours - a number):
 	[let target be the time of day minus hours hours;]
 	let target be time of day plus hours hours;
 	now time of day is target;
-	say "The minutes tick forwards.";
+	[say "The minutes tick forwards.";]
 	rule succeeds;
 
 To charge by (amount - a number):
@@ -131,10 +133,14 @@ Check casting procrastinate:
 	forward time by the duration;
 	Say "A while passes...".
 
+The current hour is a number that varies.
 
 Every turn:
-	Let the qoldis be a random number from 1 to 10;
-	Decrease the quality of life of the player by qoldis;
+	let H be the hours part of the time of day;
+	if H is not the current hour: [only decrease the quality of life once an hour]
+		now the current hour is H;
+		Let the qoldis be a random number from 5 to 15;
+		Decrease the quality of life of the player by qoldis;
 	If the quality of life of the player is negative:
 		Say "You neglected your own needs too much and need to be hospitalized. You missed your project deadline and also have a hefty medical bill to deal with.";
 		end the story;
@@ -275,7 +281,23 @@ After examining the square key:
 
 
 [---------------------Common Area------------------------]
-The Common Area is east of the hallway. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small [trash can]. There's also a coffee maker on the counter. [if the pile of dishes are dirty]All of the coffee cups are dirty though.[otherwise]The coffee cups are clean and ready to use.[end if] There's also a [pile of dishes][if the pile of dishes are dirty] soaking in the sink. [otherwise] clean and drying on the counter.[end if]";
+The Common Area is east of the hallway. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small [trash can]. There's also a coffee maker on the counter. [if the pile of dishes are dirty]All of the coffee cups are dirty though.[otherwise]The coffee cups are clean and ready to use.[end if] There's also a [pile of dishes][if the pile of dishes are dirty] soaking in the sink. [otherwise] clean and drying on the counter.[end if] There is a [game] console hooked up to the TV.";
+
+The game is a device in the common area. The description of the game is "This is your gamesphere that you brought from home. You love to sit and play it for hours. It's calling your name." 
+Understand "gamesphere" and "console" as game.
+Instead of switching on the game:
+	if the game is switched off:
+		now the game is switched on;
+		say "You boot up the gamesphere and see your favorite game pop up.";
+	else:
+		say "It's already on.";
+		
+Playing is an action applying to one visible thing. Understand "play [something]" as playing. 
+Carry out playing:
+	Forward time by 4;
+	say "You get lost playing the [the noun] and zone back into reality several hours later.";
+	Increase the quality of life of the player by 30;
+
 
 The trash can is a container in the common area. The description of the trash can is "The trash can is barely full."
 Instead of removing something from the trash can: say "Ew, it's all dirty now, no thanks."
@@ -368,9 +390,8 @@ The Professor's Office is west of the sidewalk. The description of the Professor
 After going to the Professor's Office:
 	Now the markiplier of the player is 2;
 	Continue the action.
-[todo: add a multiplier to progress after getting help ]
 
 [---------------------Gym------------------------]
-The Gym is north of the courtyard.
+The Gym is north of the courtyard. The description of the gym is "A modest sized gym that is free for students.".
 
 
