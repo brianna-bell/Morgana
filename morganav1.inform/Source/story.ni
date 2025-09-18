@@ -13,6 +13,9 @@ The maximum progress is always 100.
 The player has a number called drugs taken. The drugs taken of the player is 0. 
 The maximum drugs taken is always 5. 
 
+The player has a number called quality of life. The quality of life of the player is 100.
+The minimum quality of life is always 0.
+
 [The effort of washing is always 30. [percent]]
 The time to wash is always 1. [hours]
 
@@ -29,7 +32,7 @@ Include Basic Screen Effects by Emily Short.
 Table of Fancy Status
 left	central	right
 " [location]"	"[time of day]"	"[current weekday]"
-" Energy: [energy of the player]%"	 ""	"Progress: [progress of the player]%"
+" Energy: [energy of the player]%"	 "QoL [quality of life of the player]"	"Progress: [progress of the player]%"
 
 Rule for constructing the status line:
 	 fill status bar with Table of Fancy Status;
@@ -39,7 +42,7 @@ When play begins (this is the run property checks at the start of play rule):
 	repeat with item running through things:
 		if description of the item is "":
 			say "[item] has no description.";
-	Say "You are Morgana, a college student struggling to meet your project deadline, keep up with your responsibilities and try to have some kind of social life. Your project deadline is in 3 days (due first thing Saturday morning). Good luck!";
+	Say "You are Morgana, a college student struggling to meet your project deadline, keep up with your responsibilities and try to have some kind of social life. Your project deadline is in 3 days (due Friday at 11:59pm). Good luck!";
 
 To reverse time by (hours - a number):
 	[let target be the time of day minus hours hours;]
@@ -104,7 +107,8 @@ A thing can be dirty or clean.
 
 Washing is an action applying to one visible thing. Understand "wash [something]" as washing. 
 Carry out washing:
-	say "The [the noun] are now pretty and clean!".
+	say "The [the noun] are now pretty and clean!";
+	Increase the quality of life of the player by 30.
 
 The description of the player is "You are Morgana, a college student. You have 9 fingers and 4 toes."
 
@@ -115,14 +119,42 @@ Casting xyzzy is an action applying to nothing.
 Check casting xyzzy:
 	say "Nice try bozo.";
 
+
+Understand "procrastinate" or "waste time" or "stall" as casting procrastinate.
+
+Casting procrastinate is an action applying to nothing.
+
+Check casting procrastinate:
+	Let the duration be a random number from 3 to 5;
+	forward time by the duration;
+	Say "A while passes...".
+
+
 Every turn:
+	Let the qoldis be a random number from 1 to 10;
+	Decrease the quality of life of the player by qoldis;
+	If the quality of life of the player is negative:
+		Say "You neglected your own needs too much and need to be hospitalized. You missed your project deadline and also have a hefty medical bill to deal with.";
+		end the story;
 	If the time of day is after 11:59 PM:
-		say "it's time for bed!";
+		say "It's time for bed! You wake up the next day fully rested.";
 		Now the energy of the player is the maximum energy;
 		Now the drugs taken of the player is 0;
 		Now the time of day is 8:59 AM;
 		now the current weekday is the weekday after the current weekday;
-	If the current weekday is Saturday:
+	If the current weekday is Friday:
+		If the time of day is 11:59 PM:
+			Say "The time has come to turn in your final project. Your grade is....";
+			if the progress of the player is greater than 90:
+				say "A! You're on track to become the smartest mind of your generation! Feel proud of your accomplishment and enjoy your time off before the next ovester starts.";
+			otherwise if the progress of the player is greater than 80:
+				say "B. B's get degrees I guess.";
+			otherwise if the progress of the player is greater than 70:
+				say "C... Not too great. Better study harder next time.";
+			otherwise: 
+				say "F for the failure you are :(";
+			end the story;
+	Otherwise if the current weekday is Saturday: 
 		Say "The time has come to turn in your final project. Your grade is....";
 		if the progress of the player is greater than 90:
 			say "A! You're on track to become the smartest mind of your generation! Feel proud of your accomplishment and enjoy your time off before the next ovester starts.";
@@ -133,7 +165,6 @@ Every turn:
 		otherwise: 
 			say "F for the failure you are :(";
 		end the story;
-
 
 [---------------------Gameplay--------------------]
 
@@ -159,11 +190,13 @@ Check working:
 Carry out working:
 	move the laptop to the player;
 	let effort be a random number from 10 to 25;
-	increase progress of the player by effort;
-	if progress of the player > maximum progress:
-		now progress of the player is maximum progress;
 	let worktime be a random number from 1 to 3;
-	drain by (worktime * 10) and (worktime * -1);
+	let difference be the energy of the player - (worktime * 10);
+	if the difference greater than -1:
+		drain by (worktime * 10) and (worktime * -1);
+		increase progress of the player by effort;
+		if progress of the player > maximum progress:
+			now progress of the player is maximum progress;
 
 Report working:
 	if progress of the player is 0:
@@ -175,7 +208,7 @@ Report working:
 	else if progress of the player is less than maximum progress:
 		say "You're in the final stretch, just a little more to go!";
 	else:
-		Say "You are finally done. You can relax, celebrate, or party til Saturday. Enjoy your time.";
+		Say "You are finally done. You can relax, celebrate, or party til Saturday. Enjoy your time."
 
 Instead of switching on the laptop:
 	if the laptop is switched off:
@@ -255,6 +288,7 @@ Instead of washing the dishes:
 		let effort of washing be a random number from 25 to 35;
 		Drain by the effort of washing and 2;
 		Now the dishes are clean;
+		Increase the quality of life of the player by 30;
 	otherwise:
 		say "but they're already clean.";
 
@@ -273,6 +307,7 @@ Instead of drinking the cup of coffee:
 	now the player is carrying the cup of coffee;
 	say "You drink the hot coffee and it warms you from the inside.";
 	charge by 2; 
+	Increase the quality of life of the player by 10;
 	remove the cup of coffee from play;
 
 [---------------------Far Hall------------------------]
@@ -289,18 +324,25 @@ Jessie's Room is east of the far hall. The description of Jessie's Room is "Her 
 The Long Hall is south of the Common Area. The description of the Long Hall is "A longer corridor that leads to a study hall to the east, Annie's Room to the south, and the courtyard outside to the west. On the door to your dorm there are 3 different critters with each of your names on them."
 
 [---------------------Study Room------------------------]
-The Study Room is east of the long hall. 
+The Study Room is east of the long hall. The description of the Study Room is "A room smaller than the common area. It has a few tables, chairs, and a whiteboard on the wall." 
 [boost progress?] 
 
 [---------------------Annie's Room------------------------]
-Annie's Room is south of the long hall. 
+Annie's Room is south of the long hall. The description of Annie's Room is "A similar common area to yours, but mirrored. Annie lives here. You two are good friends, so you hang out here often. She lucked into a single room so this common area is all hers."
 
 [---------------------Courtyard------------------------]
-The Courtyard is west of the long hall.
+The Courtyard is west of the long hall. The description of the Courtyard is "The courtyard is a big area inside of a dome to keep the atmosphere in. The dome is clear so you can see outside to the rest of campus. You see a path to the north that leads to the gym, a path to the train station to the south, and the rest of campus to the west."
 
 [---------------------Train Station------------------------]
-The Train Station is south of the courtyard.
+The Train Station is south of the courtyard. The description of the Train Station is "The train that leads off campus is here. You can take it eastward, to go get groceries, or westward to go to the sorority house."
 [to party house or grocery store or both?]
+
+[---------------------Grocery Store------------------------]
+The Grocery Store is east of the Train Station. The description of the Grocery Store is "The local grocer carries cheap and easy meals. Although it's a lot healthier to buy ingredients and cook your meals from scratch."
+
+[---------------------Sorority House------------------------]
+The Sorority House is west of the Train Station. The description of the Sorority House is "A big fancy building with greek letters on the outside. Once you go inside, there are about 35 sorority girls all drinking and having fun. You also see Annie. Do you want to join them?".
+
 
 [---------------------Sidewalk------------------------]
 The Sidewalk is west of the courtyard.
