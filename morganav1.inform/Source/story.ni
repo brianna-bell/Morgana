@@ -20,6 +20,8 @@ The player has a number called markiplier. The markiplier of the player is 1.
 
 The player has a number called minutes passed. The minutes passed of the player is 0.
 
+Groceries bought is a truth state that varies. Groceries bought is false.
+
 [The effort of washing is always 30. [percent]]
 The time to wash is always 1. [hours]
 
@@ -36,7 +38,7 @@ Include Basic Screen Effects by Emily Short.
 Table of Fancy Status
 left	central	right
 " [location]"	"[time of day]"	"[current weekday]"
-" Energy: [energy of the player]%"	 "mp [markiplier of the player] QoL [quality of life of the player]"	"Progress: [progress of the player]%"
+" Energy: [energy of the player]%"	 "groceries [groceries bought]"	"Progress: [progress of the player]%"
 
 Rule for constructing the status line:
 	 fill status bar with Table of Fancy Status;
@@ -148,10 +150,14 @@ Every turn:
 		Say "You've been working too hard. You might want to take care of yourself.";
 	If the time of day is after 11:59 PM:
 		say "It's time for bed! You wake up the next day fully rested.";
+		Now the player is in the dorm room;
 		Now the energy of the player is the maximum energy;
 		Now the drugs taken of the player is 0;
 		Now the time of day is 8:59 AM;
 		now the current weekday is the weekday after the current weekday;
+		Now the teeth are dirty;
+		Now the body is dirty;
+		Now the dishes are dirty; [____________________make sure to reset everything______________________]
 	If the current weekday is Friday:
 		If the time of day is 11:59 PM:
 			Say "The time has come to turn in your final project. Your grade is....";
@@ -195,11 +201,11 @@ Check working:
 	if progress is maximum progress:
 		say "You're completely finished! Time to relax." instead;
 	otherwise if the energy of the player is less than 1:
-		say "oops too tired :(" instead;
+		say "You're too tired to continue, better step away and do something else for a bit." instead;
 
 Carry out working:
 	move the laptop to the player;
-	let effort be a random number from 10 to 25;
+	let effort be a random number from 5 to 15;
 	let effort be effort * markiplier of the player;
 	let worktime be a random number from 1 to 3;
 	let difference be the energy of the player - (worktime * 10);
@@ -242,6 +248,7 @@ After eating the badderall:
 	increase the drugs taken of the player by 1;	
 	Now the energy of the player is 100;
 	remove the badderall from play;
+	Now the quality of life of the player is 150;
 	Say "You feel completely restored!". 
 
 
@@ -258,40 +265,51 @@ Before someone opening a locked thing (called the lockbox):
 	if the lockbox is locked, stop the action.
 
 [---------------------Hallway------------------------]
-The Hallway is south of the dorm room. "A narrow hallway with a mirror, a coatrack, and several posters."
+The Hallway is south of the dorm room. The description of the hallway is "A narrow hallway with a few posters, a mirror, and a shoe rack. To the north is your dorm room. To the south is a small bathroom that is all yours. There is a tiny closet to the west. The common area is to the east."
 
 [---------------------Bathroom------------------------]
-The Bathroom is south of the Hallway. "A tiny bathroom with a toilet, shower, and sink."
+The Bathroom is south of the Hallway. The description of the bathroom is "A tiny bathroom with a toilet, shower, and sink. Next to the sink there are your toothbrush and toothpaste. Your shower has only your soap and shampoo in it. You're glad that you don't have to share a bathroom with anyone else."
+
+There is a body. The body can be showered. The body is dirty. [reset]
 Understand "take a shower" and "shower" as showering.
 Showering is an action applying to nothing. 
 Check showering:
 	if the player is in the bathroom: 
-		Reverse time by 1;
-		Say "You turn on the shower and wait for the water to heat up. When it's hot, you strip and step inside. The steam fogs up the bathroom but it feels so nice on your skin. You take your time shampooing and scrubbing your body. You feel much better after showering.";
-		Increase the quality of life of the player by 30;
-		If the energy of the player is less than 85:
-			Increase the energy of the player by 15;
-		Otherwise:
-			Now the energy of the player is 100;
+		if the body is dirty:
+			Reverse time by 1;
+			Say "You turn on the shower and wait for the water to heat up. When it's hot, you strip and step inside. The steam fogs up the bathroom but it feels so nice on your skin. You take your time shampooing and scrubbing your body. You feel much better after showering.";
+			Increase the quality of life of the player by 30;
+			If the energy of the player is less than 85:
+				Increase the energy of the player by 15;
+			Otherwise:
+				Now the energy of the player is 100;
+		otherwise:
+			Say "But you're already clean.";
 	otherwise:
 		Say "There's no shower here.";
+
+There is a teeth. The teeth can be brushed. The teeth is dirty. [reset]
 
 Understand "brush teeth" as brushing.
 Brushing is an action applying to nothing.
 Check brushing:
 	If the player is in the bathroom:
-		Reverse time by 1;
-		Say "You pick up your toothbrush, add some toothpaste, and brush your teeth. Afterwards, you feel fresh."; 
-		Increase the quality of life of the player by 10;
-		If the energy of the player is less than 90:
-			Increase the energy of the player by 10;
+		If the teeth is dirty: 
+			Reverse time by 1;
+			Say "You pick up your toothbrush, add some toothpaste, and brush your teeth. Afterwards, you feel fresh."; 
+			Increase the quality of life of the player by 10;
+			If the energy of the player is less than 90:
+				Increase the energy of the player by 10;
+			Otherwise:
+				Now the energy of the player is 100;
+			Now teeth are clean;
 		Otherwise:
-			Now the energy of the player is 100;
+			Say "But your teeth are already clean.";
 	Otherwise:
 		Say "There's no toothbrush here.";
 
 [---------------------Closet------------------------]
-The Closet is west of the Hallway. "A small closet with all three of our extra stuff in it."
+The Closet is west of the Hallway. The description of the closet is "A small closet with all of my extra stuff in it."
 
 [Understand "open box" as opening the large box.]
 The large box is a closed openable container in the closet. The description of the large box is "A large box containing everything you brought to college but haven't used yet." 
@@ -308,7 +326,7 @@ After examining the square key:
 
 
 [---------------------Common Area------------------------]
-The Common Area is east of the hallway. "The common area contains a small couch, tv, dining table, and a kitchenette. The kitchenette has just a sink and a fridge. There is also a small [trash can]. There's also a coffee maker on the counter. [if the pile of dishes are dirty]All of the coffee cups are dirty though.[otherwise]The coffee cups are clean and ready to use.[end if] There's also a [pile of dishes][if the pile of dishes are dirty] soaking in the sink. [otherwise] clean and drying on the counter.[end if] There is a [game] console hooked up to the TV.";
+The Common Area is east of the hallway. "The common area contains a small couch, tv, dining table, and a kitchenette with a [fridge] and a coffee maker. There is also a small [trash can]. [if the pile of dishes are dirty]All of the coffee cups are dirty though.[otherwise]The coffee cups are clean and ready to use.[end if] There's also a [pile of dishes][if the pile of dishes are dirty] soaking in the sink. [otherwise] clean and drying on the counter.[end if] There is a [game] console hooked up to the TV.";
 
 The game is a device in the common area. The description of the game is "This is your gamesphere that you brought from home. You love to sit and play it for hours. It's calling your name." 
 Understand "gamesphere" and "console" as game.
@@ -323,15 +341,29 @@ Playing is an action applying to one visible thing. Understand "play [something]
 Carry out playing:
 	Forward time by 4;
 	say "You get lost playing the [the noun] and zone back into reality several hours later.";
-	Increase the quality of life of the player by 30;
+	Increase the quality of life of the player by 50;
 
+
+The fridge is a container in the common area. The description of the fridge is "A small fridge that [if groceries bought is true]has the groceries you bought earlier. You can make a meal for yourself.[otherwise]is pretty much empty except for some of your roomates leftovers.[end if]".
+
+[The roommates leftovers are in the fridge. A description of the roommates leftovers are "A random assortment of your roommates' old leftovers. You're not sure how long they've been in there."]
+
+Food is a thing. 
+
+Instead of searching the fridge:
+	if groceries bought is true:
+		now the food is in the fridge;
+		say "You see some food inside the fridge.";
+	otherwise:
+		Say "All there is are your roommates old leftovers. You're not sure how long they've been in there."
+	
 
 The trash can is a container in the common area. The description of the trash can is "The trash can is barely full."
 Instead of removing something from the trash can: say "Ew, it's all dirty now, no thanks."
 
 Instead of examining the trash can:
 	clear only the main screen;
-	display the boxed quotation "That's where you belong".
+	display the boxed quotation "That's where you belong.".
 
 The pile of dishes are things in the common area. The pile of dishes can be washed. The pile of dishes are dirty. 
 
@@ -367,6 +399,10 @@ Instead of drinking the cup of coffee:
 [---------------------Far Hall------------------------]
 The Far Hall is east of the common area. The description of the Far Hall is "A hall similar to the one outside of your door. Your two roommates have set out their jackets and shoes set out."
 
+[testing take this out!!]
+After going to the Far Hall:
+	Now the groceries bought is true;
+
 [---------------------Katie's Room------------------------]
 The Katie's Room is north of the far hall. The description of Katie's Room is "Her room is decorated with nerdy stuff. She's an architectural student and loves math. The same type of desk as yours. She has a laptop charger and a mousepad with equations on it. On one of the walls is a tourism poster of earth. You both hope to go there one day."
 [Add her homework here in the afternoons]
@@ -396,6 +432,7 @@ The Grocery Store is east of the Train Station. The description of the Grocery S
 After going to the Grocery Store:
 	Forward time by 1;
 	Increase quality of life of the player by 40;
+	Now the groceries bought is true;
 	Continue the action;
 	
 
@@ -420,5 +457,16 @@ After going to the Professor's Office:
 
 [---------------------Gym------------------------]
 The Gym is north of the courtyard. The description of the gym is "A modest sized gym that is free for students.".
-
-
+The treadmill is in the gym. The description of the treadmill is "The older machine is perfect for practicing a pretend runway walk."
+The dance loop is in the gym. The description of the dance loop is "A giant person sized loop that lets you hold on tight and spin til your heart is content."
+The stationary bike is in the gym. The description of the stationary bike is "A bicycle fixed in place with added resistance to make your muscles stronger."
+The weight machine is in the gym. The description of the weight machine is "A machine used for pulling or pushing an amount of weights. It's not your favorite way to exercise." 
+Exercising is an action applying to one visible thing. Understand "Exercise on [something]" and "Exercize on [something]" and "work out" as exercising. 
+Carry out exercising:
+	If the player is in the gym:
+		say "You push yourself until you're sweaty and tired, but at least you feel better now";
+		Increase the quality of life of the player by 30;
+		Forward time by 2;
+		Drain by 25 and 0;
+	otherwise:
+		say "There's no equipment here!";
