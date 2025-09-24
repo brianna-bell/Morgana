@@ -22,8 +22,13 @@ The player has a number called minutes passed. The minutes passed of the player 
 
 Groceries bought is a truth state that varies. Groceries bought is false.
 
+Party thrown is a truth state that varies. Party thrown is false.
+
 [The effort of washing is always 30. [percent]]
 The time to wash is always 1. [hours]
+
+Talking to is an action applying to one visible thing.
+Understand "talk to [someone]" as talking to.
 
 [debug only to skip to Saturday]
 Understand "dskip" as casting dskip.
@@ -38,7 +43,7 @@ Include Basic Screen Effects by Emily Short.
 Table of Fancy Status
 left	central	right
 " [location]"	"[time of day]"	"[current weekday]"
-" Energy: [energy of the player]%"	 "groceries [groceries bought]"	"Progress: [progress of the player]%"
+" Energy: [energy of the player]%"	 "pt [party thrown]"	"Progress: [progress of the player]%"
 
 Rule for constructing the status line:
 	 fill status bar with Table of Fancy Status;
@@ -195,7 +200,7 @@ Understand "work on laptop" or "use laptop" or "type on laptop" or "work on proj
 Working is an action applying to nothing. 
 
 Check working when the laptop is switched off:
-	say "You should probably turn the laptop on first." instead.
+	Now the laptop is switched on;
 
 Check working: 
 	if progress is maximum progress:
@@ -342,11 +347,13 @@ Carry out playing:
 	Forward time by 4;
 	say "You get lost playing the [the noun] and zone back into reality several hours later.";
 	Increase the quality of life of the player by 50;
+	If the energy of the player is greater than 80:
+		Now the energy of the player is 100;
+	Otherwise:
+		Increase the energy of the player by 20;
 
 
-The fridge is a container in the common area. The description of the fridge is "A small fridge that [if groceries bought is true]has the groceries you bought earlier. You can make a meal for yourself.[otherwise]is pretty much empty except for some of your roomates leftovers.[end if]".
-
-[The roommates leftovers are in the fridge. A description of the roommates leftovers are "A random assortment of your roommates' old leftovers. You're not sure how long they've been in there."]
+The fridge is a container in the common area. The description of the fridge is "A small fridge that [if groceries bought is true]has the groceries you bought earlier. You can make a meal for yourself or bake some cookies.[otherwise]is pretty much empty except for some of your roomates leftovers.[end if]".
 
 Food is a thing. 
 
@@ -356,7 +363,41 @@ Instead of searching the fridge:
 		say "You see some food inside the fridge.";
 	otherwise:
 		Say "All there is are your roommates old leftovers. You're not sure how long they've been in there."
-	
+		
+
+Cooking is an action applying to nothing. Understand "cook food" and "make meal" as cooking. 
+Carry out cooking:
+	If the player is in the common area:
+		If groceries bought is true:
+			If the dishes are clean:
+				Say "Let em cook! You cook and eat a nice little meal.";
+				Reverse time by 2;
+				Increase the quality of life of the player by 40;
+			Otherwise:
+				Say "The dishes are all dirty though.";
+		Otherwise:
+			Say "There's no food in the fridge.";
+	Otherwise: 
+		Say "There's no food here.".
+
+Baking is an action applying to nothing. Understand "bake" and "bake sweets" and "bake cookies" as baking.
+Carry out baking:
+	If the player is in the common area:
+		If groceries bought is true:
+			If the dishes are clean:
+				Say "You have enough to bake a dozen cookies. You get in the baking zone and end up with fresh cookies. You eat a few and they taste so good.";
+				Forward time by 3;
+				Increase the quality of life of the player by 20;
+				If the energy of the player is greater than 80:
+					Now the energy of the player is 100;
+				Otherwise:
+					Increase the energy of the player by 20;
+			Otherwise:
+				Say "The dishes are all dirty though.";
+		Otherwise:
+			Say "There's no food in the fridge.";
+	Otherwise: 
+		Say "There's no food here.".
 
 The trash can is a container in the common area. The description of the trash can is "The trash can is barely full."
 Instead of removing something from the trash can: say "Ew, it's all dirty now, no thanks."
@@ -375,8 +416,9 @@ Instead of washing the dishes:
 		Drain by the effort of washing and 2;
 		Now the dishes are clean;
 		Increase the quality of life of the player by 30;
+		Say "The dishes are all clean and ready to use.";
 	otherwise:
-		say "but they're already clean.";
+		say "But they're already clean.";
 
 A cup of coffee is a thing. The description of the cup of coffee is "A warm cup of fresh hot coffee. The outside reads '#1 Mug'".
 
@@ -399,9 +441,6 @@ Instead of drinking the cup of coffee:
 [---------------------Far Hall------------------------]
 The Far Hall is east of the common area. The description of the Far Hall is "A hall similar to the one outside of your door. Your two roommates have set out their jackets and shoes set out."
 
-[testing take this out!!]
-After going to the Far Hall:
-	Now the groceries bought is true;
 
 [---------------------Katie's Room------------------------]
 The Katie's Room is north of the far hall. The description of Katie's Room is "Her room is decorated with nerdy stuff. She's an architectural student and loves math. The same type of desk as yours. She has a laptop charger and a mousepad with equations on it. On one of the walls is a tourism poster of earth. You both hope to go there one day."
@@ -414,11 +453,75 @@ Jessie's Room is east of the far hall. The description of Jessie's Room is "Her 
 The Long Hall is south of the Common Area. The description of the Long Hall is "A longer corridor that leads to a study hall to the east, Annie's Room to the south, and the courtyard outside to the west. On the door to your dorm there are 3 different critters with each of your names on them."
 
 [---------------------Study Room------------------------]
-The Study Room is east of the long hall. The description of the Study Room is "A room smaller than the common area. It has a few tables, chairs, and a whiteboard on the wall." 
-[boost progress?] 
+The Study Room is east of the long hall. The description of the Study Room is "A room smaller than the common area. It has a few tables, chairs, and a whiteboard on the wall. When you walk in, [Katie] and [Jessie] look up from their computers and wave at you. The vibes are good, so you can all work on your projects here together.". 
+Katie is a woman in the study room. The description of Katie is "She has shouler length blonde hair that's always tied up. Her laptop has nery stickers all over it. She is a good friend of yours.".
+Jessie is a woman in the study room. The description of Jessie is "She has long brown hair that is usually curled and styled, but it's finals week so it's up in a high bun. She still looks as pretty as always.".
+
+After going to the study room:
+	Now the markiplier of the player is 2;
+	Continue the action.
+
+After going from the study room:
+	Now the markiplier of the player is 1;
+	Continue the action.
+
+
 
 [---------------------Annie's Room------------------------]
 Annie's Room is south of the long hall. The description of Annie's Room is "A similar common area to yours, but mirrored. Annie lives here. You two are good friends, so you hang out here often. She lucked into a single room so this common area is all hers."
+Annie is a woman in Annie's Room. The description of Annie is "She's the most stunning person you've ever seen. You've had a crush on her for several months and talk every day."
+
+
+
+Annie has a number called affection. The affection of Annie is 0.
+
+Flirting with is an action applying to one visible thing.
+Understand "flirt with [someone]" as flirting with.
+
+Check flirting with:
+	if the noun is not Annie:
+		say "You don't have a crush on [the noun]." instead;
+	if the player is not in the location of the noun:
+		say "You can imagine how it would go, but can't do it since [the noun] isn't here." instead.
+
+Carry out flirting with Annie:
+	if the affection of Annie is 0:
+		say "You hold her hand and tell her how amazing she is. She blushes and smiles.";
+		increase the affection of Annie by 1;
+	otherwise if the affection of Annie is 1:
+		Say "You admit your feelings to her and she says that she has a crush on you too. You both giggle nervously.";
+		increase the affection of Annie by 1;
+	otherwise:
+		Say "You kiss her hand and she melts at your touch.".
+
+
+Instead of kissing Annie:
+	if the affection of Annie is less than 2:
+		say "Annie turns her head away. Maybe try flirting with her a little more." instead;
+	otherwise if the affection of Annie is greater than 4:
+		Clear the screen;
+		Say "You get lost in her kisses, and time flies by. There is nothing else in the world but the two of you. You forget to turn in the project and have to retake the class, but you have the girlfriend of your dreams so it's worth it.";
+		end the story saying "Romance Ending";
+	otherwise if the affection of Annie is 2:
+		say "You kiss Annie, and she kisses you back gently. The kiss is everything you ever dreamed of and more.";
+		increase the affection of annie by 1;
+	otherwise:
+		Say "You kiss her again and you fall further in love with her.";
+		Increase the affection of annie by 1;
+
+Carry out talking to Annie:
+	If the player is in Annie's Room:
+		say "You strike up a conversation with Annie about the latest memes and campus shenanigans. Talking and laughing with her takes some stress out of your mind. She always knows how to lighten your mood. You do get a little lost in the conversation.";
+		Forward time by 5;
+		Increase the quality of life of the player by 40;
+		If the energy of the player is greater than 80:
+			Now the energy of the player is 100;
+		otherwise:
+			Increase the energy of the player by 20;
+	otherwise:
+		Say "She's not here.".
+
+
 
 [---------------------Courtyard------------------------]
 The Courtyard is west of the long hall. The description of the Courtyard is "The courtyard is a big area inside of a dome to keep the atmosphere in. The dome is clear so you can see outside to the rest of campus. You see a path to the north that leads to the gym, a path to the train station to the south, and the rest of campus to the west."
@@ -439,20 +542,24 @@ After going to the Grocery Store:
 [Although it's a lot healthier to buy ingredients and cook your meals from scratch.]
 
 [---------------------Sorority House------------------------]
-The Sorority House is west of the Train Station. The description of the Sorority House is "A big fancy building with greek letters on the outside. Once you go inside, there are about 35 sorority girls all drinking and having fun. You also see your friend Annie. You join the party and have a good time. After a few hours, the party winds down and it's time to go back. You can take the train eastward to get back to campus.".
-After going to the Sorority House:
-	Forward time by 3;
-	Increase quality of life of the player by 70;
-	Increase the drugs taken of the player by 1;
-	Continue the action;
+The Sorority House is west of the Train Station. The description of the Sorority House is "A big fancy house with greek letters on the outside.[If party thrown is false] You arrive at the sorority house just in time for the party. Once you go inside, there are about 35 sorority girls all drinking and having fun. You also see your crush Annie. You join the party and have a good time. After a few hours, the party winds down and it's time to go back home. You can take the train eastward to get back to campus.[otherwise] The party already happened. There's nothing else to do here.[end if]".
+
+After going from the Sorority House: [this is a little delayed but it'll do for now]
+	If party thrown is false:
+		Forward time by 6;
+		Increase quality of life of the player by 70;
+		Increase the drugs taken of the player by 2;
+		Now party thrown is true;
+		Continue the action;
 
 [---------------------Sidewalk------------------------]
-The Sidewalk is west of the courtyard. The description of the Sidewalk is "A long stretch from the courtyard to the building where your professor's office is. The walk is nice and peaceful."
+The Sidewalk is west of the courtyard. The description of the Sidewalk is "A long stretch from the courtyard to the building where your professor's office is. The walk is nice and peaceful. The professor's office is to the west and the courtyard is to the east."
 
 [---------------------Professor's Office------------------------]
-The Professor's Office is west of the sidewalk. The description of the Professor's Office is "You walk into your professor's office. She is there, grading homework assignments. She welcomes you in. You ask her some questions about the final project, and feel that you understand what to do better."
+The Professor's Office is west of the sidewalk. The description of the Professor's Office is "You walk into your professor's office. She is there, grading homework assignments. She welcomes you in. You ask her some questions about the final project, and feel that you understand what to do better. The sidewalk is to the east which leads back to the courtyard."
 After going to the Professor's Office:
 	Now the markiplier of the player is 2;
+	Reverse time by 2;
 	Continue the action.
 
 [---------------------Gym------------------------]
