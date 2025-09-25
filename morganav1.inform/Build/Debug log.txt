@@ -1,5 +1,5 @@
 Debugging log of inform7
-inform7 was called as: C:\Program Files\Inform\Compilers\inform7 -release -internal C:\Program Files\Inform\Internal -external C:\Users\winch\Documents\Inform -project C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.inform -format=Inform6/16
+inform7 was called as: C:\Program Files\Inform\Compilers\inform7 -release -internal C:\Program Files\Inform\Internal -external C:\Users\winch\Documents\Inform -project C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.inform -format=Inform6/32
 Reading further switches from file: <no file>
 Completed expert settings file
 Using Inform kit 'BasicInformKit' (priority 0).
@@ -7,7 +7,7 @@ Using Inform kit 'EnglishLanguageKit' (priority 1).
 Using Inform kit 'WorldModelKit' (priority 2).
 Using Inform kit 'CommandParserKit' (priority 3).
 756 Preform nonterminals read from C:\Program Files\Inform\Internal\Languages\English\Syntax.preform
-I've now read your source text, which is 5921 words long.
+I've now read your source text, which is 5916 words long.
 Included: core, naming, instance counting, interactive fiction, spatial model, backdrops, bibliographic data, chronology, devices, mapping, persons, player, regions, scenes, scoring, timed rules, times of day, actions, going, command, showme, multimedia, figures, sounds, glulx external files
 Excluded: 
 I've also read Basic Inform by Graham Nelson, which is 7691 words long.
@@ -122,7 +122,7 @@ Phase XIII ... Generating inter (3)
 
 .... Sequence__undertake_queued_tasks() took 136cs
 .... Sequence__undertake_queued_tasks() took 1cs
-.... RTPhrasebook__compile_entries() took 2cs
+.... RTPhrasebook__compile_entries() took 3cs
 
 
 -----------------------------------------------------
@@ -203,7 +203,7 @@ Compile CPU time: 176 centiseconds
 
 ==== Phase XVII.11 ... step 11/15: eliminate-redundant-labels ====
 
-2019 redundant label(s) removed
+2020 redundant label(s) removed
 
 
 ==== Phase XVII.12 ... step 12/15: eliminate-redundant-operations ====
@@ -6854,7 +6854,7 @@ HTML tag stack:
     47. html (opened at line 236 of 'D:/Programs/Adv/Inform7/Distribution/inweb/foundation-module/Chapter 5/HTML.w')
 
 
-Back end elapsed time: 114cs
+Back end elapsed time: 122cs
 Total of 122 files written as streams.
 Vacant escapes: %: ..CDE.GH..K.M.O.QR.TU...YZab..e..h.jklm.o.qr......yz0123456789
 Vacant escapes: $: .....F...J..........UVW.....................s.u..x.........789

@@ -30,7 +30,7 @@
 		<key>IFSettingBasicInform</key>
 		<false/>
 		<key>IFSettingZCodeVersion</key>
-		<integer>8</integer>
+		<integer>256</integer>
 		<key>IFSettingCompilerVersion</key>
 		<string>****</string>
 	</dict>

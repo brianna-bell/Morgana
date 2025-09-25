@@ -1,6 +1,6 @@
 "Morgana" by Brianna
 
-Release along with the "Parchment" interpreter. Release along with cover art.
+Release along with the "Quixe" interpreter. 
 
 [---------------------Setup--------------------]
 

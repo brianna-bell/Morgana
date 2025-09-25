@@ -3,7 +3,7 @@
     <story>
         <identification>
             <ifid>8A6C1E5F-AB8B-47C9-A3AA-EB77F3358D48</ifid>
-            <format>zcode</format>
+            <format>glulx</format>
         </identification>
         <bibliographic>
             <title>Morgana</title>
@@ -14,12 +14,6 @@
             <language>en</language>
             <group>Inform</group>
         </bibliographic>
-        <cover>
-            <format>jpg</format>
-            <height>225</height>
-            <width>225</width>
-            <description>The cover art.</description>
-        </cover>
         <releases>
             <attached>
                 <release>
@@ -35,11 +29,10 @@
             <generatorversion>Inform 10.1.2 (build )</generatorversion>
             <originated>2025-09-25</originated>
         </colophon>
-        <zcode>
+        <glulx>
             <serial>250925</serial>
             <release>1</release>
             <compiler>Inform Inform 10.1.2 (build )</compiler>
-            <coverpicture>1</coverpicture>
-        </zcode>
+        </glulx>
     </story>
 </ifindex>

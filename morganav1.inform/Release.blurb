@@ -10,11 +10,13 @@ release to "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.m
 
 ! Blorb instructions
 
-storyfile leafname "Morgana.zblorb"
-storyfile "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.inform\Build\output.z8" include
+storyfile leafname "Morgana.gblorb"
+storyfile "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.inform\Build\output.ulx" include
 ifiction "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.inform\Metadata.iFiction" include
-cover "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.materials\Cover.jpg"
-picture 1 "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.materials\Cover.jpg"
+cover "C:\Program Files\Inform\Internal\Miscellany\DefaultCover.jpg"
+picture 1 "C:\Program Files\Inform\Internal\Miscellany\DefaultCover.jpg"
+release file "C:\Program Files\Inform\Internal\Miscellany\DefaultCover.jpg"
+release file "C:\Program Files\Inform\Internal\Miscellany\Small Cover.jpg"
 
 ! Placeholder variables
 
@@ -30,14 +32,14 @@ placeholder [BLURB] = "A work of interactive fiction."
 
 ! Website instructions
 
-placeholder [ENCODEDSTORYFILE] = "Morgana.zblorb.js"
+placeholder [ENCODEDSTORYFILE] = "Morgana.gblorb.js"
 template path "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.materials\Templates"
 template path "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.materials\Templates"
 template path "C:\Users\winch\Documents\Inform\Templates"
 template path "C:\Program Files\Inform\Internal\Templates"
 placeholder [INTERPRETERSCRIPTS] = " "
-interpreter "Parchment" "z"
-base64 "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.inform\Build\output.z8" to "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.materials\Release\interpreter\Morgana.zblorb.js"
+interpreter "Quixe" "g"
+base64 "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.inform\Build\output.ulx" to "C:\Users\winch\Documents\Inform\Projects\Morgana\Morgana\morganav1.materials\Release\interpreter\Morgana.gblorb.js"
 
 ! Website instructions
 
@@ -48,7 +50,7 @@ template path "C:\Program Files\Inform\Internal\Templates"
 css
 website "Standard"
 status instruction ||&nbsp;<a href="source:story.ni#line3"><img border=0 src=inform:/doc_images/Reveal.png></a>||
-status instruction ||&nbsp;<a href="source:story.ni#line3"><img border=0 src=inform:/doc_images/Reveal.png></a>||
+status alternative ||Using 'Release along with cover art', to provide something more distinctive than the default artwork above&nbsp;<a href=inform:/doc401.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with a file of "Such-and-Such" called "whatever.pdf"', perhaps to add a manual, or a welcoming note&nbsp;<a href=inform:/doc399.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with the source text'&nbsp;<a href=inform:/doc410.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with a solution'&nbsp;<a href=inform:/doc409.html><img border=0 src=inform:/doc_images/help.png></a>||
