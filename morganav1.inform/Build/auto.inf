@@ -4017,7 +4017,7 @@ Constant alphabetised_text_1 = " N = Next";
 Constant alphabetised_text_2 = " P = Previous";
 Constant I7_FULL_VERSION_NUMBER = "10.1.2";
 Constant I7_VERSION_NUMBER = "10.1.2";
-Serial "250924";
+Serial "250925";
 Constant alphabetised_text_3 = ">";
 Constant alphabetised_text_4 = "A bicycle fixed in place with added resistance to make your muscles stronger.";
 Constant alphabetised_text_5 = "A campy little bracelet that you bought at a thrift store in your hometown several years ago.";
