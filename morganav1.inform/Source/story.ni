@@ -1,5 +1,7 @@
 "Morgana" by Brianna
 
+Release along with an interpreter. Release along with cover art.
+
 [---------------------Setup--------------------]
 
 Use serial comma. 
@@ -43,7 +45,7 @@ Include Basic Screen Effects by Emily Short.
 Table of Fancy Status
 left	central	right
 " [location]"	"[time of day]"	"[current weekday]"
-" Energy: [energy of the player]%"	 "pt [party thrown]"	"Progress: [progress of the player]%"
+" Energy: [energy of the player]%"	 ""	"Progress: [progress of the player]%"
 
 Rule for constructing the status line:
 	 fill status bar with Table of Fancy Status;
@@ -53,7 +55,31 @@ When play begins (this is the run property checks at the start of play rule):
 	repeat with item running through things:
 		if description of the item is "":
 			say "[item] has no description.";
-	Say "You are Morgana, a college student struggling to meet your project deadline, keep up with your responsibilities and try to have some kind of social life. Your project is due Friday at 11:59pm. Good luck!";
+	Say "You are Morgana, a college student struggling to meet your project deadline, keep up with your responsibilities and try to have some kind of social life. Your project is due Friday night at 11:59pm. Good luck! If you need help at any time, just say HELP.";
+	
+
+Include Basic Help Menu by Emily Short.
+
+Table of Basic Help Options (continued)
+title	subtable	description
+"Easter Eggs (After playing the game)"	Table of Eggs	""
+"Hints"	Table of Hints	--
+
+Table of Eggs
+title	subtable	description	toggle
+"Procrastinate"	--	"Every college kid has done it. Try doing 'procrastinate'"	--
+"Xyzzy"	--	"A classic IF word. Try doing 'xyzzy'"	--
+"Trash"	--	"Try doing 'examine trash can' in the Common Area"	--
+
+Table of Hints
+title	subtable	description	toggle
+"What do I do with the lockbox?"	--	"Open it with the key."	hint toggle rule
+"Where is the key to the lockbox?"	--	"In a place where things are stored."	hint toggle rule
+"What is Glorp?"	--	"Glorp is the name of your alien pet cat that you got at a shelter last year. She's so cute and fluffy."	hint toggle rule
+"Are there drugs at the party?"	--	"There sure are. Try not to pregame it with coffee."	hint toggle rule
+"Why can't I kiss my roommates?"	--	"They're just not into you, sorry."	hint toggle rule
+
+
 
 To reverse time by (hours - a number):
 	[let target be the time of day minus hours hours;]
@@ -191,7 +217,26 @@ Every turn:
 
 [---------------------Dorm Room--------------------]
 
-The Dorm Room is a room. The description of the dorm room is "You are sitting in your dorm room on your [bed] in the small apartment you share with 2 other roommates. This room is small and cozy. You see a [desk] in the corner of the room. On the desk is a [laptop]."
+The Dorm Room is a room. The description of the dorm room is "You are sitting in your dorm room on your [bed] in the small apartment you share with 2 other roommates. This room is small and cozy. You see a [desk] in the corner of the room. On the desk is a [laptop]. There is also an [easel] with a blank canvas on it. The door leading out to the hall is to the south."
+
+The easel is in the dorm room. The description of the easel is "A simple wooden easel with a blank canvas on it. You like to paint in your free time or when just avoiding your responsibilities.".
+Painting is an action applying to one visible thing. Understand "make painting" and "paint" and "paint canvas" as painting.
+Carry out painting:
+	If the player is in the dorm room:
+		let result be a random number from 1 to 3;
+		if result is 1:
+			say "You pick up a paint brush and let your heart take control. You get so focused on painting that you lose track of time. But at the end, you have a completed painting of the campus at dusk, with the sun setting and the two moons already high in the sky.";
+		if result is 2:
+			say "You pick up a paint brush and let your heart take control. You get so focused on painting that you lose track of time. But at the end, you have a completed painting of little Glorp curled up in a flower pot as a baby.";
+		if result is 3:
+			say "You pick up a paint brush and let your heart take control. You get so focused on painting that you lose track of time. But at the end, you have a completed painting of abstract colors and shapes. Not your best work but it got it out of your system.";
+		Forward time by 4;
+		If the energy of the player is less than 85:
+			Increase the energy of the player by 15;
+		Otherwise:
+			Now the energy of the player is 100;
+	Otherwise:
+		Say "There's nothing here to paint."
 
 The laptop is a device in the Dorm Room. The description of the laptop is "Your small silver laptop." The laptop is switched off.
 
@@ -273,9 +318,10 @@ Before someone opening a locked thing (called the lockbox):
 The Hallway is south of the dorm room. The description of the hallway is "A narrow hallway with a few posters, a mirror, and a shoe rack. To the north is your dorm room. To the south is a small bathroom that is all yours. There is a tiny closet to the west. The common area is to the east."
 
 [---------------------Bathroom------------------------]
-The Bathroom is south of the Hallway. The description of the bathroom is "A tiny bathroom with a toilet, shower, and sink. Next to the sink there are your toothbrush and toothpaste. Your shower has only your soap and shampoo in it. You're glad that you don't have to share a bathroom with anyone else."
+The Bathroom is south of the Hallway. The description of the bathroom is "A tiny bathroom with a toilet, shower, and sink. Next to the sink there are your toothbrush and toothpaste. Your shower has only your soap and shampoo in it. You're glad that you don't have to share a bathroom with anyone else. The door back to the hallway is to the north."
 
 There is a body. The body can be showered. The body is dirty. [reset]
+The description of the body is "You have 2 arms and 3 legs.[if body is dirty] You haven't showered in a while and are kind of grody.[otherwise] You are still nice and clean.[end if]".
 Understand "take a shower" and "shower" as showering.
 Showering is an action applying to nothing. 
 Check showering:
@@ -288,12 +334,13 @@ Check showering:
 				Increase the energy of the player by 15;
 			Otherwise:
 				Now the energy of the player is 100;
+			Now the body is clean;
 		otherwise:
 			Say "But you're already clean.";
 	otherwise:
 		Say "There's no shower here.";
 
-There is a teeth. The teeth can be brushed. The teeth is dirty. [reset]
+There is a teeth. The teeth can be brushed. The teeth is dirty. The description of the teeth is "Chompers.". [reset]
 
 Understand "brush teeth" as brushing.
 Brushing is an action applying to nothing.
@@ -314,7 +361,7 @@ Check brushing:
 		Say "There's no toothbrush here.";
 
 [---------------------Closet------------------------]
-The Closet is west of the Hallway. The description of the closet is "A small closet with all of my extra stuff in it."
+The Closet is west of the Hallway. The description of the closet is "A small closet with all of my extra stuff in it. There's barely room to step inside."
 
 [Understand "open box" as opening the large box.]
 The large box is a closed openable container in the closet. The description of the large box is "A large box containing everything you brought to college but haven't used yet." 
@@ -331,7 +378,47 @@ After examining the square key:
 
 
 [---------------------Common Area------------------------]
-The Common Area is east of the hallway. "The common area contains a small couch, tv, dining table, and a kitchenette with a [fridge] and a coffee maker. There is also a small [trash can]. [if the pile of dishes are dirty]All of the coffee cups are dirty though.[otherwise]The coffee cups are clean and ready to use.[end if] There's also a [pile of dishes][if the pile of dishes are dirty] soaking in the sink. [otherwise] clean and drying on the counter.[end if] There is a [game] console hooked up to the TV.";
+The Common Area is east of the hallway. "The common area contains a small couch, tv, dining table, and a kitchenette with a [fridge] and a coffee maker. There is also a small [trash can]. [if the pile of dishes are dirty]All of the coffee cups are dirty though.[otherwise]The coffee cups are clean and ready to use.[end if] There's also a [pile of dishes][if the pile of dishes are dirty] soaking in the sink. [otherwise] clean and drying on the counter.[end if] There is a [game] console hooked up to the TV. Resting on the sofa is your fuzzy [pet alien], Glorp. To the east is your roommates side of the apartment. To the south is the front door.";
+
+The pet alien is an animal in the common area. 
+Understand "Glorp" and "glorp" and "pet" and "alien" as pet alien.
+The description of the pet alien is "The cute fuzzy little green alien is your precious pet that you've had for a year. You love her to bits.".
+
+Petting is an action applying to one visible thing. 
+Understand "Pet [something]" as petting.
+Carry out petting:
+	If the player is in the common area:
+		If the noun is the pet alien:
+			Say "You pet little Glorp and he meows lovingly at you. Your soul feels a little bit better.";
+			Forward time by 1;
+			Increase the quality of life of the player by 20;
+			If the energy of the player is less than 90:
+				Increase the energy of the player by 10;
+			Otherwise:
+				Now the energy of the player is 100;
+		Otherwise:
+			Say "You pat it a few times, but it's not very fun.";
+	Otherwise:
+		Say "There's nothing fluffy to pet in here.".
+
+
+Feeding is an action applying to one visible thing.
+Understand "feed [something]" as feeding.
+
+Check feeding:
+	If the player is in the common area:
+		if the noun is pet alien:
+			Say "You pour food into her bowl and she crunches it all up, then goes back to lay down on the couch.";
+			Increase the quality of life of the player by 20;
+			Reverse time by 1;
+			Decrease energy of the player by 5;
+		Otherwise:
+			Say "That doesn't need to be fed.";
+	Otherwise:
+		Say "There's nothing to feed here.".
+
+
+
 
 The game is a device in the common area. The description of the game is "This is your gamesphere that you brought from home. You love to sit and play it for hours. It's calling your name." 
 Understand "gamesphere" and "console" as game.
@@ -355,7 +442,7 @@ Carry out playing:
 
 The fridge is a container in the common area. The description of the fridge is "A small fridge that [if groceries bought is true]has the groceries you bought earlier. You can make a meal for yourself or bake some cookies.[otherwise]is pretty much empty except for some of your roomates leftovers.[end if]".
 
-Food is a thing. 
+Food is a thing. The description of food is "Groceries that you bought at the store. There's enough to cook a few meals and make some cookies too.".
 
 Instead of searching the fridge:
 	if groceries bought is true:
@@ -373,6 +460,7 @@ Carry out cooking:
 				Say "Let em cook! You cook and eat a nice little meal.";
 				Reverse time by 2;
 				Increase the quality of life of the player by 40;
+				Decrease the energy of the player by 20;
 			Otherwise:
 				Say "The dishes are all dirty though.";
 		Otherwise:
@@ -439,7 +527,7 @@ Instead of drinking the cup of coffee:
 	remove the cup of coffee from play;
 
 [---------------------Far Hall------------------------]
-The Far Hall is east of the common area. The description of the Far Hall is "A hall similar to the one outside of your door. Your two roommates have set out their jackets and shoes set out."
+The Far Hall is east of the common area. The description of the Far Hall is "A hall similar to the one outside of your door. Your two roommates have set out their jackets and shoes set out. Katie's Room is to the north and Jessie's Room is to the east."
 
 
 [---------------------Katie's Room------------------------]
@@ -450,7 +538,7 @@ The Katie's Room is north of the far hall. The description of Katie's Room is "H
 Jessie's Room is east of the far hall. The description of Jessie's Room is "Her room is set up sophisticated. She has a full set of school supplies all in creme and pastel coordinating hues. Her bed is always made and her books are always on the shelf. She has a picture on her desk of her and her younger brother. She misses him often."
 
 [---------------------Long Hall------------------------]
-The Long Hall is south of the Common Area. The description of the Long Hall is "A longer corridor that leads to a study hall to the east, Annie's Room to the south, and the courtyard outside to the west. On the door to your dorm there are 3 different critters with each of your names on them."
+The Long Hall is south of the Common Area. The description of the Long Hall is "A longer corridor that leads to a study room to the east, Annie's Room to the south, and the courtyard outside to the west. On the door to your dorm there are 3 different critters with each of your names on them."
 
 [---------------------Study Room------------------------]
 The Study Room is east of the long hall. The description of the Study Room is "A room smaller than the common area. It has a few tables, chairs, and a whiteboard on the wall. When you walk in, [Katie] and [Jessie] look up from their computers and wave at you. The vibes are good, so you can all work on your projects here together.". 
@@ -468,10 +556,8 @@ After going from the study room:
 
 
 [---------------------Annie's Room------------------------]
-Annie's Room is south of the long hall. The description of Annie's Room is "A similar common area to yours, but mirrored. Annie lives here. You two are good friends, so you hang out here often. She lucked into a single room so this common area is all hers."
+Annie's Room is south of the long hall. The description of Annie's Room is "A similar common area to yours, but mirrored. Annie lives here. You two are good friends with some romantic tension, so the two of you hang out here often. She lucked into a single room so this is all hers."
 Annie is a woman in Annie's Room. The description of Annie is "She's the most stunning person you've ever seen. You've had a crush on her for several months and talk every day."
-
-
 
 Annie has a number called affection. The affection of Annie is 0.
 
@@ -527,14 +613,15 @@ Carry out talking to Annie:
 The Courtyard is west of the long hall. The description of the Courtyard is "The courtyard is a big area inside of a dome to keep the atmosphere in. The dome is clear so you can see outside to the rest of campus. You see a path to the north that leads to the gym, a path to the train station to the south, and the rest of campus to the west."
 
 [---------------------Train Station------------------------]
-The Train Station is south of the courtyard. The description of the Train Station is "The train that leads off campus is here. You can take it eastward, to go get groceries, or westward to go to the sorority house.".
-[to party house or grocery store or both?]
+The Train Station is south of the courtyard. The description of the Train Station is "The train that leads off campus is here. You can take it eastward to go get groceries or westward to go to the sorority house.".
+
 
 [---------------------Grocery Store------------------------]
 The Grocery Store is east of the Train Station. The description of the Grocery Store is "The local grocer carries cheap and easy meals. You fill your basket, check out, and are ready to go back home. Take the train west to go back to campus.".
 After going to the Grocery Store:
 	Forward time by 1;
 	Increase quality of life of the player by 40;
+	Decrease the energy of the player by 20;
 	Now the groceries bought is true;
 	Continue the action;
 	
@@ -560,15 +647,16 @@ The Professor's Office is west of the sidewalk. The description of the Professor
 After going to the Professor's Office:
 	Now the markiplier of the player is 2;
 	Reverse time by 2;
+	Decrease the energy of the player by 15;
 	Continue the action.
 
 [---------------------Gym------------------------]
-The Gym is north of the courtyard. The description of the gym is "A modest sized gym that is free for students.".
+The Gym is north of the courtyard. The description of the gym is "A modest sized gym that is free for students. The exit back to the courtyard is to the south.".
 The treadmill is in the gym. The description of the treadmill is "The older machine is perfect for practicing a pretend runway walk."
 The dance loop is in the gym. The description of the dance loop is "A giant person sized loop that lets you hold on tight and spin til your heart is content."
 The stationary bike is in the gym. The description of the stationary bike is "A bicycle fixed in place with added resistance to make your muscles stronger."
 The weight machine is in the gym. The description of the weight machine is "A machine used for pulling or pushing an amount of weights. It's not your favorite way to exercise." 
-Exercising is an action applying to one visible thing. Understand "Exercise on [something]" and "Exercize on [something]" and "work out" as exercising. 
+Exercising is an action applying to one visible thing. Understand "Exercise on [something]" and "Exercize on [something]" and "work out" and "exercize" as exercising. 
 Carry out exercising:
 	If the player is in the gym:
 		say "You push yourself until you're sweaty and tired, but at least you feel better now";

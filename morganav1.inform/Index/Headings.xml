@@ -1274,4 +1274,32 @@
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
+    <key>182</key><dict>
+        <key>Filename</key><string>C:\Program Files\Inform\Internal\Extensions\Emily Short\Basic Help Menu.i7x</string>
+        <key>Line</key><integer>1</integer>
+        <key>Title</key><string>--</string>
+        <key>Level</key><integer>0</integer>
+        <key>Indentation</key><integer>0</integer>
+    </dict>
+    <key>183</key><dict>
+        <key>Filename</key><string>C:\Program Files\Inform\Internal\Extensions\Emily Short\Menus.i7x</string>
+        <key>Line</key><integer>1</integer>
+        <key>Title</key><string>--</string>
+        <key>Level</key><integer>0</integer>
+        <key>Indentation</key><integer>0</integer>
+    </dict>
+    <key>184</key><dict>
+        <key>Filename</key><string>C:\Program Files\Inform\Internal\Extensions\Emily Short\Menus.i7x</string>
+        <key>Line</key><integer>9</integer>
+        <key>Title</key><string>Section 1</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>185</key><dict>
+        <key>Filename</key><string>C:\Program Files\Inform\Internal\Extensions\Emily Short\Menus.i7x</string>
+        <key>Line</key><integer>208</integer>
+        <key>Title</key><string>Section 2</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
 </dict></plist>
